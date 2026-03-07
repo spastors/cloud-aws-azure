@@ -8,18 +8,14 @@ En la nube, el gasto se transforma de **CAPEX** (inversiones en infraestructuras
 
 ## Modelos de servicio y de despliegue
 
-- **IaaS, PaaS y SaaS:** Son modelos de servicio en la nube que definen el nivel de control del usuario. En **IaaS (Infraestructura como Servicio)**, el proveedor gestiona el hardware y la virtualización, mientras que el cliente controla el sistema operativo, el middleware y las aplicaciones. En **PaaS (Plataforma)**, el proveedor también gestiona el sistema operativo y el runtime, lo que permite al usuario centrarse en las aplicaciones. En **SaaS (Software)**, el proveedor gestiona todo y el usuario solo utiliza la aplicación final. La siguiente tabla compara quién controla cada componente en IaaS, PaaS y SaaS:
+- **IaaS, PaaS y SaaS:** Son modelos de servicio en la nube que definen el nivel de control del usuario.
+  - En **IaaS (Infraestructura como Servicio)**, el proveedor gestiona el hardware y la virtualización, mientras que el cliente controla el sistema operativo, el middleware y las aplicaciones.
+  - En **PaaS (Plataforma)**, el proveedor también gestiona el sistema operativo y el runtime, lo que permite al usuario centrarse en las aplicaciones.
+  - En **SaaS (Software)**, el proveedor gestiona todo y el usuario solo utiliza la aplicación final. La siguiente tabla compara quién controla cada componente en IaaS, PaaS y SaaS:
 
-| **Componente** | **IaaS** | **PaaS** | **SaaS** |
-| --- | --- | --- | --- |
-| **Hardware físico** | Proveedor | Proveedor | Proveedor |
-| **Virtualización** | Proveedor | Proveedor | Proveedor |
-| **Sistema operativo (OS)** | Cliente | Proveedor | Proveedor |
-| **Middleware** | Cliente | Proveedor | Proveedor |
-| **Runtime (ejecución)** | Cliente | Proveedor | Proveedor |
-| **Aplicaciones** | Cliente | Cliente | Proveedor |
-| **Datos de la aplicación** | Cliente | Cliente | Cliente |
-| Cada modelo tiene casos de uso. Por ejemplo, IaaS (EC2, EBS) es ideal si necesitas control total del entorno; PaaS (AWS Elastic Beanstalk, RDS) acelera el desarrollo sin gestionar infraestructura; y SaaS (Gmail, Salesforce) ofrece aplicaciones listas para usar. |  |  |  |
+<img width="778" height="727" alt="image" src="https://github.com/user-attachments/assets/2da8eebd-a7db-4e39-9222-15e450cdd1e2" />
+
+Cada modelo tiene casos de uso. Por ejemplo, IaaS (EC2, EBS) es ideal si necesitas control total del entorno; PaaS (AWS Elastic Beanstalk, RDS) acelera el desarrollo sin gestionar infraestructura; y SaaS (Gmail, Salesforce) ofrece aplicaciones listas para usar. |  |  |  |
 - **Nubes públicas, privadas, híbridas y multicloud:**
 - **Nube pública:** Infraestructura compartida, proporcionada por terceros (p. ej., AWS, Azure, GCP) y utilizada *por muchos clientes*. Ofrece alta escalabilidad y costes bajos gracias al pago por uso, pero un menor control sobre la infraestructura.
 - **Nube privada:** Infraestructura dedicada a una sola organización, ya sea en sus propias instalaciones o en un centro del proveedor. Ofrece mayor control, seguridad y cumplimiento, pero requiere una inversión elevada (mayor CAPEX) y gestión propia.
@@ -126,6 +122,9 @@ En la nube, **interoperabilidad** significa que distintos sistemas o nubes puede
 - **CAPEX (Capital Expenditure):** Gastos de capital. Inversiones iniciales en activos duraderos (servidores, hardware y licencias perpetuas). En la nube, el CAPEX se minimiza.
 - **OPEX (Operational Expenditure):** Gastos operativos. Costes recurrentes de operación (consumo de recursos, suscripciones y licencias anuales). En la nube, la mayoría de costes son OPEX (pago por uso).
 - **TCO (Total Cost of Ownership):** Costo total de propiedad. Suma de todos los gastos de un sistema en un período (CAPEX + OPEX + mantenimiento + actualizaciones).
+  
+<img width="784" height="568" alt="image" src="https://github.com/user-attachments/assets/ed52668c-0f19-40d4-a44b-fc03a75608c1" />
+
 - **IaaS/PaaS/SaaS:** Modelos de servicio en la nube. IaaS (Infraestructura como Servicio) entrega recursos básicos (máquinas virtuales y almacenamiento), PaaS (Plataforma) ofrece entornos listos para desarrollar (bases de datos gestionadas y frameworks) y SaaS (Software) entrega aplicaciones completas por Internet.
 - **Contenedor:** Entorno ligero y portátil que encapsula una aplicación y sus dependencias (por ejemplo, Docker), aislando procesos sobre un kernel compartido.
 - **Kubernetes:** Plataforma open source para **orquestar contenedores**. Automatiza el despliegue, el escalado y la administración de aplicaciones en contenedores.
