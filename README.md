@@ -37,12 +37,26 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1537" height="739" alt="image" src="https://github.com/user-attachments/assets/38038130-6d3e-46cd-a2de-36a1a6b5dbcf" />
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fba67e26-f523-4b24-8cd5-22d4ef3ba15c" />
+
+<img width="1215" height="912" alt="image" src="https://github.com/user-attachments/assets/fcfe20bd-7a20-4cef-9cbb-10a003739b1a" />
+
+<img width="1618" height="860" alt="image" src="https://github.com/user-attachments/assets/40a57f65-6315-48c9-8ccb-e7d8414caf31" />
+
+<img width="1745" height="534" alt="image" src="https://github.com/user-attachments/assets/0a5c3991-74a8-431a-a0b3-7f61a6882224" />
+
+<img width="1850" height="1080" alt="image" src="https://github.com/user-attachments/assets/9309e35e-7153-4c4b-91e2-8cde8b4a2bcd" />
+
+
 **Cómputo (Compute):**
 
 - **Amazon EC2:** Máquinas virtuales configurables en la nube. Permite elegir sistema operativo, CPU, memoria y almacenamiento. Se paga por segundo u hora de uso. Incluye instancias on-demand (sin compromiso, pago por uso) y opciones de ahorro, como instancias reservadas o Savings Plans, además de Spot (capacidad ociosa con hasta ~90% de descuento).
 
 <img width="1681" height="876" alt="image" src="https://github.com/user-attachments/assets/96943499-a954-4caa-933b-b514f1bba01b" />
 
+- **Amazon CloudWatch** es un servicio de monitoreo y observabilidad nativo de AWS que recopila datos en tiempo real (métricas, logs y eventos) de recursos como EC2, RDS y Lambda. Permite visualizar el rendimiento, configurar alarmas, automatizar acciones y optimizar recursos, ofreciendo una vista unificada del estado operativo.
+- **Amazon AWS Auto Scaling** es un servicio que ajusta automáticamente la capacidad de sus recursos (como instancias EC2, ECS o DynamoDB) para mantener un rendimiento óptimo y alta disponibilidad, aumentando o disminuyendo la capacidad según la demanda en tiempo real. Esto optimiza costos al eliminar recursos innecesarios.
+- **AWS Elastic Beanstalk** es un servicio "Plataforma como Servicio" (PaaS) de Amazon Web Services que facilita la implementación y escalado rápido de aplicaciones web y servicios (desarrollados en Java, .NET, PHP, Node.js, Python, Ruby, Go y Docker) sin gestionar la infraestructura subyacente. Solo necesitas subir tu código y el servicio gestiona automáticamente el aprovisionamiento, balanceo de carga, escalado y monitoreo.
 - **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
 - **AWS Software Development Kit (SDK)** es un conjunto de herramientas, bibliotecas y documentación que permite a los desarrolladores crear aplicaciones fácilmente en la plataforma Amazon Web Services (AWS). Simplifica el acceso a servicios de AWS (como S3, DynamoDB) mediante código, soportando lenguajes como Python, JavaScript, Java, PHP, Ruby, Go y .NET
 - **Amazon ECS/EKS/Fargate:** Servicios para ejecutar contenedores Docker. **ECS** es el orquestador propio de AWS. **EKS** es Kubernetes gestionado. **Fargate** permite lanzar contenedores sin gestionar servidores subyacentes. Estos servicios facilitan el despliegue de microservicios y aplicaciones en contenedores.
@@ -54,6 +68,7 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Amazon EFS:** Sistema de archivos compartido (file storage) accesible desde varias instancias simultáneamente.
 - **Amazon Glacier / Deep Archive:** Almacenamiento de larga duración y bajo coste para datos archivados (acceso infrecuente).
 - **AWS Storage Gateway** es un servicio de almacenamiento híbrido que conecta entornos locales (on-premise) con la nube de Amazon Web Services (AWS). Proporciona acceso ilimitado a almacenamiento en la nube (S3, Glacier, EBS) sin cambiar aplicaciones existentes, utilizando protocolos estándar (NFS, SMB, iSCSI) y caché local para baja latencia
+- **Amazon Elastic Container Registry (ECR)** es un servicio de registro de contenedores (Docker y OCI) totalmente gestionado y seguro que permite almacenar, administrar y desplegar imágenes de contenedores. Destaca por su alta disponibilidad, integración nativa con AWS (ECS, EKS, Lambda) y funciones de seguridad como el escaneo de vulnerabilidades
 
 **Bases de datos:**
 
@@ -112,6 +127,7 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web)
 
 - **Amazon Simple Queue Service (SQS)** es un servicio de colas de mensajes totalmente gestionado por AWS que permite desacoplar y escalar microservicios, sistemas distribuidos y aplicaciones sin servidor. Facilita el envío, almacenamiento y recepción de mensajes entre componentes de software a cualquier volumen, garantizando la entrega y eliminando la necesidad de gestionar middleware complejo
+- **Amazon AWS Marketplace** es una tienda digital curada por Amazon que permite a los clientes encontrar, comprar, implementar y gestionar rápidamente software, servicios y datos de terceros compatibles con la nube de Amazon Web Services (AWS). Ofrece miles de soluciones de proveedores independientes, incluyendo SaaS, máquinas virtuales (AMI) y herramientas de seguridad, simplificando la adquisición y facturación bajo una misma cuenta. 
 
 ## Facturación y gestión de costes
 
