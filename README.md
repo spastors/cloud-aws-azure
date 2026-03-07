@@ -35,7 +35,10 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 ## Servicios principales de AWS
 
-- **Cómputo (Compute):**
+<img width="1537" height="739" alt="image" src="https://github.com/user-attachments/assets/38038130-6d3e-46cd-a2de-36a1a6b5dbcf" />
+
+**Cómputo (Compute):**
+
 - **Amazon EC2:** Máquinas virtuales configurables en la nube. Permite elegir sistema operativo, CPU, memoria y almacenamiento. Se paga por segundo u hora de uso. Incluye instancias on-demand (sin compromiso, pago por uso) y opciones de ahorro, como instancias reservadas o Savings Plans, además de Spot (capacidad ociosa con hasta ~90% de descuento).
 
 <img width="1681" height="876" alt="image" src="https://github.com/user-attachments/assets/96943499-a954-4caa-933b-b514f1bba01b" />
@@ -47,8 +50,13 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Amazon EBS:** Volúmenes de disco en bloque para usar con instancias EC2 (similar a discos duros en la nube).
 - **Amazon EFS:** Sistema de archivos compartido (file storage) accesible desde varias instancias simultáneamente.
 - **Amazon Glacier / Deep Archive:** Almacenamiento de larga duración y bajo coste para datos archivados (acceso infrecuente).
-- **Bases de datos:**
-- **Amazon RDS:** Bases de datos relacionales gestionadas (MySQL, PostgreSQL, SQL Server, Oracle y Aurora). AWS se encarga de aplicar parches, replicar y hacer copias de seguridad. Soporta **Multi-AZ** para alta disponibilidad (réplicas en distintas AZs).
+
+**Bases de datos:**
+
+- **Amazon RDS (Relation Database Service):** Bases de datos relacionales gestionadas (MySQL, PostgreSQL, SQL Server, Oracle y Aurora). AWS se encarga de aplicar parches, replicar y hacer copias de seguridad. Soporta **Multi-AZ** para alta disponibilidad (réplicas en distintas AZs).
+
+<img width="1244" height="587" alt="image" src="https://github.com/user-attachments/assets/cddbd8c6-fe66-4573-802d-74779ecbfda3" />
+
 - **Amazon DynamoDB:** Base de datos NoSQL (clave-valor, docu­mento) totalmente gestionada, con baja latencia y escalabilidad automática.
 - **Amazon ElastiCache:** Servicio de caché en memoria compatible con Redis o Memcached para mejorar el rendimiento de aplicaciones.
 - **Amazon Redshift:** Almacén de datos (data warehouse) para análisis a gran escala.
@@ -96,6 +104,8 @@ AWS ofrece herramientas para controlar los gastos y entender los costes:
 
 Un **ejemplo práctico**: una empresa puede crear en AWS Budgets un presupuesto mensual fijo y configurar una alerta por correo si el coste real alcanza el 80% del presupuesto. Así, se controlan los gastos de forma proactiva y se pueden tomar medidas (p. ej., apagar recursos no críticos) antes de exceder el límite. Para migraciones de datos, se puede usar **AWS Snowball** (un dispositivo físico seguro) para trasladar petabytes de información a AWS sin depender de la red pública. El dispositivo se envía al cliente, se copian los datos y luego se devuelve a AWS, lo que acelera migraciones masivas.
 
+Es importante crear una alarma de costes, esd decir, poner limites desde el banco a la tarjeta bancaria, ya que no se puede limitar el gasto mensual desde el cloud.
+
 ## Soporte técnico (AWS Support)
 
 Todos los clientes de AWS disponen de soporte *Básico* gratuito, que incluye acceso 24/7 a documentación, foros (AWS) y un número limitado de **Trusted Advisor Checks** (analiza tu entorno de AWS y ofrece recomendaciones en tiempo real basadas en las mejores prácticas de AWS) básicos para límites de servicio. Para soporte técnico con tiempos de respuesta garantizados, se usan planes de pago: **Developer**, **Business** y **Enterprise**. Estos ofrecen asistencia 24/7 (teléfono, chat y email) y recursos especializados:
@@ -122,6 +132,8 @@ En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recome
 Cada cuenta de AWS dispone de una **VPC (Virtual Private Cloud)** por región. En la VPC se definen subredes (públicas o privadas), rutas y gateways. Por ejemplo, una subred pública se conecta a Internet mediante una **Puerta de Internet (IGW)**, mientras que una subred privada usa una **NAT Gateway** para el tráfico saliente. Los **Security Groups** actúan como cortafuegos virtuales a nivel de instancia. AWS organiza sus centros de datos en **Regiones** (ubicaciones geográficas) y **Zonas de Disponibilidad** (centros independientes dentro de cada región), lo que permite diseñar aplicaciones multi-AZ para alta disponibilidad.
 
 <img width="977" height="320" alt="image" src="https://github.com/user-attachments/assets/47edb4d5-1d53-4b72-b339-16a0a6350552" />
+
+A la hora de legir una región se debe tener en cuenta: requisitos legales, proximidad con clientes, servicios disponibles y precios.
 
 **Route 53** es el servicio DNS de AWS. Traduce nombres de dominio a direcciones IP y se integra con balanceadores de carga. 
 
