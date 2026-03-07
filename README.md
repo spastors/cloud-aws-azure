@@ -20,7 +20,8 @@ En la nube, el gasto se transforma de **CAPEX** (inversiones en infraestructuras
 
 Cada modelo tiene casos de uso. Por ejemplo, IaaS (EC2, EBS) es ideal si necesitas control total del entorno; PaaS (AWS Elastic Beanstalk, RDS) acelera el desarrollo sin gestionar infraestructura; y SaaS (Gmail, Salesforce) ofrece aplicaciones listas para usar. 
 
-- **Nubes públicas, privadas, híbridas y multicloud:**
+**Nubes públicas, privadas, híbridas y multicloud:**
+
 - **Nube pública:** Infraestructura compartida, proporcionada por terceros (p. ej., AWS, Azure, GCP) y utilizada *por muchos clientes*. Ofrece alta escalabilidad y costes bajos gracias al pago por uso, pero un menor control sobre la infraestructura.
 - **Nube privada:** Infraestructura dedicada a una sola organización, ya sea en sus propias instalaciones o en un centro del proveedor. Ofrece mayor control, seguridad y cumplimiento, pero requiere una inversión elevada (mayor CAPEX) y gestión propia.
 - **Nube híbrida:** Combina nube pública y privada. Permite, por ejemplo, mantener datos sensibles en la nube privada y procesarlos en la pública cuando la demanda aumenta, conectando ambos entornos y compartiendo datos. Es útil para combinar escalabilidad y seguridad.
@@ -246,9 +247,17 @@ En la nube, **interoperabilidad** significa que distintos sistemas o nubes puede
 ## Ejemplos prácticos de uso y migración
 
 - **Migración de datos grandes:** Usar AWS Snowball para copiar petabytes de información desde un centro de datos local a S3 (dispositivo físico seguro que se envía al cliente, se carga con datos y se devuelve).
-- **Estrategia de migración (7 R’s):** Al planear la migración de aplicaciones a la nube, existen varias estrategias: Rehost (lift&shift), Repurchase (usar SaaS), Replatform (cambios menores), Refactor (rediseñar en cloud), Retire, Retain y Relocate. Estas estrategias se ilustran en la siguiente figura, que resume opciones para migrar o refactorizar cada aplicación:
+- **Estrategia de migración (7 R’s):** Al planear la migración de aplicaciones a la nube, existen varias estrategias: 
 
-*Ejemplo visual de estrategias de migración (“7 R’s”), desde lift & shift hasta rediseñar aplicaciones para la nube.*
+  - **Rehost (Lift & Shift)**: trasladar la aplicación a la nube *sin cambiar* su código ni arquitectura. Es la forma más rápida: simplemente se mueve (p.ej. máquinas virtuales) tal cual, obteniendo beneficios de la nube (reducción de costos de datacenter) sin reescribir nada.
+  - **Repurchase (Drop & Shop)**: se reemplaza la solución existente por una alternativa SaaS o un servicio gestionado equivalente. Por ejemplo, sustituir un software comprado por una versión en la nube o un servicio PaaS específico. Se “dejade migrar” el software anterior y se adquiere otro licenciado para la nube.
+  - **Replatform (Lift & Reshape)**: similar a rehost, pero con *algunas optimizaciones menores*. Se transfieren las aplicaciones a la nube realizando cambios limitados (p.ej. actualizar versión de SO, reconfigurar parámetros, usar bases de datos gestionadas) para aprovechar mejor características cloud, sin reescribir la app.
+  - **Refactor (Re-architect)**: re-diseñar la aplicación para que sea *nativa de la nube*. Esto implica re-implementar partes significativas (p.ej. convertir monolitos en microservicios o usar funciones serverless). La app se replantea aprovechando al máximo escalabilidad, resiliencia y otros servicios cloud.
+  - **Retire (Retirar)**: identificar aplicaciones obsoletas o no críticas y **darlas de baja**. A menudo las migraciones revelan software que ya no se usa; en lugar de moverlo, simplemente se elimina.
+  - **Retain (Conservar)**: mantener la aplicación *donde está*, al menos por ahora. Puede aplazarse su migración o decidir que no es adecuada para el cloud.
+  - (A veces se agrega **Relocate**: mover cargas virtualizadas sin cambios, p.ej. VMs con VMware hacia la nube, sin modificar la app).
+
+<img width="1002" height="664" alt="image" src="https://github.com/user-attachments/assets/37db5792-9a40-484a-b0b1-12c46a6ecbda" />
 
 - **Optimización de costes:** Por ejemplo, una startup puede lanzar una aplicación en EC2 bajo demanda y, cuando se estabilice, reservar capacidad para reducir gastos. También puede habilitar Auto Scaling para reducir servidores en horas valle.
 - **Presupuestos y alertas:** Crear presupuestos mensuales en AWS Budgets y configurar notificaciones (SNS o email) cuando se aproxime el límite. Como práctica, se puede fijar una alerta al 80% del presupuesto para revisar el gasto.
