@@ -59,13 +59,13 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1681" height="876" alt="image" src="https://github.com/user-attachments/assets/96943499-a954-4caa-933b-b514f1bba01b" />
 
-- **Amazon CloudWatch** es un servicio de monitoreo y observabilidad nativo de AWS que recopila datos en tiempo real (métricas, logs y eventos) de recursos como EC2, RDS y Lambda. Permite visualizar el rendimiento, configurar alarmas, automatizar acciones y optimizar recursos, ofreciendo una vista unificada del estado operativo.
-- **AWS CloudTrail** es un servicio de gobernanza y auditoría de Amazon Web Services (AWS) que registra automáticamente las acciones de los usuarios y las llamadas a la API en su infraestructura. Permite identificar quién hizo qué, cuándo y desde dónde, facilitando la seguridad, el cumplimiento normativo y la resolución de problemas.
-- **AWS Config** es un servicio de gobernanza que monitorea, registra y evalúa continuamente las configuraciones de los recursos de AWS. Permite auditar cambios históricos, evaluar el cumplimiento de políticas de seguridad y automatizar la remediación de configuraciones incorrectas. Es clave para la seguridad, el cumplimiento normativo y el control de costos. 
 - **Amazon AWS Auto Scaling** es un servicio que ajusta automáticamente la capacidad de sus recursos (como instancias EC2, ECS o DynamoDB) para mantener un rendimiento óptimo y alta disponibilidad, aumentando o disminuyendo la capacidad según la demanda en tiempo real. Esto optimiza costos al eliminar recursos innecesarios.
-- **AWS Elastic Beanstalk** es un servicio "Plataforma como Servicio" (PaaS) de Amazon Web Services que facilita la implementación y escalado rápido de aplicaciones web y servicios (desarrollados en Java, .NET, PHP, Node.js, Python, Ruby, Go y Docker) sin gestionar la infraestructura subyacente. Solo necesitas subir tu código y el servicio gestiona automáticamente el aprovisionamiento, balanceo de carga, escalado y monitoreo.
 - **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
+- **AWS Elastic Beanstalk** es un servicio "Plataforma como Servicio" (PaaS) de Amazon Web Services que facilita la implementación y escalado rápido de aplicaciones web y servicios (desarrollados en Java, .NET, PHP, Node.js, Python, Ruby, Go y Docker) sin gestionar la infraestructura subyacente. Solo necesitas subir tu código y el servicio gestiona automáticamente el aprovisionamiento, balanceo de carga, escalado y monitoreo.
 - **AWS Software Development Kit (SDK)** es un conjunto de herramientas, bibliotecas y documentación que permite a los desarrolladores crear aplicaciones fácilmente en la plataforma Amazon Web Services (AWS). Simplifica el acceso a servicios de AWS (como S3, DynamoDB) mediante código, soportando lenguajes como Python, JavaScript, Java, PHP, Ruby, Go y .NET
+
+**Contenedores (Containers):**
+
 - **Amazon ECS/EKS/Fargate:** Servicios para ejecutar contenedores Docker. **ECS** es el orquestador propio de AWS. **EKS** es Kubernetes gestionado. **Fargate** permite lanzar contenedores sin gestionar servidores subyacentes. Estos servicios facilitan el despliegue de microservicios y aplicaciones en contenedores.
 - **Amazon Elastic Container Registry (ECR)** es un servicio de registro de contenedores (Docker y OCI) totalmente gestionado y seguro que permite almacenar, administrar y desplegar imágenes de contenedores. Destaca por su alta disponibilidad, integración nativa con AWS (ECS, EKS, Lambda) y funciones de seguridad como el escaneo de vulnerabilidades.
 - **Amazon Elastic Kubernetes Service (Amazon EKS)** es un servicio administrado de Kubernetes que facilita la ejecución de aplicaciones en contenedores en la nube de AWS o en centros de datos propios. Automatiza la gestión, escalado y alta disponibilidad del plano de control y nodos, eliminando la necesidad de instalar o configurar Kubernetes manualmente
@@ -75,8 +75,14 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
   - **Amazon AWS Access Analyzer for S3** es una funcionalidad integrada en la consola de S3 que utiliza razonamiento automatizado para identificar qué buckets de S3 son accesibles públicamente o desde otras cuentas de AWS. Ayuda a los administradores a supervisar políticas, detectar riesgos de seguridad y prevenir fugas de datos no deseadas
 - **Amazon EBS:** Volúmenes de disco en bloque para usar con instancias EC2 (similar a discos duros en la nube).
 - **Amazon Elastic File System (EFS)** es un servicio de almacenamiento de archivos en la nube, gestionado, escalable y compartido, diseñado para AWS y recursos locales. Utiliza el protocolo NFS (Network File System), permitiendo que múltiples instancias EC2, contenedores o servidores accedan simultáneamente a los mismos datos en diferentes zonas de disponibilidad.
-- **Amazon Glacier / Deep Archive:** Almacenamiento de larga duración y bajo coste para datos archivados (acceso infrecuente).
+- **S3 Glacier / Deep Archive:** Almacenamiento de larga duración y bajo coste para datos archivados (acceso infrecuente).
 - **AWS Storage Gateway** es un servicio de almacenamiento híbrido que conecta entornos locales (on-premise) con la nube de Amazon Web Services (AWS). Proporciona acceso ilimitado a almacenamiento en la nube (S3, Glacier, EBS) sin cambiar aplicaciones existentes, utilizando protocolos estándar (NFS, SMB, iSCSI) y caché local para baja latencia
+- **AWS Backup** es un servicio de gestión de copias de seguridad totalmente administrado y centralizado que automatiza la protección de datos en la nube de AWS y entornos híbridos. Permite configurar políticas, programar respaldos y gestionar retenciones para servicios como Amazon EC2, RDS, EBS, S3 y DynamoDB, facilitando el cumplimiento normativo.
+- **AWS Lake Formation** es un servicio administrado que simplifica la creación, gestión y protección de data lakes (lagos de datos) en Amazon S3 en cuestión de días, no meses. Centraliza la gobernanza, permitiendo definir políticas de seguridad detalladas a nivel de columna, fila o tabla para controlar el acceso a la información.
+
+<img width="1728" height="910" alt="image" src="https://github.com/user-attachments/assets/5d5819d8-5769-4244-9f27-f6b83d5b0d76" />
+
+<img width="728" height="880" alt="image" src="https://github.com/user-attachments/assets/7ed5671b-03fe-44f9-a812-e28a84634906" />
 
 **Bases de datos:**
 
@@ -87,24 +93,19 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1244" height="587" alt="image" src="https://github.com/user-attachments/assets/cddbd8c6-fe66-4573-802d-74779ecbfda3" />
 
+- **Amazon Aurora**: Base de datos relacional de alto rendimiento compatible con MySQL/PostgreSQL.
 - **Amazon DynamoDB:** es un servicio de base de datos NoSQL de clave-valor y documentos, totalmente administrado y sin servidor (serverless) de Amazon Web Services (AWS), que ofrece un rendimiento rápido y predecible (en milisegundos) con escalabilidad automática. Es ideal para aplicaciones modernas, móviles, web, IoT y juegos que requieren alta disponibilidad y manejo de gran volumen de datos.
-- **Amazon ElastiCache:** Servicio de caché en memoria compatible con Redis o Memcached para mejorar el rendimiento de aplicaciones.
-
-<img width="1577" height="945" alt="image" src="https://github.com/user-attachments/assets/2255e526-d3a3-4779-88c5-811ab01a230e" />
-
-- **AWS Lake Formation** es un servicio administrado que simplifica la creación, gestión y protección de data lakes (lagos de datos) en Amazon S3 en cuestión de días, no meses. Centraliza la gobernanza, permitiendo definir políticas de seguridad detalladas a nivel de columna, fila o tabla para controlar el acceso a la información.
-
-<img width="1728" height="910" alt="image" src="https://github.com/user-attachments/assets/5d5819d8-5769-4244-9f27-f6b83d5b0d76" />
-
-<img width="728" height="880" alt="image" src="https://github.com/user-attachments/assets/7ed5671b-03fe-44f9-a812-e28a84634906" />
-
 - **Amazon Redshift** es un servicio de almacenamiento de datos (data warehouse) en la nube, totalmente gestionado y a escala de petabytes, diseñado para analítica de alto rendimiento. Utiliza almacenamiento columnar y procesamiento paralelo masivo (MPP) para consultas rápidas, permitiendo analizar grandes volúmenes de datos usando SQL y herramientas de BI convencionales a bajo costo.
 
 <img width="1579" height="940" alt="image" src="https://github.com/user-attachments/assets/59c58a55-9c92-4a91-8bf7-923a2abba29a" />
 
-- **Otros:** Amazon Neptune (base de grafos), DocumentDB (compatible con MongoDB), etc.
+- **Amazon Neptune**: Base de datos orientada a grafos.
+- **DocumentDB** (compatible con MongoDB)
+- **Amazon ElastiCache:** Servicio de caché en memoria compatible con Redis o Memcached para mejorar el rendimiento de aplicaciones.
 
-**Redes y entrega de contenido:**
+<img width="1577" height="945" alt="image" src="https://github.com/user-attachments/assets/2255e526-d3a3-4779-88c5-811ab01a230e" />
+
+**Redes y entrega de contenido (Networking & Content Delivery)**
 
 - **Amazon VPC:** Red virtual privada en AWS donde se definen subredes, tablas de enrutamiento y gateways. Cada cuenta de AWS inicia con una VPC por región. Dentro de la VPC se crean *subredes* (públicas o privadas) y recursos (EC2, RDS, etc.). Se conecta al exterior mediante una **Puerta de Enlace a Internet (Internet Gateway)** y se pueden usar **NAT Gateways** para el tráfico saliente de subredes privadas. VPC actúa como una red tradicional propia en la nube.
 
@@ -114,17 +115,16 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 - **Grupos de seguridad:** Firewalls a nivel de instancia EC2. Controlan qué tráfico entra o sale de cada servidor (por ejemplo, permitir SSH solo desde ciertas IPs). Son *stateful*: permiten respuestas automáticamente cuando una instancia origina tráfico.
 - **Listas de control de acceso (NACL):** Firewalls a nivel de subred, que evalúan el tráfico de entrada y salida por reglas (stateless).
-- **Elastic Load Balancing (ELB):** Distribuye automáticamente el tráfico entre múltiples instancias en una o más zonas de disponibilidad. Aumenta la disponibilidad y la tolerancia a fallos. Soporta distintos tipos (Application Load Balancer para HTTP/HTTPS, Network Load Balancer de baja latencia y Gateway Load Balancer para tráfico L4).
 - **Amazon Route 53:** Servicio DNS escalable y de alta disponibilidad. Traduce nombres de dominio a IPs y permite enrutar tráfico de forma inteligente (geolocalización y latencia). También soporta balanceo de carga simple a Load Balancers o puntos finales.
+- - **Elastic Load Balancing (ELB):** Distribuye automáticamente el tráfico entre múltiples instancias en una o más zonas de disponibilidad. Aumenta la disponibilidad y la tolerancia a fallos. Soporta distintos tipos (Application Load Balancer para HTTP/HTTPS, Network Load Balancer de baja latencia y Gateway Load Balancer para tráfico L4).
 - **Amazon CloudFront:** Red de entrega de contenido (CDN) global para distribuir contenido (contenidos web estáticos y dinámicos, como HTML, CSS, JavaScript e imágenes, así como vídeos) con baja latencia.
 
 <img width="1852" height="794" alt="image" src="https://github.com/user-attachments/assets/e33c0ad9-b1e7-4516-9f4f-6135c684fb11" />
 
 <img width="1834" height="933" alt="image" src="https://github.com/user-attachments/assets/7dc0e166-02b5-45c9-8da1-e96a26db6d62" />
 
-- **Amazon Inspector** es un servicio de gestión de vulnerabilidades automatizado de Amazon Web Services (AWS) que analiza continuamente cargas de trabajo (instancias EC2, contenedores ECR y funciones Lambda) para detectar fallos de seguridad, software desactualizado y exposiciones de red no deseadas. Proporciona hallazgos detallados con recomendaciones de corrección, mejorando la postura de seguridad y el cumplimiento normativo.
-
 - **AWS Global Accelerator** es un servicio de red que mejora la disponibilidad y el rendimiento (hasta un 60% más rápido) de las aplicaciones web y de Internet al dirigir el tráfico de usuarios a través de la infraestructura de red global de Amazon, en lugar de la red pública de Internet. Utiliza direcciones IP estáticas con Anycast para enrutar el tráfico al punto de enlace más cercano.
+
 
 **Seguridad e IAM:**
 
@@ -132,6 +132,7 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
   - **AWS IAM User (Usuario)** es una identidad específica dentro de tu cuenta de AWS que representa a una persona física o a una aplicación/servicio que interactúa con AWS. Se utiliza para el acceso directo y continuo. Un usuario tiene credenciales a largo plazo (nombre de usuario/contraseña para la consola o claves de acceso para la CLI/API). Ejemplo: Un desarrollador llamado "Juan" o una aplicación de backend que necesita leer datos de S3.
   - **AWS IAM Group (Grupo)** es Una colección de usuarios de IAM. Sirve para gestionar permisos a escala. En lugar de asignar políticas (permisos) a cada usuario individualmente, creas un grupo, le asignas permisos y añades usuarios a ese grupo. Todos los miembros heredan los permisos del grupo. Ejemplo: Un grupo llamado "Administradores" o "Desarrolladores" que agrupa a varias personas. 
   - **AWS IAM Role (Rol)** es una identidad de IAM que puedes crear en tu cuenta pero que no tiene credenciales estáticas (contraseñas o claves de acceso) asociadas. Está diseñado para ser asumido temporalmente por usuarios, aplicaciones o servicios de AWS (como EC2 o Lambda) que necesitan permisos específicos solo durante un tiempo limitado. Ejemplo: Darle a una instancia EC2 (servidor) un rol para acceder a una base de datos sin guardar contraseñas dentro del servidor
+**Mínimo privilegio:** Otorgar solo los permisos estrictamente necesarios a usuarios y roles (evitando permisos administrativos innecesarios) es una práctica esencial de seguridad. Además, activar **MFA** (autenticación multifactor) en todas las cuentas de IAM refuerza la protección.
 
 <img width="1231" height="752" alt="image" src="https://github.com/user-attachments/assets/0bbb6e8e-477a-4c86-95aa-84bd387cd295" />
 
@@ -143,16 +144,26 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 <img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
 
 - **Amazon Macie** es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza machine learning y coincidencia de patrones para descubrir, clasificar y proteger automáticamente información sensible (como datos personales o financieros) almacenada en Amazon S3.
+- **Amazon Inspector** es un servicio de gestión de vulnerabilidades automatizado de Amazon Web Services (AWS) que analiza continuamente cargas de trabajo (instancias EC2, contenedores ECR y funciones Lambda) para detectar fallos de seguridad, software desactualizado y exposiciones de red no deseadas. Proporciona hallazgos detallados con recomendaciones de corrección, mejorando la postura de seguridad y el cumplimiento normativo.
 - **Amazon Network ACLs** (Listas de Control de Acceso a la Red) son una capa de seguridad esencial en AWS que actúa como un firewall sin estado (stateless) a nivel de subred. Controlan el tráfico entrante y saliente, permitiendo o denegando reglas específicas para proteger los recursos dentro de una VPC.
 - **Amazon Cognito** es un servicio de Amazon Web Services (AWS) que gestiona el registro, inicio de sesión y control de acceso de usuarios en aplicaciones web y móviles.
 
 <img width="1717" height="775" alt="image" src="https://github.com/user-attachments/assets/eb3da604-02d6-4642-8e9c-a57a50a75056" />
 
-- **AWS Backup** es un servicio de gestión de copias de seguridad totalmente administrado y centralizado que automatiza la protección de datos en la nube de AWS y entornos híbridos. Permite configurar políticas, programar respaldos y gestionar retenciones para servicios como Amazon EC2, RDS, EBS, S3 y DynamoDB, facilitando el cumplimiento normativo.
 - **Amazon GuardDuty** es un servicio de detección de amenazas inteligente y administrado que monitorea continuamente las cuentas, cargas de trabajo (como EC2, EKS, Lambda) y datos de almacenamiento (S3) de AWS en busca de actividades maliciosas, comportamientos inusuales y malware. Utiliza inteligencia artificial, aprendizaje automático y fuentes de datos de seguridad para proporcionar alertas detalladas, facilitando la remediación rápida.
 - **AWS Artifact** es un servicio centralizado y bajo demanda que proporciona acceso a los informes de seguridad y cumplimiento de AWS, incluyendo certificaciones ISO, PCI e informes SOC. Es fundamental para auditorías, permitiendo a los usuarios descargar documentos de cumplimiento y gestionar acuerdos (aceptar términos) con AWS.
-
 - **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web)
+
+**Gestión y Gobernanza (Management)**
+
+- **Amazon CloudWatch** es un servicio de monitoreo y observabilidad nativo de AWS que recopila datos en tiempo real (métricas, logs y eventos) de recursos como EC2, RDS y Lambda. Permite visualizar el rendimiento, configurar alarmas, automatizar acciones y optimizar recursos, ofreciendo una vista unificada del estado operativo.
+- **AWS CloudTrail** es un servicio de gobernanza y auditoría de Amazon Web Services (AWS) que registra automáticamente las acciones de los usuarios y las llamadas a la API en su infraestructura. Permite identificar quién hizo qué, cuándo y desde dónde, facilitando la seguridad, el cumplimiento normativo y la resolución de problemas.
+- **AWS Config** es un servicio de gobernanza que monitorea, registra y evalúa continuamente las configuraciones de los recursos de AWS. Permite auditar cambios históricos, evaluar el cumplimiento de políticas de seguridad y automatizar la remediación de configuraciones incorrectas. Es clave para la seguridad, el cumplimiento normativo y el control de costos.
+- - **AWS Trusted Advisor:** Herramienta que analiza el entorno de AWS y ofrece recomendaciones basadas en buenas prácticas extraídas de miles de clientes. Trusted Advisor sugiere acciones para *ahorrar dinero*, *mejorar la disponibilidad y el rendimiento* o *cerrar huecos de seguridad*. Con soporte básico se accede a algunas verificaciones. Con planes Business o Enterprise se tiene acceso completo a todos los checks. Por ejemplo, puede identificar instancias EC2 infrautilizadas para apagarlas y ahorrar costes.
+
+  
+
+
 
 - **Amazon Simple Queue Service (SQS)** es un servicio de colas de mensajes totalmente gestionado por AWS que permite desacoplar y escalar microservicios, sistemas distribuidos y aplicaciones sin servidor. Facilita el envío, almacenamiento y recepción de mensajes entre componentes de software a cualquier volumen, garantizando la entrega y eliminando la necesidad de gestionar middleware complejo
 - **Amazon AWS Marketplace** es una tienda digital curada por Amazon que permite a los clientes encontrar, comprar, implementar y gestionar rápidamente software, servicios y datos de terceros compatibles con la nube de Amazon Web Services (AWS). Ofrece miles de soluciones de proveedores independientes, incluyendo SaaS, máquinas virtuales (AMI) y herramientas de seguridad, simplificando la adquisición y facturación bajo una misma cuenta.
@@ -161,6 +172,15 @@ Mensajería:
 
 - **SNS (Simple Notification Service)**: Envía notificaciones a muchos suscriptores (Pub/Sub, emails, SMS).
 - **SQS (Simple Queue Service)**: Desacopla aplicaciones usando colas de mensajes (tienes SQS en tus apuntes, pero debes contrastarlo con SNS).
+
+
+
+
+
+
+
+
+
 
 ## Facturación y gestión de costes
 
@@ -224,9 +244,6 @@ En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recome
   - Eficiencia de rendimiento: Usar recursos computacionales de manera eficiente.
   - Optimización de costes: Evitar costos innecesarios y maximizar el retorno de inversión.
   - Sostenibilidad: Minimizar el impacto ambiental de la carga de trabajo.
-
-- **AWS Trusted Advisor:** Herramienta que analiza el entorno de AWS y ofrece recomendaciones basadas en buenas prácticas extraídas de miles de clientes. Trusted Advisor sugiere acciones para *ahorrar dinero*, *mejorar la disponibilidad y el rendimiento* o *cerrar huecos de seguridad*. Con soporte básico se accede a algunas verificaciones. Con planes Business o Enterprise se tiene acceso completo a todos los checks. Por ejemplo, puede identificar instancias EC2 infrautilizadas para apagarlas y ahorrar costes.
-- **Mínimo privilegio:** Otorgar solo los permisos estrictamente necesarios a usuarios y roles (evitando permisos administrativos innecesarios) es una práctica esencial de seguridad. Además, activar **MFA** (autenticación multifactor) en todas las cuentas de IAM refuerza la protección.
 
 ## Redes básicas de AWS
 
