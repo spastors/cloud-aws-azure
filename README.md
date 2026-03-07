@@ -60,6 +60,8 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 <img width="1681" height="876" alt="image" src="https://github.com/user-attachments/assets/96943499-a954-4caa-933b-b514f1bba01b" />
 
 - **Amazon CloudWatch** es un servicio de monitoreo y observabilidad nativo de AWS que recopila datos en tiempo real (métricas, logs y eventos) de recursos como EC2, RDS y Lambda. Permite visualizar el rendimiento, configurar alarmas, automatizar acciones y optimizar recursos, ofreciendo una vista unificada del estado operativo.
+- **AWS CloudTrail** es un servicio de gobernanza y auditoría de Amazon Web Services (AWS) que registra automáticamente las acciones de los usuarios y las llamadas a la API en su infraestructura. Permite identificar quién hizo qué, cuándo y desde dónde, facilitando la seguridad, el cumplimiento normativo y la resolución de problemas.
+- **AWS Config** es un servicio de gobernanza que monitorea, registra y evalúa continuamente las configuraciones de los recursos de AWS. Permite auditar cambios históricos, evaluar el cumplimiento de políticas de seguridad y automatizar la remediación de configuraciones incorrectas. Es clave para la seguridad, el cumplimiento normativo y el control de costos. 
 - **Amazon AWS Auto Scaling** es un servicio que ajusta automáticamente la capacidad de sus recursos (como instancias EC2, ECS o DynamoDB) para mantener un rendimiento óptimo y alta disponibilidad, aumentando o disminuyendo la capacidad según la demanda en tiempo real. Esto optimiza costos al eliminar recursos innecesarios.
 - **AWS Elastic Beanstalk** es un servicio "Plataforma como Servicio" (PaaS) de Amazon Web Services que facilita la implementación y escalado rápido de aplicaciones web y servicios (desarrollados en Java, .NET, PHP, Node.js, Python, Ruby, Go y Docker) sin gestionar la infraestructura subyacente. Solo necesitas subir tu código y el servicio gestiona automáticamente el aprovisionamiento, balanceo de carga, escalado y monitoreo.
 - **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
@@ -120,6 +122,8 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1834" height="933" alt="image" src="https://github.com/user-attachments/assets/7dc0e166-02b5-45c9-8da1-e96a26db6d62" />
 
+- **Amazon Inspector** es un servicio de gestión de vulnerabilidades automatizado de Amazon Web Services (AWS) que analiza continuamente cargas de trabajo (instancias EC2, contenedores ECR y funciones Lambda) para detectar fallos de seguridad, software desactualizado y exposiciones de red no deseadas. Proporciona hallazgos detallados con recomendaciones de corrección, mejorando la postura de seguridad y el cumplimiento normativo.
+
 - **AWS Global Accelerator** es un servicio de red que mejora la disponibilidad y el rendimiento (hasta un 60% más rápido) de las aplicaciones web y de Internet al dirigir el tráfico de usuarios a través de la infraestructura de red global de Amazon, en lugar de la red pública de Internet. Utiliza direcciones IP estáticas con Anycast para enrutar el tráfico al punto de enlace más cercano.
 
 **Seguridad e IAM:**
@@ -151,7 +155,12 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web)
 
 - **Amazon Simple Queue Service (SQS)** es un servicio de colas de mensajes totalmente gestionado por AWS que permite desacoplar y escalar microservicios, sistemas distribuidos y aplicaciones sin servidor. Facilita el envío, almacenamiento y recepción de mensajes entre componentes de software a cualquier volumen, garantizando la entrega y eliminando la necesidad de gestionar middleware complejo
-- **Amazon AWS Marketplace** es una tienda digital curada por Amazon que permite a los clientes encontrar, comprar, implementar y gestionar rápidamente software, servicios y datos de terceros compatibles con la nube de Amazon Web Services (AWS). Ofrece miles de soluciones de proveedores independientes, incluyendo SaaS, máquinas virtuales (AMI) y herramientas de seguridad, simplificando la adquisición y facturación bajo una misma cuenta. 
+- **Amazon AWS Marketplace** es una tienda digital curada por Amazon que permite a los clientes encontrar, comprar, implementar y gestionar rápidamente software, servicios y datos de terceros compatibles con la nube de Amazon Web Services (AWS). Ofrece miles de soluciones de proveedores independientes, incluyendo SaaS, máquinas virtuales (AMI) y herramientas de seguridad, simplificando la adquisición y facturación bajo una misma cuenta.
+
+Mensajería:
+
+- **SNS (Simple Notification Service)**: Envía notificaciones a muchos suscriptores (Pub/Sub, emails, SMS).
+- **SQS (Simple Queue Service)**: Desacopla aplicaciones usando colas de mensajes (tienes SQS en tus apuntes, pero debes contrastarlo con SNS).
 
 ## Facturación y gestión de costes
 
@@ -164,6 +173,14 @@ AWS ofrece herramientas para controlar los gastos y entender los costes:
   - Gestión eficiente y visibilidad: La cuenta principal ("master account") puede visualizar y desglosar los costos y el uso de cada cuenta miembro, facilitando la auditoría y control de costos.
   - Pagos simplificados: Estandariza los ciclos de facturación, lo que mejora la gestión del flujo de caja al tener fechas de vencimiento unificadas.
   - Independencia de cuentas: Aunque la facturación está centralizada, todas las cuentas miembros siguen siendo independientes en términos de recursos y seguridad
+ 
+Basic: Gratis. Solo consultas de facturación.
+
+Developer: Soporte en horario comercial por email. (A partir de aquí hay soporte técnico).
+
+Business: 24/7 por teléfono/chat. Casos ilimitados.
+
+Enterprise: Incluye TAM (Technical Account Manager) y soporte consultivo.
 
 - **Etiquetado y reportes:** Se recomienda usar **tags (etiquetas)** en recursos para atribuir costes a proyectos o equipos. AWS Cost and Usage Reports y Cost Explorer permiten analizar el consumo histórico y las tendencias.
 - **AWS Budgets:** Herramienta para establecer presupuestos y alertas. Permite definir alertas (por ejemplo, enviar un correo o disparar una acción cuando se supere el 80% del presupuesto mensual). Se pueden crear presupuestos de coste total, de uso de recursos o de cobertura (RI/Savings Plans) y recibir notificaciones vía email o SNS.
@@ -214,6 +231,10 @@ En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recome
 ## Redes básicas de AWS
 
 Cada cuenta de AWS dispone de una **VPC (Virtual Private Cloud)** por región. En la VPC se definen subredes (públicas o privadas), rutas y gateways. Por ejemplo, una subred pública se conecta a Internet mediante una **Puerta de Internet (IGW)**, mientras que una subred privada usa una **NAT Gateway** para el tráfico saliente. Los **Security Groups** actúan como cortafuegos virtuales a nivel de instancia. AWS organiza sus centros de datos en **Regiones** (ubicaciones geográficas) y **Zonas de Disponibilidad** (centros independientes dentro de cada región), lo que permite diseñar aplicaciones multi-AZ para alta disponibilidad.
+
+- Región: Área geográfica física (ej. París, Tokyo). Contiene 2 o más AZs.
+- Zona de Disponibilidad (AZ): Uno o más centros de datos discretos con energía y red redundantes.
+- Ubicaciones de Borde (Edge Locations): Puntos finales de la red CDN (CloudFront) para caché de baja latencia. Hay muchas más Edge Locations que Regiones.
 
 <img width="977" height="320" alt="image" src="https://github.com/user-attachments/assets/47edb4d5-1d53-4b72-b339-16a0a6350552" />
 
