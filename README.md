@@ -162,7 +162,9 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 - **Amazon GuardDuty** es un servicio de detección de amenazas inteligente y administrado que monitorea continuamente las cuentas, cargas de trabajo (como EC2, EKS, Lambda) y datos de almacenamiento (S3) de AWS en busca de actividades maliciosas, comportamientos inusuales y malware. Utiliza inteligencia artificial, aprendizaje automático y fuentes de datos de seguridad para proporcionar alertas detalladas, facilitando la remediación rápida.
 - **AWS Artifact** es un servicio centralizado y bajo demanda que proporciona acceso a los informes de seguridad y cumplimiento de AWS, incluyendo certificaciones ISO, PCI e informes SOC. Es fundamental para auditorías, permitiendo a los usuarios descargar documentos de cumplimiento y gestionar acuerdos (aceptar términos) con AWS.
-- **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web)
+- **AWS WAF (Web Application Firewall)** es un servicio de seguridad en la nube de Amazon Web Services que protege aplicaciones web y APIs contra exploits comunes, bots y tráfico malicioso. Permite crear reglas personalizadas para bloquear o permitir solicitudes HTTP/HTTPS basadas en IP, cabeceras o contenido, protegiendo recursos como CloudFront, Application Load Balancer y API Gateway.
+- **AWS Shield** es un servicio gestionado de protección contra ataques de denegación de servicio distribuido (DDoS) que salvaguarda aplicaciones web en Amazon Web Services (AWS). Ofrece dos niveles: Standard, que es gratuito y automático para ataques comunes en capas 3/4, y Advanced, que ofrece mitigación, visibilidad y soporte especializado para ataques sofisticados.
+- **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves)
 
 **Gestión y Gobernanza (Management)**
 
@@ -370,7 +372,13 @@ Un **contenedor** encapsula una aplicación con sus dependencias en un entorno p
 
 ## DevOps e Infraestructura como Código
 
-La cultura **DevOps** fomenta la colaboración entre desarrollo y operaciones para entregar software con frecuencia y calidad, mediante automatización y CI/CD. En AWS, servicios como **CodeCommit** (repositorio Git), **CodeBuild** (compilación) y **CodeDeploy/CodePipeline** (entrega continua) ayudan a implementar DevOps. Por ejemplo, un cambio en el código puede activar automáticamente una pipeline que ejecute pruebas y despliegue en AWS. La **Infraestructura como Código (IaC)** permite definir recursos (redes, servidores y bases) en archivos (JSON o YAML). AWS CloudFormation es un servicio de IaC que modela y aprovisiona recursos de AWS de forma automática a partir de plantillas.
+La cultura **DevOps** fomenta la colaboración entre desarrollo y operaciones para entregar software con frecuencia y calidad, mediante automatización y CI/CD. En AWS, servicios como **CodeCommit** (repositorio Git), **CodeBuild** (compilación) y **CodeDeploy/CodePipeline** (entrega continua) ayudan a implementar DevOps. Por ejemplo, un cambio en el código puede activar automáticamente una pipeline que ejecute pruebas y despliegue en AWS. La **Infraestructura como Código (IaC)** permite definir recursos (redes, servidores y bases) en archivos (JSON o YAML). 
+
+**AWS CloudFormation** es un servicio de IaC que modela y aprovisiona recursos de AWS de forma automática a partir de plantillas.
+
+**AWS CodeStar** es un servicio unificado en la nube que facilita la creación, gestión y trabajo en proyectos de desarrollo de software en Amazon Web Services (AWS). Permite configurar rápidamente cadenas de herramientas CI/CD (integración y entrega continuas), incluyendo código fuente, compilación y despliegue, además de integrar gestión de tareas (Jira) y paneles de control del equipo.
+
+**Amazon Lightsail** es el servicio de servidor privado virtual (VPS) de AWS diseñado para ser sencillo, rápido y económico. Incluye todo lo necesario para lanzar un proyecto web (instancias, almacenamiento, bases de datos, redes, IP estática) con precios fijos mensuales, siendo ideal para sitios web, aplicaciones pequeñas, blogs (WordPress) y entornos de desarrollo
 
 ## Interoperabilidad y portabilidad
 
@@ -399,6 +407,7 @@ En la nube, **interoperabilidad** significa que distintos sistemas o nubes puede
 - **Seguridad:** Implementar políticas de IAM estrictas y habilitar MFA. Por ejemplo, exigir que solo personal con permisos adecuados pueda lanzar instancias EC2 de producción, mientras que en desarrollo se usan permisos más limitados.
 - **Alta disponibilidad:** Desplegar instancias en múltiples AZ dentro de una región. Por ejemplo, configurar una base de datos RDS con Multi-AZ para replicar datos en otra zona y soportar fallos.
 - **Contenedores y Serverless:** Para una app web con picos de tráfico, se puede ejecutar el backend en contenedores (ECS o EKS) y usar funciones Lambda para tareas puntuales (procesar imágenes o enviar emails), aprovechando el escalado automático.
+- **AWS DataSync** es un servicio de transferencia de datos en línea, seguro y gestionado que automatiza y acelera el movimiento de grandes volúmenes de datos entre sistemas de almacenamiento locales (on-premises), otras nubes (como Azure o Google Cloud) y los servicios de almacenamiento de AWS (S3, EFS, FSx). Facilita migraciones, réplicas y archivado, gestionando automáticamente la infraestructura, el cifrado y la validación de la integridad
 
 ## Glosario de términos clave
 
