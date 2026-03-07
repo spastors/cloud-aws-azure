@@ -94,7 +94,9 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 <img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/ebac3c56-ee47-4d46-92b8-bb75eb766b9d" />
 <img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
 
-- **Amazon Macie** es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza machine learning y coincidencia de patrones para descubrir, clasificar y proteger automáticamente información sensible (como datos personales o financieros) almacenada en Amazon S3. 
+- **Amazon Macie** es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza machine learning y coincidencia de patrones para descubrir, clasificar y proteger automáticamente información sensible (como datos personales o financieros) almacenada en Amazon S3.
+- **Amazon Network ACLs** (Listas de Control de Acceso a la Red) son una capa de seguridad esencial en AWS que actúa como un firewall sin estado (stateless) a nivel de subred. Controlan el tráfico entrante y saliente, permitiendo o denegando reglas específicas para proteger los recursos dentro de una VPC.
+- **Amazon Cognito** es un servicio de Amazon Web Services (AWS) que gestiona el registro, inicio de sesión y control de acceso de usuarios en aplicaciones web y móviles.
 
 - **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web) y GuardDuty (detección de amenazas), entre otros, aunque no son obligatorios para el nivel Cloud Practitioner.
 
@@ -102,7 +104,7 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 AWS ofrece herramientas para controlar los gastos y entender los costes:
 
-- **Modelos de precios:** AWS cobra mayoritariamente por consumo. En EC2, por ejemplo, existen instancias **bajo demanda** (pago por hora o segundo, sin compromiso previo), instancias **reservadas** o **Savings Plans** (compromiso por 1 a 3 años con descuento) y **Spot** (capacidad no usada, hasta ~90% más barato). Los servicios de almacenamiento y datos también se cobran según el uso y el nivel. Es clave conocer estas opciones para optimizar costes.
+- **Modelos de precios:** AWS cobra mayoritariamente por consumo. En EC2, por ejemplo, existen instancias **bajo demanda** (pago por hora o segundo, sin compromiso previo), instancias **reservadas** o **Savings Plans** (compromiso por 1 a 3 años con descuento) y **Spot** (capacidad no usada, hasta ~90% más barato). Los servicios de almacenamiento y datos también se cobran según el uso y el nivel. Es clave conocer estas opciones para optimizar costes. **Amazon Spot Instances** son máquinas virtuales de Amazon EC2 que permiten utilizar la capacidad de cómputo sobrante de AWS con descuentos de hasta el 90% respecto a los precios bajo demanda. Son ideales para cargas de trabajo flexibles, sin estado y tolerantes a interrupciones, ya que AWS puede recuperar la instancia con un aviso de 2 minutos.
 - **Facturación consolidada:** Con AWS Organizations se pueden vincular varias cuentas bajo una factura maestra, compartiendo beneficios (p. ej., volúmenes para descuentos) y aislando recursos por unidad de negocio.
 - **Etiquetado y reportes:** Se recomienda usar **tags (etiquetas)** en recursos para atribuir costes a proyectos o equipos. AWS Cost and Usage Reports y Cost Explorer permiten analizar el consumo histórico y las tendencias.
 - **AWS Budgets:** Herramienta para establecer presupuestos y alertas. Permite definir alertas (por ejemplo, enviar un correo o disparar una acción cuando se supere el 80% del presupuesto mensual). Se pueden crear presupuestos de coste total, de uso de recursos o de cobertura (RI/Savings Plans) y recibir notificaciones vía email o SNS.
@@ -128,8 +130,14 @@ En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recome
 
 <img width="1818" height="784" alt="image" src="https://github.com/user-attachments/assets/d92afcb5-e11c-4d42-bad9-5c77a4e1354a" />
 
+- **AWS Well-Architected Framework** es un conjunto de mejores prácticas, principios de diseño y guías de Amazon Web Services (AWS) para ayudar a arquitectos de la nube a construir infraestructura segura, de alto rendimiento, resiliente y eficiente. Se basa en seis pilares fundamentales, evaluando cargas de trabajo para optimizar costos y sostenibilidad. 
+  - Excelencia operativa: Ejecutar y monitorear sistemas, mejorando procesos continuamente.
+  - Seguridad: Proteger información, sistemas y activos.
+  - Fiabilidad (Reliability): Capacidad de recuperarse de fallos y escalar recursos.
+  - Eficiencia de rendimiento: Usar recursos computacionales de manera eficiente.
+  - Optimización de costes: Evitar costos innecesarios y maximizar el retorno de inversión.
+  - Sostenibilidad: Minimizar el impacto ambiental de la carga de trabajo.
 
-- **Framework Well-Architected:** AWS promueve 6 pilares para diseñar arquitecturas robustas: excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costes y sostenibilidad. Estas áreas reúnen buenas prácticas (por ejemplo, monitorizar logs, aplicar caching y automatizar pruebas). Se recomienda revisar las cargas con estas pautas.
 - **AWS Trusted Advisor:** Herramienta que analiza el entorno de AWS y ofrece recomendaciones basadas en buenas prácticas extraídas de miles de clientes. Trusted Advisor sugiere acciones para *ahorrar dinero*, *mejorar la disponibilidad y el rendimiento* o *cerrar huecos de seguridad*. Con soporte básico se accede a algunas verificaciones. Con planes Business o Enterprise se tiene acceso completo a todos los checks. Por ejemplo, puede identificar instancias EC2 infrautilizadas para apagarlas y ahorrar costes.
 - **Mínimo privilegio:** Otorgar solo los permisos estrictamente necesarios a usuarios y roles (evitando permisos administrativos innecesarios) es una práctica esencial de seguridad. Además, activar **MFA** (autenticación multifactor) en todas las cuentas de IAM refuerza la protección.
 
@@ -267,6 +275,8 @@ En la nube, **interoperabilidad** significa que distintos sistemas o nubes puede
 ## Ejemplos prácticos de uso y migración
 
 - **Migración de datos grandes:** Usar AWS Snowball para copiar petabytes de información desde un centro de datos local a S3 (dispositivo físico seguro que se envía al cliente, se carga con datos y se devuelve).
+- **Amazon S3 File Gateway** es un servicio de almacenamiento híbrido que permite a las aplicaciones locales (on-premises) acceder a datos en la nube de Amazon S3 utilizando protocolos estándar de archivos como NFS o SMB. Facilita la migración, copia de seguridad y almacenamiento en la nube al funcionar como un puente entre servidores locales y S3, ofreciendo almacenamiento casi ilimitado y caché local para baja latencia.
+- **AWS Application Discovery Service (ADS)** es un servicio de Amazon Web Services diseñado para ayudar a las empresas a planificar su migración a la nube. Recopila automáticamente datos detallados de configuración, rendimiento y dependencia (conexiones TCP) de servidores locales y bases de datos, integrándose con AWS Migration Hub para facilitar la migración
 - **Estrategia de migración (7 R’s):** Al planear la migración de aplicaciones a la nube, existen varias estrategias: 
 
   - **Rehost (Lift & Shift)**: trasladar la aplicación a la nube *sin cambiar* su código ni arquitectura. Es la forma más rápida: simplemente se mueve (p.ej. máquinas virtuales) tal cual, obteniendo beneficios de la nube (reducción de costos de datacenter) sin reescribir nada.
