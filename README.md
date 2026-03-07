@@ -47,6 +47,9 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1850" height="1080" alt="image" src="https://github.com/user-attachments/assets/9309e35e-7153-4c4b-91e2-8cde8b4a2bcd" />
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f9236ed9-7523-4c95-b9c1-f4e92a977836" />
+
+<img width="1335" height="948" alt="image" src="https://github.com/user-attachments/assets/c4d216c8-e064-4ff9-886a-cffe77ed0380" />
 
 **Cómputo (Compute):**
 
@@ -60,18 +63,22 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
 - **AWS Software Development Kit (SDK)** es un conjunto de herramientas, bibliotecas y documentación que permite a los desarrolladores crear aplicaciones fácilmente en la plataforma Amazon Web Services (AWS). Simplifica el acceso a servicios de AWS (como S3, DynamoDB) mediante código, soportando lenguajes como Python, JavaScript, Java, PHP, Ruby, Go y .NET
 - **Amazon ECS/EKS/Fargate:** Servicios para ejecutar contenedores Docker. **ECS** es el orquestador propio de AWS. **EKS** es Kubernetes gestionado. **Fargate** permite lanzar contenedores sin gestionar servidores subyacentes. Estos servicios facilitan el despliegue de microservicios y aplicaciones en contenedores.
+- **Amazon Elastic Container Registry (ECR)** es un servicio de registro de contenedores (Docker y OCI) totalmente gestionado y seguro que permite almacenar, administrar y desplegar imágenes de contenedores. Destaca por su alta disponibilidad, integración nativa con AWS (ECS, EKS, Lambda) y funciones de seguridad como el escaneo de vulnerabilidades.
+- **Amazon Elastic Kubernetes Service (Amazon EKS)** es un servicio administrado de Kubernetes que facilita la ejecución de aplicaciones en contenedores en la nube de AWS o en centros de datos propios. Automatiza la gestión, escalado y alta disponibilidad del plano de control y nodos, eliminando la necesidad de instalar o configurar Kubernetes manualmente
 
 **Almacenamiento:**
 - **Amazon S3:** Almacenamiento de objetos en la nube (archivos, imágenes y copias de seguridad). Es altamente escalable y redundante. Soporta distintos *niveles de almacenamiento* (Standard, Infrequent Access, Glacier, etc.) según la frecuencia de acceso. Es ideal para datos estáticos con control de versiones o copias de seguridad. Bucket (cajon/directorio donde se guardan objetos, debe ser nombre único en todo el mundo).
   - **Amazon AWS Access Analyzer for S3** es una funcionalidad integrada en la consola de S3 que utiliza razonamiento automatizado para identificar qué buckets de S3 son accesibles públicamente o desde otras cuentas de AWS. Ayuda a los administradores a supervisar políticas, detectar riesgos de seguridad y prevenir fugas de datos no deseadas
 - **Amazon EBS:** Volúmenes de disco en bloque para usar con instancias EC2 (similar a discos duros en la nube).
-- **Amazon EFS:** Sistema de archivos compartido (file storage) accesible desde varias instancias simultáneamente.
+- **Amazon Elastic File System (EFS)** es un servicio de almacenamiento de archivos en la nube, gestionado, escalable y compartido, diseñado para AWS y recursos locales. Utiliza el protocolo NFS (Network File System), permitiendo que múltiples instancias EC2, contenedores o servidores accedan simultáneamente a los mismos datos en diferentes zonas de disponibilidad.
 - **Amazon Glacier / Deep Archive:** Almacenamiento de larga duración y bajo coste para datos archivados (acceso infrecuente).
 - **AWS Storage Gateway** es un servicio de almacenamiento híbrido que conecta entornos locales (on-premise) con la nube de Amazon Web Services (AWS). Proporciona acceso ilimitado a almacenamiento en la nube (S3, Glacier, EBS) sin cambiar aplicaciones existentes, utilizando protocolos estándar (NFS, SMB, iSCSI) y caché local para baja latencia
-- **Amazon Elastic Container Registry (ECR)** es un servicio de registro de contenedores (Docker y OCI) totalmente gestionado y seguro que permite almacenar, administrar y desplegar imágenes de contenedores. Destaca por su alta disponibilidad, integración nativa con AWS (ECS, EKS, Lambda) y funciones de seguridad como el escaneo de vulnerabilidades
 
 **Bases de datos:**
 
+<img width="1624" height="1000" alt="image" src="https://github.com/user-attachments/assets/17aed05f-740f-48cd-961c-a086755a3169" />
+
+- **Amazon SimpleDB** es un servicio de base de datos NoSQL distribuida y sin esquemas, diseñado para almacenar y consultar datos estructurados de pequeño tamaño con alta disponibilidad. Ofrece simplicidad al eliminar la necesidad de administración de bases de datos, indexando datos automáticamente. Es ideal para aplicaciones de juegos, metadatos y almacenamiento de datos sin relaciones complejas.
 - **Amazon RDS (Relation Database Service):** Bases de datos relacionales gestionadas (MySQL, PostgreSQL, SQL Server, Oracle y Aurora). AWS se encarga de aplicar parches, replicar y hacer copias de seguridad. Soporta **Multi-AZ** para alta disponibilidad (réplicas en distintas AZs).
 
 <img width="1244" height="587" alt="image" src="https://github.com/user-attachments/assets/cddbd8c6-fe66-4573-802d-74779ecbfda3" />
