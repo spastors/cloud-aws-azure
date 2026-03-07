@@ -45,7 +45,8 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 - **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
 - **Amazon ECS/EKS/Fargate:** Servicios para ejecutar contenedores Docker. **ECS** es el orquestador propio de AWS. **EKS** es Kubernetes gestionado. **Fargate** permite lanzar contenedores sin gestionar servidores subyacentes. Estos servicios facilitan el despliegue de microservicios y aplicaciones en contenedores.
-- **Almacenamiento:**
+
+**Almacenamiento:**
 - **Amazon S3:** Almacenamiento de objetos en la nube (archivos, imágenes y copias de seguridad). Es altamente escalable y redundante. Soporta distintos *niveles de almacenamiento* (Standard, Infrequent Access, Glacier, etc.) según la frecuencia de acceso. Es ideal para datos estáticos con control de versiones o copias de seguridad. Bucket (cajon/directorio donde se guardan objetos, debe ser nombre único en todo el mundo).
 - **Amazon EBS:** Volúmenes de disco en bloque para usar con instancias EC2 (similar a discos duros en la nube).
 - **Amazon EFS:** Sistema de archivos compartido (file storage) accesible desde varias instancias simultáneamente.
@@ -61,7 +62,9 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Amazon ElastiCache:** Servicio de caché en memoria compatible con Redis o Memcached para mejorar el rendimiento de aplicaciones.
 - **Amazon Redshift:** Almacén de datos (data warehouse) para análisis a gran escala.
 - **Otros:** Amazon Neptune (base de grafos), DocumentDB (compatible con MongoDB), etc.
-- **Redes y entrega de contenido:**
+
+**Redes y entrega de contenido:**
+
 - **Amazon VPC:** Red virtual privada en AWS donde se definen subredes, tablas de enrutamiento y gateways. Cada cuenta de AWS inicia con una VPC por región. Dentro de la VPC se crean *subredes* (públicas o privadas) y recursos (EC2, RDS, etc.). Se conecta al exterior mediante una **Puerta de Enlace a Internet (Internet Gateway)** y se pueden usar **NAT Gateways** para el tráfico saliente de subredes privadas. VPC actúa como una red tradicional propia en la nube.
 
 <img width="1786" height="751" alt="image" src="https://github.com/user-attachments/assets/9537aa49-102e-4fd3-9623-b341b1cc3dd8" />
@@ -78,7 +81,8 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1834" height="933" alt="image" src="https://github.com/user-attachments/assets/7dc0e166-02b5-45c9-8da1-e96a26db6d62" />
 
-- **Seguridad e IAM:**
+**Seguridad e IAM:**
+
 - **AWS Identity and Access Management (IAM):** Permite crear usuarios, grupos y roles con permisos específicos. Un **usuario IAM** representa a una persona o aplicación que interactúa con AWS. Se recomienda aplicar el **principio de privilegio mínimo**, dando a cada usuario solo los permisos necesarios. La *cuenta root* (creador de la cuenta) tiene todos los permisos. Se aconseja protegerla con **MFA** (autenticación de dos factores) y usarla solo cuando sea imprescindible. AWS permite habilitar MFA para cualquier usuario IAM, requiriendo un código adicional generado en un dispositivo, lo que mejora la seguridad.
 
 <img width="1231" height="752" alt="image" src="https://github.com/user-attachments/assets/0bbb6e8e-477a-4c86-95aa-84bd387cd295" />
@@ -104,7 +108,7 @@ AWS ofrece herramientas para controlar los gastos y entender los costes:
 
 Un **ejemplo práctico**: una empresa puede crear en AWS Budgets un presupuesto mensual fijo y configurar una alerta por correo si el coste real alcanza el 80% del presupuesto. Así, se controlan los gastos de forma proactiva y se pueden tomar medidas (p. ej., apagar recursos no críticos) antes de exceder el límite. Para migraciones de datos, se puede usar **AWS Snowball** (un dispositivo físico seguro) para trasladar petabytes de información a AWS sin depender de la red pública. El dispositivo se envía al cliente, se copian los datos y luego se devuelve a AWS, lo que acelera migraciones masivas.
 
-Es importante crear una alarma de costes, esd decir, poner limites desde el banco a la tarjeta bancaria, ya que no se puede limitar el gasto mensual desde el cloud.
+Es importante crear una alarma de costes, es decir, poner limites desde el banco a la tarjeta bancaria, ya que no se puede limitar el gasto mensual desde el cloud.
 
 ## Soporte técnico (AWS Support)
 
