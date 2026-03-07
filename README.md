@@ -94,6 +94,8 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 <img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/ebac3c56-ee47-4d46-92b8-bb75eb766b9d" />
 <img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
 
+- **Amazon Macie** es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza machine learning y coincidencia de patrones para descubrir, clasificar y proteger automáticamente información sensible (como datos personales o financieros) almacenada en Amazon S3. 
+
 - **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web) y GuardDuty (detección de amenazas), entre otros, aunque no son obligatorios para el nivel Cloud Practitioner.
 
 ## Facturación y gestión de costes
