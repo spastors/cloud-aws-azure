@@ -85,7 +85,19 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 - **Amazon DynamoDB:** es un servicio de base de datos NoSQL de clave-valor y documentos, totalmente administrado y sin servidor (serverless) de Amazon Web Services (AWS), que ofrece un rendimiento rápido y predecible (en milisegundos) con escalabilidad automática. Es ideal para aplicaciones modernas, móviles, web, IoT y juegos que requieren alta disponibilidad y manejo de gran volumen de datos.
 - **Amazon ElastiCache:** Servicio de caché en memoria compatible con Redis o Memcached para mejorar el rendimiento de aplicaciones.
+
+<img width="1577" height="945" alt="image" src="https://github.com/user-attachments/assets/2255e526-d3a3-4779-88c5-811ab01a230e" />
+
+- **AWS Lake Formation** es un servicio administrado que simplifica la creación, gestión y protección de data lakes (lagos de datos) en Amazon S3 en cuestión de días, no meses. Centraliza la gobernanza, permitiendo definir políticas de seguridad detalladas a nivel de columna, fila o tabla para controlar el acceso a la información.
+
+<img width="1728" height="910" alt="image" src="https://github.com/user-attachments/assets/5d5819d8-5769-4244-9f27-f6b83d5b0d76" />
+
+<img width="728" height="880" alt="image" src="https://github.com/user-attachments/assets/7ed5671b-03fe-44f9-a812-e28a84634906" />
+
 - **Amazon Redshift** es un servicio de almacenamiento de datos (data warehouse) en la nube, totalmente gestionado y a escala de petabytes, diseñado para analítica de alto rendimiento. Utiliza almacenamiento columnar y procesamiento paralelo masivo (MPP) para consultas rápidas, permitiendo analizar grandes volúmenes de datos usando SQL y herramientas de BI convencionales a bajo costo.
+
+<img width="1579" height="940" alt="image" src="https://github.com/user-attachments/assets/59c58a55-9c92-4a91-8bf7-923a2abba29a" />
+
 - **Otros:** Amazon Neptune (base de grafos), DocumentDB (compatible con MongoDB), etc.
 
 **Redes y entrega de contenido:**
@@ -403,3 +415,5 @@ En la nube, **interoperabilidad** significa que distintos sistemas o nubes puede
 [AWS Trusted Advisor - AWS Support](https://docs.aws.amazon.com/es_es/awssupport/latest/user/trusted-advisor.html)
 
 [Aprovisionamiento de infraestructura como código - AWS CloudFormation - AWS](https://aws.amazon.com/es/cloudformation/)
+
+https://youtu.be/8OKfNHciBNg
