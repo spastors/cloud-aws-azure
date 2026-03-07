@@ -4,6 +4,9 @@
 
 La **computación en la nube** consiste en ofrecer recursos informáticos (cómputo, almacenamiento, bases de datos, etc.) *bajo demanda* a través de Internet, siguiendo un modelo de pago por uso. Esto elimina la necesidad de comprar y gestionar hardware propio, y permite a las organizaciones escalar con rapidez según la demanda. Entre las ventajas clave destacan la **agilidad** (aprovisionar recursos en minutos), la **elasticidad** (escalar automáticamente) y el **ahorro de costes**, al pagar solo por lo consumido.
 
+<img width="708" height="461" alt="image" src="https://github.com/user-attachments/assets/321729dd-bf99-4b9c-a86f-53d7f198514b" />
+
+
 En la nube, el gasto se transforma de **CAPEX** (inversiones en infraestructuras fijas, como servidores y licencias) a **OPEX** (costes operativos variables, según el uso). Esto reduce el *Costo Total de Propiedad* (TCO), ya que minimiza el CAPEX inicial y ajusta el gasto al consumo real. Por ejemplo, en un entorno propio (on-premises) se asumen grandes CAPEX y costes de mantenimiento, mientras que en la nube el coste es más predecible y flexible.
 
 ## Modelos de servicio y de despliegue
@@ -32,6 +35,9 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 - **Cómputo (Compute):**
 - **Amazon EC2:** Máquinas virtuales configurables en la nube. Permite elegir sistema operativo, CPU, memoria y almacenamiento. Se paga por segundo u hora de uso. Incluye instancias on-demand (sin compromiso, pago por uso) y opciones de ahorro, como instancias reservadas o Savings Plans, además de Spot (capacidad ociosa con hasta ~90% de descuento).
+
+<img width="1681" height="876" alt="image" src="https://github.com/user-attachments/assets/96943499-a954-4caa-933b-b514f1bba01b" />
+
 - **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
 - **Amazon ECS/EKS/Fargate:** Servicios para ejecutar contenedores Docker. **ECS** es el orquestador propio de AWS. **EKS** es Kubernetes gestionado. **Fargate** permite lanzar contenedores sin gestionar servidores subyacentes. Estos servicios facilitan el despliegue de microservicios y aplicaciones en contenedores.
 - **Almacenamiento:**
@@ -54,7 +60,16 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Amazon CloudFront:** Red de entrega de contenido (CDN) global para distribuir contenido con baja latencia.
 - **Seguridad e IAM:**
 - **AWS Identity and Access Management (IAM):** Permite crear usuarios, grupos y roles con permisos específicos. Un **usuario IAM** representa a una persona o aplicación que interactúa con AWS. Se recomienda aplicar el **principio de privilegio mínimo**, dando a cada usuario solo los permisos necesarios. La *cuenta root* (creador de la cuenta) tiene todos los permisos. Se aconseja protegerla con **MFA** (autenticación de dos factores) y usarla solo cuando sea imprescindible. AWS permite habilitar MFA para cualquier usuario IAM, requiriendo un código adicional generado en un dispositivo, lo que mejora la seguridad.
+
+<img width="1231" height="752" alt="image" src="https://github.com/user-attachments/assets/0bbb6e8e-477a-4c86-95aa-84bd387cd295" />
+
 - **Políticas de IAM:** Documentos en JSON que definen permisos (qué acciones puede realizar un usuario o rol sobre qué recursos). Se adjuntan a usuarios, grupos o roles para controlar el acceso.
+
+<img width="956" height="733" alt="image" src="https://github.com/user-attachments/assets/b3897885-dff2-407f-85d4-560d3b985a69" />
+<img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/01afeb5c-b3e3-4bf5-b41f-d516754e5527" />
+<img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/ebac3c56-ee47-4d46-92b8-bb75eb766b9d" />
+<img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
+
 - **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web) y GuardDuty (detección de amenazas), entre otros, aunque no son obligatorios para el nivel Cloud Practitioner.
 
 ## Facturación y gestión de costes
@@ -82,6 +97,10 @@ En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recome
 ## Buenas prácticas en AWS
 
 - **Responsabilidad Compartida:** AWS se encarga de la seguridad *de* la nube (infraestructura física, redes y centros de datos), mientras que el cliente es responsable de la seguridad *en* la nube (sistema operativo, aplicaciones, datos y configuraciones). Por ejemplo, AWS asegura la integridad del hardware y la virtualización, pero el usuario debe mantener los datos cifrados y los permisos de IAM bien configurados.
+
+<img width="1818" height="784" alt="image" src="https://github.com/user-attachments/assets/d92afcb5-e11c-4d42-bad9-5c77a4e1354a" />
+
+
 - **Framework Well-Architected:** AWS promueve 6 pilares para diseñar arquitecturas robustas: excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costes y sostenibilidad. Estas áreas reúnen buenas prácticas (por ejemplo, monitorizar logs, aplicar caching y automatizar pruebas). Se recomienda revisar las cargas con estas pautas.
 - **AWS Trusted Advisor:** Herramienta que analiza el entorno de AWS y ofrece recomendaciones basadas en buenas prácticas extraídas de miles de clientes. Trusted Advisor sugiere acciones para *ahorrar dinero*, *mejorar la disponibilidad y el rendimiento* o *cerrar huecos de seguridad*. Con soporte básico se accede a algunas verificaciones. Con planes Business o Enterprise se tiene acceso completo a todos los checks. Por ejemplo, puede identificar instancias EC2 infrautilizadas para apagarlas y ahorrar costes.
 - **Mínimo privilegio:** Otorgar solo los permisos estrictamente necesarios a usuarios y roles (evitando permisos administrativos innecesarios) es una práctica esencial de seguridad. Además, activar **MFA** (autenticación multifactor) en todas las cuentas de IAM refuerza la protección.
