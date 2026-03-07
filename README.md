@@ -51,6 +51,8 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1335" height="948" alt="image" src="https://github.com/user-attachments/assets/c4d216c8-e064-4ff9-886a-cffe77ed0380" />
 
+<img width="916" height="955" alt="image" src="https://github.com/user-attachments/assets/5eb7412c-2e54-4df2-9b74-2fda8ce9643e" />
+
 **Cómputo (Compute):**
 
 - **Amazon EC2:** Máquinas virtuales configurables en la nube. Permite elegir sistema operativo, CPU, memoria y almacenamiento. Se paga por segundo u hora de uso. Incluye instancias on-demand (sin compromiso, pago por uso) y opciones de ahorro, como instancias reservadas o Savings Plans, además de Spot (capacidad ociosa con hasta ~90% de descuento).
@@ -139,6 +141,9 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Amazon Macie** es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza machine learning y coincidencia de patrones para descubrir, clasificar y proteger automáticamente información sensible (como datos personales o financieros) almacenada en Amazon S3.
 - **Amazon Network ACLs** (Listas de Control de Acceso a la Red) son una capa de seguridad esencial en AWS que actúa como un firewall sin estado (stateless) a nivel de subred. Controlan el tráfico entrante y saliente, permitiendo o denegando reglas específicas para proteger los recursos dentro de una VPC.
 - **Amazon Cognito** es un servicio de Amazon Web Services (AWS) que gestiona el registro, inicio de sesión y control de acceso de usuarios en aplicaciones web y móviles.
+
+<img width="1717" height="775" alt="image" src="https://github.com/user-attachments/assets/eb3da604-02d6-4642-8e9c-a57a50a75056" />
+
 - **AWS Backup** es un servicio de gestión de copias de seguridad totalmente administrado y centralizado que automatiza la protección de datos en la nube de AWS y entornos híbridos. Permite configurar políticas, programar respaldos y gestionar retenciones para servicios como Amazon EC2, RDS, EBS, S3 y DynamoDB, facilitando el cumplimiento normativo.
 - **Amazon GuardDuty** es un servicio de detección de amenazas inteligente y administrado que monitorea continuamente las cuentas, cargas de trabajo (como EC2, EKS, Lambda) y datos de almacenamiento (S3) de AWS en busca de actividades maliciosas, comportamientos inusuales y malware. Utiliza inteligencia artificial, aprendizaje automático y fuentes de datos de seguridad para proporcionar alertas detalladas, facilitando la remediación rápida.
 - **AWS Artifact** es un servicio centralizado y bajo demanda que proporciona acceso a los informes de seguridad y cumplimiento de AWS, incluyendo certificaciones ISO, PCI e informes SOC. Es fundamental para auditorías, permitiendo a los usuarios descargar documentos de cumplimiento y gestionar acuerdos (aceptar términos) con AWS.
