@@ -58,9 +58,9 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1244" height="587" alt="image" src="https://github.com/user-attachments/assets/cddbd8c6-fe66-4573-802d-74779ecbfda3" />
 
-- **Amazon DynamoDB:** Base de datos NoSQL (clave-valor, docu­mento) totalmente gestionada, con baja latencia y escalabilidad automática.
+- **Amazon DynamoDB:** es un servicio de base de datos NoSQL de clave-valor y documentos, totalmente administrado y sin servidor (serverless) de Amazon Web Services (AWS), que ofrece un rendimiento rápido y predecible (en milisegundos) con escalabilidad automática. Es ideal para aplicaciones modernas, móviles, web, IoT y juegos que requieren alta disponibilidad y manejo de gran volumen de datos.
 - **Amazon ElastiCache:** Servicio de caché en memoria compatible con Redis o Memcached para mejorar el rendimiento de aplicaciones.
-- **Amazon Redshift:** Almacén de datos (data warehouse) para análisis a gran escala.
+- **Amazon Redshift** es un servicio de almacenamiento de datos (data warehouse) en la nube, totalmente gestionado y a escala de petabytes, diseñado para analítica de alto rendimiento. Utiliza almacenamiento columnar y procesamiento paralelo masivo (MPP) para consultas rápidas, permitiendo analizar grandes volúmenes de datos usando SQL y herramientas de BI convencionales a bajo costo.
 - **Otros:** Amazon Neptune (base de grafos), DocumentDB (compatible con MongoDB), etc.
 
 **Redes y entrega de contenido:**
@@ -81,6 +81,8 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 
 <img width="1834" height="933" alt="image" src="https://github.com/user-attachments/assets/7dc0e166-02b5-45c9-8da1-e96a26db6d62" />
 
+- **AWS Global Accelerator** es un servicio de red que mejora la disponibilidad y el rendimiento (hasta un 60% más rápido) de las aplicaciones web y de Internet al dirigir el tráfico de usuarios a través de la infraestructura de red global de Amazon, en lugar de la red pública de Internet. Utiliza direcciones IP estáticas con Anycast para enrutar el tráfico al punto de enlace más cercano.
+
 **Seguridad e IAM:**
 
 - **AWS Identity and Access Management (IAM):** Permite crear usuarios, grupos y roles con permisos específicos. Un **usuario IAM** representa a una persona o aplicación que interactúa con AWS. Se recomienda aplicar el **principio de privilegio mínimo**, dando a cada usuario solo los permisos necesarios. La *cuenta root* (creador de la cuenta) tiene todos los permisos. Se aconseja protegerla con **MFA** (autenticación de dos factores) y usarla solo cuando sea imprescindible. AWS permite habilitar MFA para cualquier usuario IAM, requiriendo un código adicional generado en un dispositivo, lo que mejora la seguridad.
@@ -97,18 +99,27 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Amazon Macie** es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza machine learning y coincidencia de patrones para descubrir, clasificar y proteger automáticamente información sensible (como datos personales o financieros) almacenada en Amazon S3.
 - **Amazon Network ACLs** (Listas de Control de Acceso a la Red) son una capa de seguridad esencial en AWS que actúa como un firewall sin estado (stateless) a nivel de subred. Controlan el tráfico entrante y saliente, permitiendo o denegando reglas específicas para proteger los recursos dentro de una VPC.
 - **Amazon Cognito** es un servicio de Amazon Web Services (AWS) que gestiona el registro, inicio de sesión y control de acceso de usuarios en aplicaciones web y móviles.
+- **AWS Backup** es un servicio de gestión de copias de seguridad totalmente administrado y centralizado que automatiza la protección de datos en la nube de AWS y entornos híbridos. Permite configurar políticas, programar respaldos y gestionar retenciones para servicios como Amazon EC2, RDS, EBS, S3 y DynamoDB, facilitando el cumplimiento normativo.
+- **Amazon GuardDuty** es un servicio de detección de amenazas inteligente y administrado que monitorea continuamente las cuentas, cargas de trabajo (como EC2, EKS, Lambda) y datos de almacenamiento (S3) de AWS en busca de actividades maliciosas, comportamientos inusuales y malware. Utiliza inteligencia artificial, aprendizaje automático y fuentes de datos de seguridad para proporcionar alertas detalladas, facilitando la remediación rápida.
 
-- **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web) y GuardDuty (detección de amenazas), entre otros, aunque no son obligatorios para el nivel Cloud Practitioner.
+- **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves), Shield/WAF (protección contra ataques DDoS y filtrado de tráfico web)
 
 ## Facturación y gestión de costes
 
 AWS ofrece herramientas para controlar los gastos y entender los costes:
 
 - **Modelos de precios:** AWS cobra mayoritariamente por consumo. En EC2, por ejemplo, existen instancias **bajo demanda** (pago por hora o segundo, sin compromiso previo), instancias **reservadas** o **Savings Plans** (compromiso por 1 a 3 años con descuento) y **Spot** (capacidad no usada, hasta ~90% más barato). Los servicios de almacenamiento y datos también se cobran según el uso y el nivel. Es clave conocer estas opciones para optimizar costes. **Amazon Spot Instances** son máquinas virtuales de Amazon EC2 que permiten utilizar la capacidad de cómputo sobrante de AWS con descuentos de hasta el 90% respecto a los precios bajo demanda. Son ideales para cargas de trabajo flexibles, sin estado y tolerantes a interrupciones, ya que AWS puede recuperar la instancia con un aviso de 2 minutos.
-- **Facturación consolidada:** Con AWS Organizations se pueden vincular varias cuentas bajo una factura maestra, compartiendo beneficios (p. ej., volúmenes para descuentos) y aislando recursos por unidad de negocio.
+- **Facturación consolidada de Amazon AWS** es una funcionalidad de AWS Organizations que agrupa los cargos de múltiples cuentas de AWS en una sola factura, permitiendo una gestión financiera centralizada. Sus principales ventajas son la simplificación contable, una única fecha de pago, y descuentos por volumen acumulados de todas las cuentas. Ventajas clave:
+  - Una sola factura: Simplifica la administración al consolidar los cargos de todas las cuentas vinculadas, reduciendo el papeleo.
+  - Descuentos por volumen (Pricing Volume Discounts): Permite combinar el uso de servicios de todas las cuentas para alcanzar niveles de precios más bajos (descuentos por volumen) en servicios como S3, EC2 y Savings Plans, lo que reduce los costos generales.
+  - Gestión eficiente y visibilidad: La cuenta principal ("master account") puede visualizar y desglosar los costos y el uso de cada cuenta miembro, facilitando la auditoría y control de costos.
+  - Pagos simplificados: Estandariza los ciclos de facturación, lo que mejora la gestión del flujo de caja al tener fechas de vencimiento unificadas.
+  - Independencia de cuentas: Aunque la facturación está centralizada, todas las cuentas miembros siguen siendo independientes en términos de recursos y seguridad
+
 - **Etiquetado y reportes:** Se recomienda usar **tags (etiquetas)** en recursos para atribuir costes a proyectos o equipos. AWS Cost and Usage Reports y Cost Explorer permiten analizar el consumo histórico y las tendencias.
 - **AWS Budgets:** Herramienta para establecer presupuestos y alertas. Permite definir alertas (por ejemplo, enviar un correo o disparar una acción cuando se supere el 80% del presupuesto mensual). Se pueden crear presupuestos de coste total, de uso de recursos o de cobertura (RI/Savings Plans) y recibir notificaciones vía email o SNS.
 - **AWS Cost Explorer:** Interfaz para visualizar y analizar los costes y el uso históricos. Permite crear informes personalizados, ver tendencias de gasto de los últimos 13 meses y pronosticar hasta 18 meses. También ofrece recomendaciones de instancias reservadas óptimas.
+- **Amazon Reserved Instances (RI)** son un modelo de precios de AWS que ofrece descuentos significativos (hasta un 72% menos que bajo demanda) a cambio de un compromiso de uso constante durante 1 o 3 años. Garantizan capacidad de reserva en una zona específica, ideal para cargas de trabajo estables y predecibles.
 
 Un **ejemplo práctico**: una empresa puede crear en AWS Budgets un presupuesto mensual fijo y configurar una alerta por correo si el coste real alcanza el 80% del presupuesto. Así, se controlan los gastos de forma proactiva y se pueden tomar medidas (p. ej., apagar recursos no críticos) antes de exceder el límite. Para migraciones de datos, se puede usar **AWS Snowball** (un dispositivo físico seguro) para trasladar petabytes de información a AWS sin depender de la red pública. El dispositivo se envía al cliente, se copian los datos y luego se devuelve a AWS, lo que acelera migraciones masivas.
 
@@ -123,6 +134,14 @@ Todos los clientes de AWS disponen de soporte *Básico* gratuito, que incluye ac
 - Enterprise: para negocios críticos, e incluye además un TAM (Técnico de Cuenta Designado) y revisiones proactivas de arquitecturas.
 
 En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recomendaciones ilimitadas** de Trusted Advisor. Por ejemplo, los planes Business y Enterprise permiten crear casos ilimitados y acceder a asesoramiento experto en arquitectura.
+
+- **AWS Cloud Adoption Framework (AWS CAF)** es un marco estructurado de Amazon Web Services (AWS) que proporciona mejores prácticas y orientación para acelerar la transformación digital y la adopción de la nube. Ayuda a alinear las estrategias empresariales con la tecnología, cubriendo áreas como seguridad, personas y operaciones para minimizar riesgos. Perspectivas clave de AWS CAF (3.0):
+  - Comercial (Business): Alinear la estrategia de TI con los objetivos de negocio.
+  - Personas (People): Capacitar al personal y gestionar el cambio organizativo.
+  - Gobernanza (Governance): Gestionar el cumplimiento, riesgos y prioridades.
+  - Plataforma (Platform): Diseñar y escalar la arquitectura técnica.
+  - Seguridad (Security): Garantizar la protección de datos y el cumplimiento.
+  - Operaciones (Operations): Asegurar la fiabilidad y funcionamiento continuo. 
 
 ## Buenas prácticas en AWS
 
