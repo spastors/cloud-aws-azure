@@ -211,12 +211,12 @@ Todos los clientes de AWS disponen de soporte *Básico* gratuito, que incluye ac
 En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recomendaciones ilimitadas** de Trusted Advisor. Por ejemplo, los planes Business y Enterprise permiten crear casos ilimitados y acceder a asesoramiento experto en arquitectura.
 
 - **AWS Cloud Adoption Framework (AWS CAF)** es un marco estructurado de Amazon Web Services (AWS) que proporciona mejores prácticas y orientación para acelerar la transformación digital y la adopción de la nube. Ayuda a alinear las estrategias empresariales con la tecnología, cubriendo áreas como seguridad, personas y operaciones para minimizar riesgos. Perspectivas clave de AWS CAF (3.0):
-  - Comercial (Business): Alinear la estrategia de TI con los objetivos de negocio.
-  - Personas (People): Capacitar al personal y gestionar el cambio organizativo.
-  - Gobernanza (Governance): Gestionar el cumplimiento, riesgos y prioridades.
-  - Plataforma (Platform): Diseñar y escalar la arquitectura técnica.
-  - Seguridad (Security): Garantizar la protección de datos y el cumplimiento.
-  - Operaciones (Operations): Asegurar la fiabilidad y funcionamiento continuo. 
+  - Comercial (Business): Asegura que las inversiones en la nube estén alineadas con los objetivos de negocio y contribuyan a acelerar la transformación digital.
+  - Personas (People): Se enfoca en preparar y motivar al personal para el cambio, promoviendo una cultura de aprendizaje continuo y adaptabilidad.
+  - Gobernanza (Governance): Facilita la coordinación y supervisión de iniciativas en la nube, ayudando a gestionar riesgos y prioridades organizativas.
+  - Plataforma (Platform): Proporciona orientación para diseñar y escalar una arquitectura técnica sólida y flexible en la nube.
+  - Seguridad (Security): Garantiza que los datos, aplicaciones y sistemas estén protegidos y cumplan con los requisitos de seguridad y conformidad.
+  - Operaciones (Operations): Se asegura de que los servicios en la nube funcionen de manera fiable y eficiente, satisfaciendo las necesidades del negocio.
 
 ## Buenas prácticas en AWS
 
