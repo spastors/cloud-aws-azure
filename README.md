@@ -18,7 +18,8 @@ En la nube, el gasto se transforma de **CAPEX** (inversiones en infraestructuras
 
 <img width="778" height="727" alt="image" src="https://github.com/user-attachments/assets/2da8eebd-a7db-4e39-9222-15e450cdd1e2" />
 
-Cada modelo tiene casos de uso. Por ejemplo, IaaS (EC2, EBS) es ideal si necesitas control total del entorno; PaaS (AWS Elastic Beanstalk, RDS) acelera el desarrollo sin gestionar infraestructura; y SaaS (Gmail, Salesforce) ofrece aplicaciones listas para usar. |  |  |  |
+Cada modelo tiene casos de uso. Por ejemplo, IaaS (EC2, EBS) es ideal si necesitas control total del entorno; PaaS (AWS Elastic Beanstalk, RDS) acelera el desarrollo sin gestionar infraestructura; y SaaS (Gmail, Salesforce) ofrece aplicaciones listas para usar. 
+
 - **Nubes públicas, privadas, híbridas y multicloud:**
 - **Nube pública:** Infraestructura compartida, proporcionada por terceros (p. ej., AWS, Azure, GCP) y utilizada *por muchos clientes*. Ofrece alta escalabilidad y costes bajos gracias al pago por uso, pero un menor control sobre la infraestructura.
 - **Nube privada:** Infraestructura dedicada a una sola organización, ya sea en sus propias instalaciones o en un centro del proveedor. Ofrece mayor control, seguridad y cumplimiento, pero requiere una inversión elevada (mayor CAPEX) y gestión propia.
@@ -41,7 +42,7 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
 - **Amazon ECS/EKS/Fargate:** Servicios para ejecutar contenedores Docker. **ECS** es el orquestador propio de AWS. **EKS** es Kubernetes gestionado. **Fargate** permite lanzar contenedores sin gestionar servidores subyacentes. Estos servicios facilitan el despliegue de microservicios y aplicaciones en contenedores.
 - **Almacenamiento:**
-- **Amazon S3:** Almacenamiento de objetos en la nube (archivos, imágenes y copias de seguridad). Es altamente escalable y redundante. Soporta distintos *niveles de almacenamiento* (Standard, Infrequent Access, Glacier, etc.) según la frecuencia de acceso. Es ideal para datos estáticos o copias de seguridad.
+- **Amazon S3:** Almacenamiento de objetos en la nube (archivos, imágenes y copias de seguridad). Es altamente escalable y redundante. Soporta distintos *niveles de almacenamiento* (Standard, Infrequent Access, Glacier, etc.) según la frecuencia de acceso. Es ideal para datos estáticos con control de versiones o copias de seguridad. Bucket (cajon/directorio donde se guardan objetos, debe ser nombre único en todo el mundo).
 - **Amazon EBS:** Volúmenes de disco en bloque para usar con instancias EC2 (similar a discos duros en la nube).
 - **Amazon EFS:** Sistema de archivos compartido (file storage) accesible desde varias instancias simultáneamente.
 - **Amazon Glacier / Deep Archive:** Almacenamiento de larga duración y bajo coste para datos archivados (acceso infrecuente).
@@ -53,6 +54,11 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Otros:** Amazon Neptune (base de grafos), DocumentDB (compatible con MongoDB), etc.
 - **Redes y entrega de contenido:**
 - **Amazon VPC:** Red virtual privada en AWS donde se definen subredes, tablas de enrutamiento y gateways. Cada cuenta de AWS inicia con una VPC por región. Dentro de la VPC se crean *subredes* (públicas o privadas) y recursos (EC2, RDS, etc.). Se conecta al exterior mediante una **Puerta de Enlace a Internet (Internet Gateway)** y se pueden usar **NAT Gateways** para el tráfico saliente de subredes privadas. VPC actúa como una red tradicional propia en la nube.
+
+<img width="1786" height="751" alt="image" src="https://github.com/user-attachments/assets/9537aa49-102e-4fd3-9623-b341b1cc3dd8" />
+
+<img width="1649" height="762" alt="image" src="https://github.com/user-attachments/assets/66371141-a3be-4c27-b34e-a1d28e1f1e9c" />
+
 - **Grupos de seguridad:** Firewalls a nivel de instancia EC2. Controlan qué tráfico entra o sale de cada servidor (por ejemplo, permitir SSH solo desde ciertas IPs). Son *stateful*: permiten respuestas automáticamente cuando una instancia origina tráfico.
 - **Listas de control de acceso (NACL):** Firewalls a nivel de subred, que evalúan el tráfico de entrada y salida por reglas (stateless).
 - **Elastic Load Balancing (ELB):** Distribuye automáticamente el tráfico entre múltiples instancias en una o más zonas de disponibilidad. Aumenta la disponibilidad y la tolerancia a fallos. Soporta distintos tipos (Application Load Balancer para HTTP/HTTPS, Network Load Balancer de baja latencia y Gateway Load Balancer para tráfico L4).
@@ -109,7 +115,116 @@ En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recome
 
 Cada cuenta de AWS dispone de una **VPC (Virtual Private Cloud)** por región. En la VPC se definen subredes (públicas o privadas), rutas y gateways. Por ejemplo, una subred pública se conecta a Internet mediante una **Puerta de Internet (IGW)**, mientras que una subred privada usa una **NAT Gateway** para el tráfico saliente. Los **Security Groups** actúan como cortafuegos virtuales a nivel de instancia. AWS organiza sus centros de datos en **Regiones** (ubicaciones geográficas) y **Zonas de Disponibilidad** (centros independientes dentro de cada región), lo que permite diseñar aplicaciones multi-AZ para alta disponibilidad.
 
-**Route 53** es el servicio DNS de AWS. Traduce nombres de dominio a direcciones IP y se integra con balanceadores de carga. **Elastic Load Balancer** (ELB) reparte automáticamente tráfico de aplicaciones entre varias instancias en múltiples zonas, y solo envía tráfico a instancias “saludables”. Esto mejora la escalabilidad y la tolerancia a fallos.
+**Route 53** es el servicio DNS de AWS. Traduce nombres de dominio a direcciones IP y se integra con balanceadores de carga. 
+
+**Elastic Load Balancer** (ELB) reparte automáticamente tráfico de aplicaciones entre varias instancias en múltiples zonas, y solo envía tráfico a instancias “saludables”. Esto mejora la escalabilidad y la tolerancia a fallos.
+
+<img width="1259" height="893" alt="image" src="https://github.com/user-attachments/assets/31e473bc-1598-4c65-8962-ff7f9fe1b60c" />
+
+### Conceptos Básicos de Nombres de Dominio
+
+<img width="1859" height="941" alt="image" src="https://github.com/user-attachments/assets/04105b96-60e8-402b-8c1d-53c04201878d" />
+
+- **Top Level Domains (TLD)**: La última parte del dominio (.com, .net, .org)
+- **Dominio desnudo (naked domain)**: El nombre más el TLD (ejemplo: [example.com](http://example.com))
+- **Subdominio**: El dominio desnudo más algo delante de él ([www.example.com](http://www.example.com), [mail.example.com](http://mail.example.com), [app.example.com](http://app.example.com))
+- **Importante**: [www.example.com](http://www.example.com) y [example.com](http://example.com) son dos dominios completamente diferentes - pueden tener sitios web distintos
+- Por conveniencia, típicamente se redirige [www.example.com](http://www.example.com) a [example.com](http://example.com), pero no son lo mismo
+- **FQDN (Fully Qualified Domain Name)**: Nombre de dominio descrito con el máximo detalle posible ([Server1.US-EAST.prod.example.com](http://Server1.US-EAST.prod.example.com))
+
+<img width="1363" height="869" alt="image" src="https://github.com/user-attachments/assets/a2eff7ab-0962-4fbc-be1c-a32cfcf9c1d7" />
+
+### Funcionamiento del DNS
+
+- **Propósito del DNS**: Convertir nombres de dominio (que los humanos recuerdan fácilmente) en direcciones IP (que las computadoras necesitan)
+- **Componentes clave del sistema DNS**:
+    - Resolver: Inicia el proceso de resolución
+    - Root DNS: Contiene información sobre servidores TLD (aproximadamente 13 clusters de servidores)
+    - TLD DNS: Gestiona información sobre dominios desnudos dentro de cada TLD
+    - Authoritative DNS: Mantiene información sobre todos los subdominios de un dominio desnudo específico
+
+<img width="1752" height="1010" alt="image" src="https://github.com/user-attachments/assets/99810aee-22d6-4b25-96be-f723cb0243e7" />
+
+### Flujo de Resolución DNS
+
+- El resolver pregunta al Root DNS por la IP del dominio
+- Root DNS responde con la IP de los servidores TLD apropiados
+- El resolver pregunta al TLD DNS, que responde con la IP del servidor authoritative
+- El resolver pregunta al authoritative DNS, que finalmente proporciona la IP del dominio
+- Todo este proceso ocurre en fracciones de segundo cada vez que se busca un sitio web
+- **Caché**: Una vez obtenida la IP, se guarda en caché local para evitar repetir el proceso
+- **TTL (Time to Live)**: Determina cuánto tiempo permanece la IP en caché
+
+### AWS Route 53
+
+- **Función principal**: Actúa como DNS authoritative para nombres de dominio
+- Route 53 responde preguntas sobre dominios y devuelve direcciones IP
+- **Importante**: Route 53 NO enruta el tráfico - solo proporciona la IP al usuario, quien luego establece la conexión directamente
+- Los usuarios pueden agregar dominios a Route 53 sin necesidad de registrarlos allí (pueden registrarse en GoDaddy u otros registradores)
+- Se integra con otros servicios de AWS
+
+<img width="1863" height="930" alt="image" src="https://github.com/user-attachments/assets/733246ff-a8e1-4614-bbc4-4450e00b9ffc" />
+
+### Tipos de Registros DNS
+
+- **A Record**: Apunta a una dirección IP (ejemplo: [example.com](http://example.com) → 52.16.9.3)
+- **NS Record**: Dirección IP de los servidores de nombres
+- **CNAME o Alias Record**: Un nombre de dominio apunta a otro ([www.example.com](http://www.example.com) → [example.com](http://example.com))
+- **MX Records**: Para servidores de correo
+- **SOA (Start of Authority)**: Establece la autoridad para el DNS - siempre presente por defecto
+- **TXT Records**: Para validación adicional, como verificar propiedad del dominio
+
+<img width="1773" height="927" alt="image" src="https://github.com/user-attachments/assets/75b84bfa-940d-4436-8926-0b5d0173d5f1" />
+
+<img width="1846" height="1011" alt="image" src="https://github.com/user-attachments/assets/37a09a4e-b65a-4f74-97ad-eb52a814cca3" />
+
+<img width="1839" height="1011" alt="image" src="https://github.com/user-attachments/assets/0131aaa3-f04c-44eb-a9de-d4b567b62f7a" />
+
+<img width="1834" height="1017" alt="image" src="https://github.com/user-attachments/assets/e11f7f88-5407-4a81-ae16-8dc7e364aa7e" />
+
+<img width="1773" height="1003" alt="image" src="https://github.com/user-attachments/assets/7c7949ac-78a9-475a-b78b-c43966e412b4" />
+
+<img width="1599" height="994" alt="image" src="https://github.com/user-attachments/assets/d0870b32-08fc-4e7c-bf13-b451c76106c0" />
+
+### Políticas de Enrutamiento en Route 53
+
+- **Simple Routing Policy**:
+    - Enrutamiento básico de un dominio a una dirección IP
+- **Latency-Based Routing (LBR)**:
+    - Enruta usuarios según la latencia entre su ubicación y las regiones disponibles
+    - Route 53 conoce la latencia entre ubicaciones de usuarios y diferentes regiones de AWS
+    - Devuelve la IP de la región con menor latencia
+    - Requiere contenido idéntico en todas las regiones
+- **Weighted Routing Policy**:
+    - Distribuye consultas según porcentajes configurados
+    - **Importante**: NO es balanceo de carga de tráfico - solo distribuye respuestas DNS
+- **Geolocation Routing Policy**:
+    - Enruta usuarios según su ubicación geográfica
+    - Similar a cómo YouTube muestra contenido diferente según el país
+    - Permite contenido específico por región o país
+    - Opciones disponibles: por continente o por país
+    - Para Estados Unidos, permite enrutamiento a nivel de estado
+    - La ubicación se determina por el bloque de IP, no por GPS
+- **Failover Routing Policy**:
+    - Configuración primario/secundario (activo/standby)
+    - Route 53 siempre devuelve la IP del primario
+    - Cambia al secundario solo si el primario falla según health checks
+    - El secundario puede ser un entorno completo o una página estática en S3 con mensaje de mantenimiento
+
+### Políticas de Tráfico
+
+- Permite combinar múltiples políticas de enrutamiento
+- Ejemplo: Política de failover en el nivel superior, con weighted routing dentro del primario
+- Crea configuraciones complejas para gestión de tráfico avanzada
+
+### Hosted Zones
+
+- Donde se agregan dominios a Route 53
+- Pueden ser públicas (para internet) o privadas (solo dentro de VPC)
+- Al crear una hosted zone, se generan automáticamente dos registros: NS y SOA
+- Los name servers de Route 53 deben configurarse en el registrador del dominio
+
+<img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/d2e54c3a-7fd7-4f3a-8bb5-52a7355b9379" />
 
 ## Contenedores y orquestación
 
