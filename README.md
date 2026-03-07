@@ -116,7 +116,7 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Grupos de seguridad:** Firewalls a nivel de instancia EC2. Controlan qué tráfico entra o sale de cada servidor (por ejemplo, permitir SSH solo desde ciertas IPs). Son *stateful*: permiten respuestas automáticamente cuando una instancia origina tráfico.
 - **Listas de control de acceso (NACL):** Firewalls a nivel de subred, que evalúan el tráfico de entrada y salida por reglas (stateless).
 - **Amazon Route 53:** Servicio DNS escalable y de alta disponibilidad. Traduce nombres de dominio a IPs y permite enrutar tráfico de forma inteligente (geolocalización y latencia). También soporta balanceo de carga simple a Load Balancers o puntos finales.
-- - **Elastic Load Balancing (ELB):** Distribuye automáticamente el tráfico entre múltiples instancias en una o más zonas de disponibilidad. Aumenta la disponibilidad y la tolerancia a fallos. Soporta distintos tipos (Application Load Balancer para HTTP/HTTPS, Network Load Balancer de baja latencia y Gateway Load Balancer para tráfico L4).
+- **Elastic Load Balancing (ELB):** Distribuye automáticamente el tráfico entre múltiples instancias en una o más zonas de disponibilidad. Aumenta la disponibilidad y la tolerancia a fallos. Soporta distintos tipos (Application Load Balancer para HTTP/HTTPS, Network Load Balancer de baja latencia y Gateway Load Balancer para tráfico L4).
 - **Amazon CloudFront:** Red de entrega de contenido (CDN) global para distribuir contenido (contenidos web estáticos y dinámicos, como HTML, CSS, JavaScript e imágenes, así como vídeos) con baja latencia.
 
 <img width="1852" height="794" alt="image" src="https://github.com/user-attachments/assets/e33c0ad9-b1e7-4516-9f4f-6135c684fb11" />
@@ -159,28 +159,13 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **Amazon CloudWatch** es un servicio de monitoreo y observabilidad nativo de AWS que recopila datos en tiempo real (métricas, logs y eventos) de recursos como EC2, RDS y Lambda. Permite visualizar el rendimiento, configurar alarmas, automatizar acciones y optimizar recursos, ofreciendo una vista unificada del estado operativo.
 - **AWS CloudTrail** es un servicio de gobernanza y auditoría de Amazon Web Services (AWS) que registra automáticamente las acciones de los usuarios y las llamadas a la API en su infraestructura. Permite identificar quién hizo qué, cuándo y desde dónde, facilitando la seguridad, el cumplimiento normativo y la resolución de problemas.
 - **AWS Config** es un servicio de gobernanza que monitorea, registra y evalúa continuamente las configuraciones de los recursos de AWS. Permite auditar cambios históricos, evaluar el cumplimiento de políticas de seguridad y automatizar la remediación de configuraciones incorrectas. Es clave para la seguridad, el cumplimiento normativo y el control de costos.
-- - **AWS Trusted Advisor:** Herramienta que analiza el entorno de AWS y ofrece recomendaciones basadas en buenas prácticas extraídas de miles de clientes. Trusted Advisor sugiere acciones para *ahorrar dinero*, *mejorar la disponibilidad y el rendimiento* o *cerrar huecos de seguridad*. Con soporte básico se accede a algunas verificaciones. Con planes Business o Enterprise se tiene acceso completo a todos los checks. Por ejemplo, puede identificar instancias EC2 infrautilizadas para apagarlas y ahorrar costes.
+- **AWS Trusted Advisor:** Herramienta que analiza el entorno de AWS y ofrece recomendaciones basadas en buenas prácticas extraídas de miles de clientes. Trusted Advisor sugiere acciones para *ahorrar dinero*, *mejorar la disponibilidad y el rendimiento* o *cerrar huecos de seguridad*. Con soporte básico se accede a algunas verificaciones. Con planes Business o Enterprise se tiene acceso completo a todos los checks. Por ejemplo, puede identificar instancias EC2 infrautilizadas para apagarlas y ahorrar costes.
 
-  
-
-
+**Mensajería y otros**
 
 - **Amazon Simple Queue Service (SQS)** es un servicio de colas de mensajes totalmente gestionado por AWS que permite desacoplar y escalar microservicios, sistemas distribuidos y aplicaciones sin servidor. Facilita el envío, almacenamiento y recepción de mensajes entre componentes de software a cualquier volumen, garantizando la entrega y eliminando la necesidad de gestionar middleware complejo
 - **Amazon AWS Marketplace** es una tienda digital curada por Amazon que permite a los clientes encontrar, comprar, implementar y gestionar rápidamente software, servicios y datos de terceros compatibles con la nube de Amazon Web Services (AWS). Ofrece miles de soluciones de proveedores independientes, incluyendo SaaS, máquinas virtuales (AMI) y herramientas de seguridad, simplificando la adquisición y facturación bajo una misma cuenta.
-
-Mensajería:
-
 - **SNS (Simple Notification Service)**: Envía notificaciones a muchos suscriptores (Pub/Sub, emails, SMS).
-- **SQS (Simple Queue Service)**: Desacopla aplicaciones usando colas de mensajes (tienes SQS en tus apuntes, pero debes contrastarlo con SNS).
-
-
-
-
-
-
-
-
-
 
 ## Facturación y gestión de costes
 
