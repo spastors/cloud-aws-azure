@@ -241,12 +241,12 @@ En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recome
 <img width="1818" height="784" alt="image" src="https://github.com/user-attachments/assets/d92afcb5-e11c-4d42-bad9-5c77a4e1354a" />
 
 - **AWS Well-Architected Framework** es un conjunto de mejores prácticas, principios de diseño y guías de Amazon Web Services (AWS) para ayudar a arquitectos de la nube a construir infraestructura segura, de alto rendimiento, resiliente y eficiente. Se basa en seis pilares fundamentales, evaluando cargas de trabajo para optimizar costos y sostenibilidad. 
-  - Excelencia operativa: Ejecutar y monitorear sistemas, mejorando procesos continuamente.
-  - Seguridad: Proteger información, sistemas y activos.
-  - Fiabilidad (Reliability): Capacidad de recuperarse de fallos y escalar recursos.
-  - Eficiencia de rendimiento: Usar recursos computacionales de manera eficiente.
-  - Optimización de costes: Evitar costos innecesarios y maximizar el retorno de inversión.
-  - Sostenibilidad: Minimizar el impacto ambiental de la carga de trabajo.
+  - Excelencia operativa (Operational Excellence): Ejecutar y monitorear sistemas, mejorando procesos continuamente. -> Monitor, improve processes, automation
+  - Seguridad (Security): Proteger información, sistemas y activos. -> Protect, data, encryption, identity
+  - Fiabilidad (Reliability): Capacidad de recuperarse de fallos y escalar recursos. -> Recover, failure, fault tolerance, high availability, resilience
+  - Eficiencia de rendimiento (Performance): Usar recursos computacionales de manera eficiente. -> Efficiency	Efficient use of resources, latency, scaling, performance
+  - Optimización de costes (Cost Optimization): Evitar costos innecesarios y maximizar el retorno de inversión. -> Reduce cost, avoid waste, rightsizing
+  - Sostenibilidad (Sustainability): Minimizar el impacto ambiental de la carga de trabajo. -> Environmental impact, energy
 
 ## Redes básicas de AWS
 
