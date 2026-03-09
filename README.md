@@ -247,10 +247,15 @@ En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recome
   - Eficiencia de rendimiento (Performance): Usar recursos computacionales de manera eficiente. -> Efficiency	Efficient use of resources, latency, scaling, performance
   - Optimización de costes (Cost Optimization): Evitar costos innecesarios y maximizar el retorno de inversión. -> Reduce cost, avoid waste, rightsizing
   - Sostenibilidad (Sustainability): Minimizar el impacto ambiental de la carga de trabajo. -> Environmental impact, energy
+  - 
 1️⃣ ¿Habla de fallos o recuperación? → Reliability
+
 2️⃣ ¿Habla de velocidad o eficiencia? → Performance
+
 3️⃣ ¿Habla de proteger datos? → Security
+
 4️⃣ ¿Habla de ahorrar dinero? → Cost Optimization
+
 5️⃣ ¿Habla de monitoreo y mejora continua? → Operational Excellence
 
 ## Redes básicas de AWS
