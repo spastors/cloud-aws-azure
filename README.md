@@ -23,7 +23,17 @@
 * **Concepto:** Capacidad de desplegar recursos y contenido en múltiples ubicaciones geográficas para estar físicamente cerca de los usuarios finales.
 * **Pregunta de examen típica:** "¿Qué beneficio de AWS permite a una empresa desplegar una aplicación a usuarios de todo el mundo con baja latencia en cuestión de minutos?". **Respuesta: Alcance Global (vía Regiones y Edge Locations).**
 
-### **Conceptos Fundamentales de AWS**
+### **E. Economía de Escala (Economies of Scale)**
+
+* **Concepto:** Es el beneficio de que AWS, al tener millones de clientes, compra hardware en cantidades masivas, lo que reduce sus costos operativos. AWS traslada esos ahorros a los clientes en forma de **precios más bajos**.
+* **Pregunta de examen típica:** "¿Por qué AWS puede reducir los precios de sus servicios periódicamente para sus clientes?". **Respuesta: Debido a las economías de escala.**
+
+### **F. Pago por uso (Pay-as-you-go / Modelo de Consumo)**
+
+* **Concepto:** Método de facturación donde solo pagas por la cantidad exacta de recursos que utilizas, sin contratos a largo plazo ni inversiones iniciales.
+* **Pregunta de examen típica:** "¿Qué característica de la nube de AWS permite a una empresa cambiar gastos de capital (CapEx) por gastos operativos (OpEx)?". **Respuesta: El modelo de precios de pago por uso.**
+
+### **Tabla Resumen**
 
 | Concepto | **Palabras Clave (Disparadores)** | **Escenario Típico del Examen** | **Respuesta Ganadora** |
 | --- | --- | --- | --- |
@@ -41,38 +51,43 @@
 #### **1. Amazon Inspector**
 
 * **Concepto:** Servicio que busca **vulnerabilidades** y desviaciones de las mejores prácticas en tus recursos.
-* **Cómo recordarlo:** El **Mecánico**. Metes el coche (tu instancia EC2) al taller y él revisa si tiene fugas, piezas viejas o parches de seguridad que faltan.
 * **Pregunta de examen típica:** "¿Qué servicio automatiza la evaluación de seguridad de las instancias **EC2** para encontrar vulnerabilidades de software?". **Respuesta: Amazon Inspector.**
 
 #### **2. Amazon GuardDuty**
 
 * **Concepto:** Detección de **amenazas inteligentes** que monitoriza continuamente tu cuenta en busca de actividad maliciosa.
-* **Cómo recordarlo:** El **Perro Guardián**. No revisa el software, sino que "escucha" y "mira" el comportamiento (logs). Si alguien intenta entrar desde una IP maliciosa o hay un comportamiento extraño, ladra (te avisa). Usa **Inteligencia Artificial**.
 * **Pregunta de examen típica:** "¿Qué servicio utiliza **Machine Learning** para detectar actividades no autorizadas o inusuales en las cuentas de AWS?". **Respuesta: Amazon GuardDuty.**
 
 #### **3. AWS Security Hub**
 
 * **Concepto:** Un lugar central para ver y gestionar todas tus alertas de seguridad y comprobar si cumples con las normas (compliance).
-* **Cómo recordarlo:** El **Centro de Control**. Es la pantalla donde se ven las cámaras de todos los demás servicios (Inspector, GuardDuty, Macie). Te da una "puntuación" de seguridad.
 * **Pregunta de examen típica:** "¿Qué servicio proporciona una **vista centralizada** y consolidada de las alertas de seguridad de varios servicios de AWS?". **Respuesta: AWS Security Hub.**
 
 #### **4. AWS Shield**
 
 * **Concepto:** Protección gestionada contra ataques de denegación de servicio distribuido (**DDoS**).
-* **Cómo recordarlo:** El **Escudo Anti-Disturbios**. Si un millón de robots atacan tu web a la vez para tirarla, el escudo bloquea ese tráfico "sucio".
 * **Pregunta de examen típica:** "¿Qué servicio protege las aplicaciones contra ataques **DDoS**?". **Respuesta: AWS Shield.**
+
+### **5. AWS WAF (Web Application Firewall)**
+
+* **Concepto:** Un cortafuegos que protege tus aplicaciones web de ataques comunes que intentan explotar vulnerabilidades en el código (Capa 7 del modelo OSI).
+* **Pregunta de examen típica:** "¿Qué servicio utilizaría para bloquear direcciones IP específicas o ataques de inyección SQL que intentan acceder a su aplicación web?". **Respuesta: AWS WAF.**
+
+### **6. Amazon Macie**
+
+* **Concepto:** Servicio de seguridad y privacidad de datos que utiliza **Machine Learning** para descubrir, clasificar y proteger datos sensibles almacenados en **Amazon S3**.
+* **Pregunta de examen típica:** "¿Qué servicio le ayuda a identificar y proteger automáticamente la información de identificación personal (**PII**) almacenada en los cubos de **Amazon S3**?". **Respuesta: Amazon Macie.**
 
 ### **Tabla Resumen**
 
-| Si el examen dice... | La palabra clave es... | La respuesta correcta es... |
+| Si el examen dice / menciona... | El concepto o problema clave es... | La respuesta correcta es... |
 | --- | --- | --- |
-| "Vulnerabilidades en EC2/Lambda" | **Inspeccionar** el código/software. | **Amazon Inspector** |
-| "Detección de amenazas / ML" | **Vigilancia** inteligente. | **Amazon GuardDuty** |
-| "Ataques DDoS / Tráfico masivo" | **Protección** (Escudo). | **AWS Shield** |
-| "Vista centralizada / Dashboard" | **Consolidar** hallazgos. | **AWS Security Hub** |
-| "Cortafuegos de aplicaciones web" | Filtrar ataques **SQL o XSS**. | **AWS WAF** |
-| "Datos sensibles / DNI / Tarjetas" | **Privacidad** en S3. | **Amazon Macie** |
-
+| **Vulnerabilidades / Parches / Software** | **Inspeccionar** internamente instancias EC2, imágenes de contenedor o funciones Lambda. | **Amazon Inspector** |
+| **Detección de Amenazas / Actividad inusual** | **Vigilancia** inteligente con ML/IA (alguien mina criptos, IP maliciosas, cuenta comprometida). | **Amazon GuardDuty** |
+| **Ataque DDoS / Tráfico Masivo** | **Protección** contra avalanchas de tráfico que buscan tumbar el servicio. | **AWS Shield** |
+| **SQL Injection / XSS / Capa 7** | **Filtrar** tráfico web malicioso que intenta hackear el código de la página. | **AWS WAF** |
+| **Datos Sensibles / DNI / PII / Tarjetas** | **Privacidad** y clasificación de datos personales dentro de **Amazon S3**. | **Amazon Macie** |
+| **Vista Centralizada / Dashboard / Cumplimiento** | **Consolidar** hallazgos de todos los servicios de seguridad en un solo panel. | **AWS Security Hub** |
 
 ### **Diferencia Crítica para no fallar:**
 
@@ -80,6 +95,15 @@
 * **GuardDuty** busca ataques **en tu cuenta** (actividad sospechosa/hackers).
 * **WAF** filtra **peticiones web** malas (Capa 7).
 * **Shield** detiene **avalanchas de tráfico** (DDoS).
+
+* **¿Dónde está el problema?**
+* Si está **DENTRO** del servidor (software viejo): **Inspector**.
+* Si está en los **DATOS** (S3): **Macie**.
+* Si está en el **COMPORTAMIENTO** de la cuenta: **GuardDuty**.
+  
+* **¿Qué tipo de ataque es?**
+* Si es por **VOLUMEN** (DDoS): **Shield**.
+* Si es por **CÓDIGO** (SQL/XSS): **WAF**.
 
 """
 
