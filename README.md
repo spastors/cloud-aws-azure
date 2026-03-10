@@ -43,9 +43,49 @@ de AWS)
 
 ## Tecnología y servicios en la nube (34 % del contenido con puntaje)
 
-
+- decidir entre opciones como el acceso programático (por ejemplo, las API, los SDK, la CLI), la consola de administración de AWS y la  infraestructura como código (IaC)
+- evaluar los requisitos para determinar si se deben utilizar operaciones únicas o procesos repetibles
+- identificar modelos de implementación (por ejemplo, en la nube, híbridos, en las instalaciones)
+- describir las relaciones entre las regiones, las zonas de disponibilidad y las ubicaciones periféricas
+- describir cómo lograr una alta disponibilidad mediante el uso de varias zonas de disponibilidad
+- reconocer que las zonas de disponibilidad no comparten puntos únicos de error
+- describir cuándo utilizar varias regiones (por ejemplo, recuperación de desastres, continuidad de actividades, baja latencia para los usuarios finales, soberanía de datos)
+- reconocer el uso adecuado de varios tipos de instancia de EC2 (por ejemplo, optimizadas para computación, optimizadas para almacenamiento)
+- reconocer el uso adecuado de varias opciones de contenedores (por ejemplo, Amazon ECS, Amazon EKS)
+- reconocer el uso adecuado de varias opciones de computación sin servidor (por ejemplo, AWS Fargate, Lambda)
+- reconocer que el escalado automático proporciona elasticidad
+- identificar los propósitos de los balanceadores de carga
+- decidir cuándo utilizar las bases de datos alojadas en Elastic Compute Cloud o las bases de datos administradas por AWS
+- identificar bases de datos relacionales (por ejemplo, Amazon RDS, Amazon Aurora)
+- identificar bases de datos NoSQL (por ejemplo, DynamoDB)
+- identificar bases de datos basadas en memoria (por ejemplo, Amazon ElastiCache)
+- identificar herramientas de migración de bases de datos (por ejemplo, AWS Database Migration Service [AWS DMS], Herramienta de conversión de esquemas de AWS [AWS SCT])
+- identificar los componentes de una VPC (por ejemplo, subredes, puertas de enlace)
+- describir la seguridad en una VPC (por ejemplo, ACL de red, grupos de seguridad, Amazon Inspector)
+- comprender el propósito de Amazon Route 53
+- identificar las opciones de conectividad de red con AWS (por ejemplo, AWS VPN, AWS Direct Connect)
+- identificar los usos del almacenamiento de objetos
+- reconocer las diferencias en las clases de almacenamiento de Amazon S3
+- identificar soluciones de almacenamiento en bloques (por ejemplo, Amazon Elastic Block Store [Amazon EBS], almacén de instancias)
+- identificar servicios de archivos (por ejemplo, Amazon Elastic File System [Amazon EFS], Amazon FSx)
+- identificar los sistemas de archivos en caché (por ejemplo, AWS Storage Gateway)
+- comprender los casos de uso de las políticas de ciclo de vida
+- describir los casos de uso de AWS Backup
+- comprender los servicios de IA/ML y las tareas que realizan (por ejemplo, IA de Amazon SageMaker, Amazon Lex, Amazon Kendra)
+- identificar los servicios de análisis de datos (por ejemplo, Amazon Athena, Amazon Kinesis, AWS Glue, Amazon QuickSight)
+- servicios de integración de aplicaciones de Amazon EventBridge, Amazon Simple Notification Service (Amazon SNS) y Amazon Simple Queue Service (Amazon SQS)
+- servicios de aplicaciones empresariales de Amazon Connect y Amazon Simple Email Service (Amazon SES)
+- servicios de habilitación para clientes (por ejemplo, AWS Support)
+- servicios y capacidades de herramientas para desarrolladores (por ejemplo, AWS CodeBuild, AWS CodePipeline y AWS X-Ray)
+- servicios de cómputo para usuarios finales de Amazon AppStream 2.0, Amazon WorkSpaces y Amazon WorkSpaces Secure Browser
+- servicios web y móviles de frontend de AWS Amplify y AWS AppSync
+- servicios de IoT (por ejemplo, AWS IoT Core)
 
 ## Facturación, precios y soporte (12 % del contenido con punta
+
+- 
+
+--------------------------------
 
 ## Fundamentos de Cloud Computing
 
