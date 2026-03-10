@@ -118,7 +118,6 @@
 - comprender las diferencias entre las estrategias de licencias (por ejemplo, el modelo Bring Your Own License [BYOL] en comparación con las licencias incluidas)
 - comprender el concepto de dimensionamiento correcto
 - identificar los beneficios de la automatización
-- comprender las economías de escala (por ejemplo, ahorro de costos)
   
 ## Seguridad y conformidad (30 % del contenido con puntaje)
 
