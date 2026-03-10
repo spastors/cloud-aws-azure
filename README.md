@@ -3,6 +3,7 @@
 ## Conceptos de la nube
 
 """
+
 ### **A. Agilidad (Agility)**
 * **Concepto:** Es la **velocidad de innovación**.
 * **Cómo recordarlo:** En la nube, un servidor se crea en segundos, no en semanas.
@@ -32,9 +33,57 @@
 | **Alcance Global** | *Baja latencia, usuarios en todo el mundo, proximidad, milisegundos.* | "Una empresa en España quiere que sus clientes en Australia vean la web rápido..." | **Alcance Global** |
 | **Economía de Escala** | *Precios más bajos, volumen, pagar menos al crecer AWS.* | "¿Por qué AWS puede ofrecer precios tan bajos a sus clientes?" | **Economía de Escala** |
 | **Pago por uso** | *OpEx, gasto variable, sin inversión inicial, eliminar CapEx.* | "La empresa quiere dejar de comprar servidores físicos y pagar solo por lo consumido..." | **Modelo de Consumo** |
+
+------------------------------------------------------------
+
+### **Servicios de Protección de Recursos**
+
+#### **1. Amazon Inspector**
+
+* **Concepto:** Servicio que busca **vulnerabilidades** y desviaciones de las mejores prácticas en tus recursos.
+* **Cómo recordarlo:** El **Mecánico**. Metes el coche (tu instancia EC2) al taller y él revisa si tiene fugas, piezas viejas o parches de seguridad que faltan.
+* **Pregunta de examen típica:** "¿Qué servicio automatiza la evaluación de seguridad de las instancias **EC2** para encontrar vulnerabilidades de software?". **Respuesta: Amazon Inspector.**
+
+#### **2. Amazon GuardDuty**
+
+* **Concepto:** Detección de **amenazas inteligentes** que monitoriza continuamente tu cuenta en busca de actividad maliciosa.
+* **Cómo recordarlo:** El **Perro Guardián**. No revisa el software, sino que "escucha" y "mira" el comportamiento (logs). Si alguien intenta entrar desde una IP maliciosa o hay un comportamiento extraño, ladra (te avisa). Usa **Inteligencia Artificial**.
+* **Pregunta de examen típica:** "¿Qué servicio utiliza **Machine Learning** para detectar actividades no autorizadas o inusuales en las cuentas de AWS?". **Respuesta: Amazon GuardDuty.**
+
+#### **3. AWS Security Hub**
+
+* **Concepto:** Un lugar central para ver y gestionar todas tus alertas de seguridad y comprobar si cumples con las normas (compliance).
+* **Cómo recordarlo:** El **Centro de Control**. Es la pantalla donde se ven las cámaras de todos los demás servicios (Inspector, GuardDuty, Macie). Te da una "puntuación" de seguridad.
+* **Pregunta de examen típica:** "¿Qué servicio proporciona una **vista centralizada** y consolidada de las alertas de seguridad de varios servicios de AWS?". **Respuesta: AWS Security Hub.**
+
+#### **4. AWS Shield**
+
+* **Concepto:** Protección gestionada contra ataques de denegación de servicio distribuido (**DDoS**).
+* **Cómo recordarlo:** El **Escudo Anti-Disturbios**. Si un millón de robots atacan tu web a la vez para tirarla, el escudo bloquea ese tráfico "sucio".
+* **Pregunta de examen típica:** "¿Qué servicio protege las aplicaciones contra ataques **DDoS**?". **Respuesta: AWS Shield.**
+
+### **Tabla Resumen**
+
+| Si el examen dice... | La palabra clave es... | La respuesta correcta es... |
+| --- | --- | --- |
+| "Vulnerabilidades en EC2/Lambda" | **Inspeccionar** el código/software. | **Amazon Inspector** |
+| "Detección de amenazas / ML" | **Vigilancia** inteligente. | **Amazon GuardDuty** |
+| "Ataques DDoS / Tráfico masivo" | **Protección** (Escudo). | **AWS Shield** |
+| "Vista centralizada / Dashboard" | **Consolidar** hallazgos. | **AWS Security Hub** |
+| "Cortafuegos de aplicaciones web" | Filtrar ataques **SQL o XSS**. | **AWS WAF** |
+| "Datos sensibles / DNI / Tarjetas" | **Privacidad** en S3. | **Amazon Macie** |
+
+
+### **Diferencia Crítica para no fallar:**
+
+* **Inspector** busca problemas **dentro** de tus servidores (vulnerabilidades).
+* **GuardDuty** busca ataques **en tu cuenta** (actividad sospechosa/hackers).
+* **WAF** filtra **peticiones web** malas (Capa 7).
+* **Shield** detiene **avalanchas de tráfico** (DDoS).
+
 """
 
-- describir cómo los clientes protegen los recursos en AWS (por ejemplo, Amazon Inspector, AWS Security Hub, Amazon GuardDuty, AWS Shield)
+
 - identificar las diferencias entre los pilares del marco de Well-Architected
 - comprender los componentes de AWS Cloud Adoption Framework (AWS CAF) (por ejemplo, reducción del riesgo empresarial; mejora del rendimiento del entorno, social y de gobernanza [ESG]; aumento de los ingresos; aumento de la eficiencia operativa)
 - identificar las estrategias de migración adecuadas (por ejemplo, replicación de bases de datos, uso de AWS Snowball)
