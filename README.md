@@ -96,12 +96,12 @@
 * **WAF** filtra **peticiones web** malas (Capa 7).
 * **Shield** detiene **avalanchas de tráfico** (DDoS).
 
-* **¿Dónde está el problema?**
+**¿Dónde está el problema?**
 * Si está **DENTRO** del servidor (software viejo): **Inspector**.
 * Si está en los **DATOS** (S3): **Macie**.
 * Si está en el **COMPORTAMIENTO** de la cuenta: **GuardDuty**.
   
-* **¿Qué tipo de ataque es?**
+**¿Qué tipo de ataque es?**
 * Si es por **VOLUMEN** (DDoS): **Shield**.
 * Si es por **CÓDIGO** (SQL/XSS): **WAF**.
 
