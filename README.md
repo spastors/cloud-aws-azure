@@ -110,9 +110,9 @@
 """
 
 
-[ ] identificar las diferencias entre los pilares del marco de Well-Architected
-[ ] comprender los componentes de AWS Cloud Adoption Framework (AWS CAF) (por ejemplo, reducción del riesgo empresarial; mejora del rendimiento del entorno, social y de gobernanza [ESG]; aumento de los ingresos; aumento de la eficiencia operativa)
-[ ] identificar las estrategias de migración adecuadas (por ejemplo, replicación de bases de datos, uso de AWS Snowball)
+- [ ] identificar las diferencias entre los pilares del marco de Well-Architected
+- [ ] comprender los componentes de AWS Cloud Adoption Framework (AWS CAF) (por ejemplo, reducción del riesgo empresarial; mejora del rendimiento del entorno, social y de gobernanza [ESG]; aumento de los ingresos; aumento de la eficiencia operativa)
+- [ ] identificar las estrategias de migración adecuadas (por ejemplo, replicación de bases de datos, uso de AWS Snowball)
 - comprender el rol de los costos fijos en comparación con los costos variables
 - comprender los costos asociados a los entornos en las instalaciones
 - comprender las diferencias entre las estrategias de licencias (por ejemplo, el modelo Bring Your Own License [BYOL] en comparación con las licencias incluidas)
