@@ -1,5 +1,52 @@
 # Guía de Estudio AWS Certified Cloud Practitioner (CLF-C02)
 
+## Conceptos de la nube (24 % del contenido con puntaje)
+
+- comprender los beneficios de la infraestructura global (por ejemplo, velocidad de implementación, alcance global)
+- comprender las ventajas de la alta disponibilidad, la elasticidad y la agilidad
+- describir cómo los clientes protegen los recursos en AWS (por ejemplo, Amazon Inspector, AWS Security Hub, Amazon GuardDuty, AWS Shield)
+- identificar las diferencias entre los pilares del marco de Well-Architected
+- comprender los componentes de AWS Cloud Adoption Framework (AWS CAF) (por ejemplo, reducción del riesgo empresarial; mejora del rendimiento del entorno, social y de gobernanza [ESG]; aumento de los ingresos; aumento de la eficiencia operativa)
+- identificar las estrategias de migración adecuadas (por ejemplo, replicación de bases de datos, uso de AWS Snowball)
+- comprender el rol de los costos fijos en comparación con los costos variables
+- comprender los costos asociados a los entornos en las instalaciones
+- comprender las diferencias entre las estrategias de licencias (por ejemplo, el modelo Bring Your Own License [BYOL] en comparación con las licencias incluidas)
+- comprender el concepto de dimensionamiento correcto
+- identificar los beneficios de la automatización
+- comprender las economías de escala (por ejemplo, ahorro de costos)
+  
+## Seguridad y conformidad (30 % del contenido con puntaje)
+
+- reconocer los componentes del modelo de responsabilidad compartida de AWS
+- describir las responsabilidades del cliente en AWS
+- describir las responsabilidades de AWS
+- describir las responsabilidades que comparten el cliente y AWS
+- Describir cómo pueden cambiar las responsabilidades de AWS y las del cliente según el servicio utilizado (por ejemplo, Amazon RDS, AWS Lambda o Amazon Elastic Compute Cloud)
+- identificar dónde encontrar la información de conformidad de AWS (por ejemplo, AWS Artifact)
+- comprender las necesidades de conformidad entre ubicaciones geográficas o sectores (por ejemplo, conformidad de AWS)
+- describir cómo los clientes protegen los recursos en AWS (por ejemplo, Amazon Inspector, AWS Security Hub, Amazon GuardDuty, AWS Shield)
+- identificar opciones de cifrado (por ejemplo, cifrado en tránsito, cifrado en reposo)
+- reconocer los servicios que ayudan a la gobernanza y la conformidad (por ejemplo, la supervisión con Amazon CloudWatch; la auditoría con AWS CloudTrail, AWS Audit Manager y AWS Config; la generación de informes con informes de acceso)
+- reconocer los requisitos de conformidad que varían entre los servicios de AWS
+- comprender las claves de acceso, las políticas de contraseñas y el almacenamiento de credenciales (por ejemplo, AWS Secrets Manager, AWS Systems Manager)
+- identificar los métodos de autenticación en AWS (por ejemplo, autenticación multifactor [MFA], IAM Identity Center, roles de IAM entre cuentas)
+- definir grupos, usuarios, políticas personalizadas y políticas administradas en conformidad con el principio de mínimo privilegio
+- identificar las tareas que solo el usuario raíz de la cuenta puede realizar
+- comprender qué métodos pueden lograr la protección del usuario raíz
+- comprender los tipos de administración de identidades (por ejemplo, federada)
+- AWS IAM Identity Center (AWS Single Sign-On)
+- describir las características y los servicios de seguridad de AWS (por ejemplo, AWS WAF, AWS Firewall Manager, AWS Shield, Amazon GuardDuty)
+- comprender que los productos de seguridad de terceros están disponibles en AWS Marketplace
+- identificar dónde está disponible la información de seguridad de AWS (por ejemplo, AWS Knowledge Center, AWS Security Center, Blog de seguridad
+de AWS)
+- comprender el uso de los servicios de AWS para identificar problemas de seguridad (por ejemplo, AWS Trusted Advisor)
+
+## Tecnología y servicios en la nube (34 % del contenido con puntaje)
+
+
+
+## Facturación, precios y soporte (12 % del contenido con punta
+
 ## Fundamentos de Cloud Computing
 
 La **computación en la nube** consiste en ofrecer recursos informáticos (cómputo, almacenamiento, bases de datos, etc.) *bajo demanda* a través de Internet, siguiendo un modelo de pago por uso. Esto elimina la necesidad de comprar y gestionar hardware propio, y permite a las organizaciones escalar con rapidez según la demanda. Entre las ventajas clave destacan la **agilidad** (aprovisionar recursos en minutos), la **elasticidad** (escalar automáticamente) y el **ahorro de costes**, al pagar solo por lo consumido.
