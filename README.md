@@ -1,9 +1,39 @@
 # Guía de Estudio AWS Certified Cloud Practitioner (CLF-C02)
 
-## Conceptos de la nube (24 % del contenido con puntaje)
+## Conceptos de la nube
 
-- comprender los beneficios de la infraestructura global (por ejemplo, velocidad de implementación, alcance global)
-- comprender las ventajas de la alta disponibilidad, la elasticidad y la agilidad
+"""
+### **A. Agilidad (Agility)**
+* **Concepto:** Es la **velocidad de innovación**.
+* **Cómo recordarlo:** En la nube, un servidor se crea en segundos, no en semanas.
+* **Pregunta de examen típica:** "¿Qué beneficio permite a los desarrolladores experimentar y fallar rápido con bajo costo?". **Respuesta: Agilidad.**
+
+### **B. Elasticidad (Elasticity)**
+* **Concepto:** Es la capacidad de **ajustar los recursos automáticamente** según la demanda (subir y BAJAR).
+* **Cómo recordarlo:** Como un **chicle**. Se estira cuando hay mucha gente (Black Friday) y se encoge cuando no hay nadie (madrugada) para ahorrar dinero.
+* **Servicio clave:** **Amazon EC2 Auto Scaling**.
+
+### **C. Alta Disponibilidad (High Availability - HA)**
+* **Concepto:** Asegurar que el sistema esté funcionando el mayor tiempo posible **sin interrupciones**.
+* **Cómo recordarlo:** **Redundancia**. Si algo se rompe, hay otro igual listo para sustituirlo.
+* **Pregunta de examen típica:** "¿Cómo se logra la HA en AWS?". **Respuesta: Desplegando en múltiples Zonas de Disponibilidad (Multi-AZ).**
+
+### **D. Alcance Global (Global Reach)**
+* **Concepto:** Capacidad de desplegar recursos y contenido en múltiples ubicaciones geográficas para estar físicamente cerca de los usuarios finales.
+* **Pregunta de examen típica:** "¿Qué beneficio de AWS permite a una empresa desplegar una aplicación a usuarios de todo el mundo con baja latencia en cuestión de minutos?". **Respuesta: Alcance Global (vía Regiones y Edge Locations).**
+
+### **Conceptos Fundamentales de AWS**
+
+| Concepto | **Palabras Clave (Disparadores)** | **Escenario Típico del Examen** | **Respuesta Ganadora** |
+| --- | --- | --- | --- |
+| **Agilidad** | *Innovación, rapidez, experimentar, fallar rápido, bajo costo.* | "La empresa quiere probar nuevas ideas sin gastar mucho dinero ni esperar meses..." | **Agilidad** |
+| **Elasticidad** | *Auto Scaling, demanda variable, picos de tráfico, estirar/encoger.* | "Una web de flores tiene mucho tráfico en San Valentín pero poco el resto del año..." | **Elasticidad** |
+| **Alta Disponibilidad** | *Redundancia, Multi-AZ, sin interrupciones, tiempo de actividad.* | "¿Cómo se asegura que una aplicación siga funcionando si un centro de datos falla?" | **Alta Disponibilidad** |
+| **Alcance Global** | *Baja latencia, usuarios en todo el mundo, proximidad, milisegundos.* | "Una empresa en España quiere que sus clientes en Australia vean la web rápido..." | **Alcance Global** |
+| **Economía de Escala** | *Precios más bajos, volumen, pagar menos al crecer AWS.* | "¿Por qué AWS puede ofrecer precios tan bajos a sus clientes?" | **Economía de Escala** |
+| **Pago por uso** | *OpEx, gasto variable, sin inversión inicial, eliminar CapEx.* | "La empresa quiere dejar de comprar servidores físicos y pagar solo por lo consumido..." | **Modelo de Consumo** |
+"""
+
 - describir cómo los clientes protegen los recursos en AWS (por ejemplo, Amazon Inspector, AWS Security Hub, Amazon GuardDuty, AWS Shield)
 - identificar las diferencias entre los pilares del marco de Well-Architected
 - comprender los componentes de AWS Cloud Adoption Framework (AWS CAF) (por ejemplo, reducción del riesgo empresarial; mejora del rendimiento del entorno, social y de gobernanza [ESG]; aumento de los ingresos; aumento de la eficiencia operativa)
@@ -46,7 +76,15 @@ de AWS)
 - decidir entre opciones como el acceso programático (por ejemplo, las API, los SDK, la CLI), la consola de administración de AWS y la  infraestructura como código (IaC)
 - evaluar los requisitos para determinar si se deben utilizar operaciones únicas o procesos repetibles
 - identificar modelos de implementación (por ejemplo, en la nube, híbridos, en las instalaciones)
-- describir las relaciones entre las regiones, las zonas de disponibilidad y las ubicaciones periféricas
+"""
+* **Regiones:** Ubicaciones físicas en el mundo con múltiples AZs.
+* *Para qué sirven:* Elegir una región cercana al usuario para **bajar la latencia** o cumplir con **leyes de datos** locales (Soberanía de datos).
+* **Zonas de Disponibilidad (AZs):** Uno o más centros de datos aislados dentro de una Región.
+* *Para qué sirven:* Si una AZ falla (por un incendio o inundación), tu aplicación sigue viva en otra. Esto es **Tolerancia a Fallos**.
+* **Puntos de Presencia (Edge Locations):** Centros de datos pequeños repartidos por cientos de ciudades.
+* *Para qué sirven:* **Velocidad de implementación**. Usan servicios como **Amazon CloudFront** para entregar contenido (vídeos, imágenes) con la mínima latencia.
+"""
+
 - describir cómo lograr una alta disponibilidad mediante el uso de varias zonas de disponibilidad
 - reconocer que las zonas de disponibilidad no comparten puntos únicos de error
 - describir cuándo utilizar varias regiones (por ejemplo, recuperación de desastres, continuidad de actividades, baja latencia para los usuarios finales, soberanía de datos)
@@ -99,6 +137,152 @@ Support)
 - identificar los beneficios de ser socio de AWS (por ejemplo, formación y certificación para socios, eventos para socios, descuentos por volumen para socios)
 - identificar los servicios clave que ofrece AWS Marketplace (por ejemplo, administración de costos, gobernanza y derechos)
 - identificar las opciones de asistencia técnica disponibles en AWS (por ejemplo, AWS Professional Services, arquitectos de soluciones de AWS)
+
+
+### Servicios y características de AWS
+
+Análisis:
+    - Amazon Athena
+    - Amazon EMR
+    - AWS Glue
+    - Amazon Kinesis
+    - Amazon OpenSearch Service
+    - Amazon QuickSight
+    - Amazon Redshift
+Integración de aplicaciones:
+    - Amazon EventBridge
+    - Amazon Simple Notification Service (Amazon SNS)
+    - Amazon Simple Queue Service (Amazon SQS)
+    - AWS Step Functions
+Aplicaciones empresariales:
+    - Amazon Connect
+    - Amazon Simple Email Service (Amazon SES)
+Administración financiera en la nube:
+    - AWS Budgets
+    - Informes de costo y uso de AWS
+    - Explorador de costos de AWS
+    - AWS MarketplaceComputación:
+    - AWS Batch
+    - Amazon Elastic Compute Cloud
+    - AWS Elastic Beanstalk
+    - Amazon Lightsail
+    - AWS Outposts
+Contenedores:
+    - Amazon Elastic Container Registry (Amazon ECR)
+    - Amazon Elastic Container Service (Amazon ECS)
+    - Amazon Elastic Kubernetes Service (Amazon EKS)
+Habilitación para clientes:
+    - AWS Support
+Base de datos:
+    - Amazon Aurora
+    - Amazon DocumentDB
+    - Amazon DynamoDB
+    - Amazon ElastiCache
+    - Amazon Neptune
+    - Amazon RDS
+Herramientas para desarrolladores:
+    - AWS CLI
+    - AWS CodeBuild
+    - AWS CodePipeline
+    - AWS X-Ray
+AWS End User Computing:
+    - Amazon AppStream 2.0
+    - Amazon WorkSpaces
+    - Amazon WorkSpaces Secure Browser
+Frontend web y móvil:
+    - AWS Amplify
+    - AWS AppSync
+Internet de las cosas (IoT):
+    - AWS IoT Core
+Machine learning:
+    - Amazon Comprehend
+    - Amazon Kendra
+    - Amazon Lex
+    - Amazon Polly
+    - Amazon Q
+    - Amazon Rekognition
+    - IA de Amazon SageMaker
+    - Amazon Textract
+    - Amazon Transcribe
+    - Amazon Translate
+Administración y gobernanza:
+    - AWS Auto Scaling
+    - AWS CloudFormation
+    - AWS CloudTrail
+    - Amazon CloudWatch
+    - AWS Compute Optimizer
+    - AWS Config
+    - AWS Control Tower
+    - Panel de AWS Health
+    - AWS License Manager
+    - Consola de administración de AWS
+    - AWS Organizations
+    - AWS Service Catalog
+    - Service Quotas
+    - AWS Systems Manager
+    - AWS Trusted Advisor
+    - Herramienta de AWS Well-Architected
+Migración y transferencia:
+    - AWS Application Discovery Service
+    - AWS Application Migration Service
+    - AWS Database Migration Service (AWS DMS)
+    - Migration Evaluator
+    - AWS Migration Hub
+    - Herramienta de conversión de esquemas de AWS (AWS SCT)
+    - AWS Snow Family
+Redes y entrega de contenido:
+    - Amazon API Gateway
+    - Amazon CloudFront
+    - AWS Direct Connect
+    - AWS Global Accelerator
+    - AWS PrivateLink
+    - Amazon Route 53
+    - AWS Transit Gateway
+    - Amazon VPC
+    - AWS VPN
+    - AWS Site-to-Site VPN
+    - AWS Client VPN
+Seguridad, identidad y conformidad:
+    - AWS Artifact
+    - AWS Audit Manager
+    - AWS Certificate Manager (ACM)
+    - AWS CloudHSM
+    - Amazon Cognito
+    - Amazon Detective
+    - AWS Directory Service
+    - AWS Firewall Manager
+    - Amazon GuardDuty
+    - AWS Identity and Access Management (AWS IAM)
+    - AWS IAM Identity Center
+    - Amazon Inspector
+    - AWS Key Management Service (AWS KMS)
+    - Amazon Macie
+    - AWS Resource Access Manager (AWS RAM)
+    - AWS Secrets Manager
+    - AWS Security Hub
+    - AWS Shield
+    - AWS WAF
+Sin servidor:
+    - AWS Fargate
+    - AWS Lambda
+Almacenamiento:
+    - AWS Backup
+    - Amazon Elastic Block Store (Amazon EBS)
+    - Amazon Elastic File System (Amazon EFS)
+    - Recuperación de desastres elástica de AWS
+    - Amazon FSx
+    - Amazon S3
+    - Amazon S3 Glacier
+    - AWS Storage Gateway
+
+
+Herramientas para desarrolladores (fuera de alcance):
+- AWS Application Composer
+- AWS CodeArtifact
+- AWS CodeDeploy
+- Amazon CodeGuru
+- AWS CloudShell
+- AWS Device Farm
 
 --------------------------------
 
