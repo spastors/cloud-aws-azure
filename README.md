@@ -68,17 +68,17 @@
 * **Concepto:** Protección gestionada contra ataques de denegación de servicio distribuido (**DDoS**).
 * **Pregunta de examen típica:** "¿Qué servicio protege las aplicaciones contra ataques **DDoS**?". **Respuesta: AWS Shield.**
 
-### **5. AWS WAF (Web Application Firewall)**
+#### **5. AWS WAF (Web Application Firewall)**
 
 * **Concepto:** Un cortafuegos que protege tus aplicaciones web de ataques comunes que intentan explotar vulnerabilidades en el código (Capa 7 del modelo OSI).
 * **Pregunta de examen típica:** "¿Qué servicio utilizaría para bloquear direcciones IP específicas o ataques de inyección SQL que intentan acceder a su aplicación web?". **Respuesta: AWS WAF.**
 
-### **6. Amazon Macie**
+#### **6. Amazon Macie**
 
 * **Concepto:** Servicio de seguridad y privacidad de datos que utiliza **Machine Learning** para descubrir, clasificar y proteger datos sensibles almacenados en **Amazon S3**.
 * **Pregunta de examen típica:** "¿Qué servicio le ayuda a identificar y proteger automáticamente la información de identificación personal (**PII**) almacenada en los cubos de **Amazon S3**?". **Respuesta: Amazon Macie.**
 
-### **Tabla Resumen**
+#### **Tabla Resumen**
 
 | Si el examen dice / menciona... | El concepto o problema clave es... | La respuesta correcta es... |
 | --- | --- | --- |
@@ -104,6 +104,8 @@
 * **¿Qué tipo de ataque es?**
 * Si es por **VOLUMEN** (DDoS): **Shield**.
 * Si es por **CÓDIGO** (SQL/XSS): **WAF**.
+
+------------------------------------------------------------
 
 """
 
