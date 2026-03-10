@@ -83,7 +83,22 @@ de AWS)
 
 ## Facturación, precios y soporte (12 % del contenido con punta
 
-- 
+- opciones de compra de computación (por ejemplo, instancias bajo demanda, instancias reservadas, instancias de spot, Savings Plans, hosts dedicados, instancias dedicadas, reservas de capacidad)
+- opciones y niveles de almacenamiento
+- comprender los usos y las capacidades adecuados de AWS Budgets y el explorador de costos de AWS
+- comprender los usos y las capacidades adecuados de la calculadora de precios de AWS
+- comprender la facturación unificada de AWS Organizations y la asignación de costos
+- comprender los distintos tipos de etiquetas de asignación de costos y su relación con los informes de facturación (por ejemplo, Informe de costo y uso de AWS)
+- localizar documentos técnicos, blogs y documentación de AWS en los sitios web oficiales de AWS
+- identificar y localizar los recursos técnicos de AWS (por ejemplo, recomendaciones de AWS, AWS Knowledge Center o AWS re:Post)
+- identificar las opciones de AWS Support para los clientes de AWS (por ejemplo, comunidades y servicio al cliente, AWS Developer Support, AWS Business Support, AWS Enterprise On-Ramp Support, AWS Enterprise
+Support)
+- identificar el rol de Trusted Advisor, el Panel de AWS Health y la API de AWS Health para ayudar a administrar y supervisar los entornos para la optimización de costos
+- identificar el rol del centro de confianza y seguridad de AWS para denunciar el abuso de los recursos de AWS
+- comprender el rol de los socios de AWS (por ejemplo, AWS Marketplace, proveedores de software independientes, integradores de sistemas)
+- identificar los beneficios de ser socio de AWS (por ejemplo, formación y certificación para socios, eventos para socios, descuentos por volumen para socios)
+- identificar los servicios clave que ofrece AWS Marketplace (por ejemplo, administración de costos, gobernanza y derechos)
+- identificar las opciones de asistencia técnica disponibles en AWS (por ejemplo, AWS Professional Services, arquitectos de soluciones de AWS)
 
 --------------------------------
 
