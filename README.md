@@ -141,9 +141,50 @@ Ejemplos de servicio de AWS para cada pilar:
 * **Costo:** AWS Cost Explorer / Budgets.
 * **Sostenibilidad:** Customer Carbon Footprint Tool.
 
+------------------------------------------------------------
+
+### ¿Qué es el AWS CAF?
+
+Es un marco que ayuda a las empresas a crear un plan de acción para su transformación digital. Divide el proceso en **6 Perspectivas** y se enfoca en obtener **4 Resultados de Negocio**.
+
+### Los 4 Resultados de Negocio (El "Por qué")
+
+* **Reducción del riesgo empresarial:** No se trata solo de seguridad, sino de **resiliencia**. La nube permite recuperarse de desastres y evitar caídas de servicio (fiabilidad), lo que protege la reputación y las finanzas.
+* **Mejora del rendimiento ESG (Social, Ambiental y Gobernanza):** Aquí es donde entra la **Sostenibilidad**. Al usar la infraestructura eficiente de AWS, las empresas reducen su huella de carbono y mejoran su transparencia de datos.
+* **Aumento de los ingresos:** Permite crear productos nuevos y lanzarlos al mercado más rápido (**Time-to-market**). Si puedes experimentar barato y rápido, generas más dinero.
+* **Aumento de la eficiencia operativa:** Automatizar tareas repetitivas y reducir el costo de mantener centros de datos físicos. El personal de TI deja de "mover cajas" y empieza a innovar.
+
+### Las 6 Perspectivas del CAF (El "Cómo")
+
+#### A. Perspectivas de Capacidades Empresariales (Enfocadas en estrategia)
+
+1. **Negocios (Business):** Se asegura de que la inversión en la nube se alinee con los objetivos de la empresa. (ROI, casos de negocio).
+2. **Personas (People):** Se enfoca en el cambio de cultura. Formación, nuevas habilidades y cómo organizar los equipos.
+3. **Gobernanza (Governance):** Se ocupa de gestionar los programas de TI para minimizar riesgos y maximizar beneficios. (Gestión de carteras, cumplimiento).
+
+#### B. Perspectivas de Capacidades Técnicas (Enfocadas en la implementación)
+
+4. **Plataforma (Platform):** Cómo diseñar y optimizar la arquitectura en la nube (la parte técnica pura).
+5. **Seguridad (Security):** Cómo proteger los datos, las identidades y cumplir con las normativas.
+6. **Operaciones (Operations):** Cómo gestionar el día a día en la nube (monitorización, salud del sistema, soporte).
+
+### Tabla Resumen
+
+| Si la pregunta dice... | La respuesta es Perspectiva... |
+| --- | --- |
+| "Alinear TI con beneficios financieros" | **Negocios (Business)** |
+| "Capacitación de empleados o cultura" | **Personas (People)** |
+| "Arquitectura, escalabilidad, computación" | **Plataforma (Platform)** |
+| "Cumplimiento normativo y gestión de riesgos" | **Gobernanza (Governance)** |
+| "Incidentes, parches, gestión de servicios" | **Operaciones (Operations)** |
+| "Cifrado, IAM, protección de datos" | **Seguridad (Security)** |
+
+> **Nota importante:** No confundir el **CAF** (estrategia de adopción) con el **Well-Architected Framework** (diseño técnico de una carga de trabajo). El CAF es para "toda la empresa", el Well-Architected es para "una aplicación específica".
+
+------------------------------------------------------------
+
 """
 
-- [ ] comprender los componentes de AWS Cloud Adoption Framework (AWS CAF) (por ejemplo, reducción del riesgo empresarial; mejora del rendimiento del entorno, social y de gobernanza [ESG]; aumento de los ingresos; aumento de la eficiencia operativa)
 - [ ] identificar las estrategias de migración adecuadas (por ejemplo, replicación de bases de datos, uso de AWS Snowball)
 - comprender el rol de los costos fijos en comparación con los costos variables
 - comprender los costos asociados a los entornos en las instalaciones
