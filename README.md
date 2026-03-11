@@ -218,12 +218,12 @@ Se usan cuando enviar datos por internet tardaría semanas o meses.
 
 Migrar una base de datos es delicado porque no puedes permitir que los datos se pierdan mientras la gente los usa.
 
-* **AWS DMS (Database Migration Service):**
+**AWS DMS (Database Migration Service):**
 * Permite migrar bases de datos con **tiempo de inactividad mínimo**.
 * **Replicación continua:** Mientras los datos se mueven, DMS sigue copiando los cambios que ocurren en la base de datos de origen.
 
 
-* **AWS SCT (Schema Conversion Tool):**
+**AWS SCT (Schema Conversion Tool):**
 * Se usa **antes** de DMS si vas a cambiar el "motor" (ej. de Oracle a Amazon Aurora).
 * Convierte el esquema de la DB para que sea compatible con el nuevo motor.
 
