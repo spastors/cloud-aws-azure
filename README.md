@@ -183,9 +183,54 @@ Es un marco que ayuda a las empresas a crear un plan de acción para su transfor
 
 ------------------------------------------------------------
 
+### Las 7 Rs: Estrategias de Migración
+
+Estas son las rutas que puede tomar una aplicación. Van desde "no hacer nada" hasta "rehacerlo todo".
+
+| Estrategia | ¿Qué es? | Cuándo usarla (Palabras clave) |
+| --- | --- | --- |
+| **Rehost** (Lift & Shift) | Mover la aplicación tal cual a una instancia EC2. | Migración rápida, poco tiempo para cambios, bajo costo inicial. |
+| **Replatform** (Lift, Tinker & Shift) | Pequeñas optimizaciones sin cambiar el código central (ej. mover la DB a RDS). | Quieres beneficios de servicios gestionados sin reescribir la app. |
+| **Refactor** (Re-architect) | Reescribir la app para que sea nativa de la nube (ej. usar Lambda o Microservicios). | Necesitas máxima escalabilidad, agilidad y rendimiento. Es la más cara/lenta. |
+| **Relocate** | Mover cargas de trabajo de VMware a AWS sin cambiar nada. | Usas VMware en on-prem y quieres seguir usándolo en la nube. |
+| **Repurchase** (Drop and Shop) | Abandonar el software actual y comprar una versión SaaS. | Pasar de un CRM antiguo a Salesforce o de Email propio a Office 365. |
+| **Retain** | No hacer nada por ahora. Mantenerlo en on-premise. | Aplicaciones que no se pueden migrar por cumplimiento o latencia. |
+| **Retire** | Eliminar la aplicación. | Aplicaciones que ya no se usan o son redundantes. |
+
+### Herramientas de Movimiento de Datos
+
+Cuando tienes terabytes de datos, el internet de tu oficina puede ser el cuello de botella. Aquí es donde entran los "camiones" de AWS.
+
+#### Familia AWS Snow (Migración física)
+
+Se usan cuando enviar datos por internet tardaría semanas o meses.
+
+* **AWS Snowcone:** Pequeño, portátil (8 TB). Ideal para sitios con poco espacio.
+* **AWS Snowball Edge:** El estándar (80 TB). Tiene capacidad de cómputo para procesar datos *in-situ*.
+* **AWS Snowmobile:** Un camión de 13 metros para exabytes de datos.
+
+#### AWS DataSync
+
+* **Uso:** Automatiza la transferencia de datos entre on-premise y S3, EFS o FSx.
+* **Clave:** Es por red (online), no físico. Usa aceleración para ir más rápido.
+
+### Replicación y Migración de Bases de Datos
+
+Migrar una base de datos es delicado porque no puedes permitir que los datos se pierdan mientras la gente los usa.
+
+* **AWS DMS (Database Migration Service):**
+* Permite migrar bases de datos con **tiempo de inactividad mínimo**.
+* **Replicación continua:** Mientras los datos se mueven, DMS sigue copiando los cambios que ocurren en la base de datos de origen.
+
+
+* **AWS SCT (Schema Conversion Tool):**
+* Se usa **antes** de DMS si vas a cambiar el "motor" (ej. de Oracle a Amazon Aurora).
+* Convierte el esquema de la DB para que sea compatible con el nuevo motor.
+
+------------------------------------------------------------
+
 """
 
-- [ ] identificar las estrategias de migración adecuadas (por ejemplo, replicación de bases de datos, uso de AWS Snowball)
 - comprender el rol de los costos fijos en comparación con los costos variables
 - comprender los costos asociados a los entornos en las instalaciones
 - comprender las diferencias entre las estrategias de licencias (por ejemplo, el modelo Bring Your Own License [BYOL] en comparación con las licencias incluidas)
