@@ -107,10 +107,42 @@
 
 ------------------------------------------------------------
 
+### **Pilares de Well-Architected**
+
+| Pilar | ¿De qué trata realmente? | **Palabras Clave (Triggers del examen)** | **Escenario Típico de Pregunta** |
+| --- | --- | --- | --- |
+| **Excelencia Operativa (Operational Excellence)** | Ejecutar sistemas, monitorizar y **mejorar procesos**. | *Automatización, cambios pequeños y reversibles, "Infrastructure as Code" (IaC), documentar.* | "La empresa quiere automatizar sus despliegues y aprender de los fallos operativos..." |
+| **Seguridad (Security)** | Proteger datos, sistemas y activos. | *Trazabilidad (logs), cifrado, incidentes, "mínimo privilegio", protección de datos.* | "¿Qué pilar se enfoca en asegurar que solo los usuarios autorizados accedan a los recursos?" |
+| **Fiabilidad (Reliability)** | **Recuperarse** de fallos y mitigar interrupciones. | *Recuperación automática, probar fallos, escalar horizontalmente, disponibilidad.* | "Un sistema debe seguir funcionando incluso si un centro de datos entero falla..." |
+| **Eficiencia del Rendimiento (Performance Efficiency)** | Usar los recursos **adecuados** para la carga. | *Selección de tipos de recursos, democratizar tecnologías avanzadas, ir global en minutos.* | "La empresa quiere usar Serverless (Lambda) para no gestionar servidores y mejorar la velocidad..." |
+| **Optimización de Costos (Cost Optimization)** | Evitar gastos innecesarios. | *Modelo de consumo, medir eficiencia, servicios gestionados, dejar de gastar en centros de datos.* | "¿Qué pilar recomienda analizar el gasto para pagar solo por lo que realmente se necesita?" |
+| **Sostenibilidad (Sustainability)** | Minimizar el **impacto ambiental**. | *Huella de carbono, maximizar utilización, reducir recursos desperdiciados.* | "¿Qué pilar se centra en la eficiencia energética y el impacto ambiental a largo plazo?" |
+
+1. **¿Fiabilidad o Excelencia Operativa?**
+* Si la pregunta habla de que el sistema **sobreviva a un fallo**: es **Fiabilidad**.
+* Si la pregunta habla de **cómo el equipo humano gestiona** el sistema o automatiza el código: es **Excelencia Operativa**.
+
+
+2. **¿Rendimiento o Costo?**
+* Si te piden la solución **más barata**: es **Costo**.
+* Si te piden la solución que **mejor aproveche la tecnología** (aunque sea más cara): es **Rendimiento**.
+
+
+3. **¿Seguridad o Fiabilidad?**
+* Si el sistema se cae por un **hacker**: es **Seguridad**.
+* Si el sistema se cae por una **inundación o exceso de tráfico**: es **Fiabilidad**.
+
+Ejemplos de servicio de AWS para cada pilar:
+
+* **Excelencia Operativa:** AWS CloudFormation (IaC).
+* **Seguridad:** AWS IAM / KMS.
+* **Fiabilidad:** Amazon EC2 Auto Scaling.
+* **Rendimiento:** Amazon CloudFront (baja latencia).
+* **Costo:** AWS Cost Explorer / Budgets.
+* **Sostenibilidad:** Customer Carbon Footprint Tool.
+
 """
 
-
-- [ ] identificar las diferencias entre los pilares del marco de Well-Architected
 - [ ] comprender los componentes de AWS Cloud Adoption Framework (AWS CAF) (por ejemplo, reducción del riesgo empresarial; mejora del rendimiento del entorno, social y de gobernanza [ESG]; aumento de los ingresos; aumento de la eficiencia operativa)
 - [ ] identificar las estrategias de migración adecuadas (por ejemplo, replicación de bases de datos, uso de AWS Snowball)
 - comprender el rol de los costos fijos en comparación con los costos variables
