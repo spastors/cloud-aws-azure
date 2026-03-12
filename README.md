@@ -1,6 +1,6 @@
 # Guía de Estudio AWS Certified Cloud Practitioner (CLF-C02)
 
-## Conceptos de la nube
+## ☁️ Conceptos de la nube ☁️
 
 ### **A. Agilidad (Agility)**
 * **Concepto:** Es la **velocidad de innovación**.
