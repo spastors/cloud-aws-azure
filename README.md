@@ -2,8 +2,6 @@
 
 ## Conceptos de la nube
 
-"""
-
 ### **A. Agilidad (Agility)**
 * **Concepto:** Es la **velocidad de innovación**.
 * **Cómo recordarlo:** En la nube, un servidor se crea en segundos, no en semanas.
@@ -229,13 +227,44 @@ Migrar una base de datos es delicado porque no puedes permitir que los datos se 
 
 ------------------------------------------------------------
 
-"""
+### Costos Fijos vs. Costos Variables
 
-- comprender el rol de los costos fijos en comparación con los costos variables
-- comprender los costos asociados a los entornos en las instalaciones
-- comprender las diferencias entre las estrategias de licencias (por ejemplo, el modelo Bring Your Own License [BYOL] en comparación con las licencias incluidas)
-- comprender el concepto de dimensionamiento correcto
-- identificar los beneficios de la automatización
+* **Costos Fijos (CapEx):** Son las inversiones iniciales pesadas. Tienes que comprar el servidor, el rack y el edificio antes de encender la primera aplicación. Es poco flexible: si tu negocio baja, el servidor sigue ahí costando dinero.
+* **Costos Variables (OpEx):** Pagas solo por lo que usas (modelo *Pay-as-you-go*). Si apagas el servicio, el costo desaparece.
+* **Ventaja clave:** Puedes **cambiar gastos de capital por gastos variables**, lo que permite a las empresas probar ideas sin arriesgar millones en hardware.
+
+### Costos de Entornos On-Premises (En las instalaciones)
+
+**TCO** (Total Cost of Ownership). **Costos "Ocultos" del On-Premise:**
+
+* **Infraestructura física:** Alquiler del espacio, racks, cableado.
+* **Utilidades:** Electricidad (los servidores consumen mucho) y **refrigeración** (aire acondicionado 24/7).
+* **Mantenimiento:** Personal técnico para cambiar discos rotos, actualizar firmware y limpiar el polvo.
+* **Seguridad física:** Guardias, cámaras, control de acceso biométrico.
+
+### Estrategias de Licencias
+
+¿Qué pasa con el software caro (como Windows Server o SQL Server)?
+
+* **Licencias Incluidas (LI):** AWS se encarga de todo. Pagas un poco más por hora en tu instancia de EC2, pero no tienes que comprar una licencia aparte. Es ideal para proyectos nuevos o temporales.
+* **BYOL (Bring Your Own License):** Si ya compraste licencias para tus servidores físicos, puedes "traértelas" a AWS.
+* **Tip de examen:** Normalmente se requiere el uso de **EC2 Dedicated Hosts** o **Dedicated Instances** para cumplir con las reglas de algunos fabricantes al usar BYOL.
+
+
+### Dimensionamiento Correcto (Right-Sizing)
+
+Es el proceso de **ajustar el tipo y tamaño de los recursos** a tus necesidades reales de rendimiento al menor costo posible.
+
+* **El error común:** En on-premise, compramos servidores gigantes "por si acaso" crecemos.
+* **La solución en la nube:** Si una instancia usa solo el 10% de su CPU, el *Right-Sizing* dicta que debes moverla a una instancia más pequeña y barata.
+* **Cuándo hacerlo:** Debe ser un proceso continuo, no algo que se hace una sola vez.
+
+| Concepto | Lo que el examen quiere oír |
+| --- | --- |
+| **CapEx a OpEx** | Dejar de invertir en hardware físico y pagar solo por uso. |
+| **TCO** | El costo total incluye luz, espacio, refrigeración y personal. |
+| **BYOL** | Reutilizar licencias propias para ahorrar dinero. |
+| **Right-Sizing** | No pagar por capacidad que no estás usando. |
   
 ## Seguridad y conformidad (30 % del contenido con puntaje)
 
