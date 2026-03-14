@@ -314,9 +314,10 @@ IAM es gratuito y es un servicio **Global** (no se configura por región). Se ri
 2. **Grupos:** Colecciones de usuarios. Es mejor dar permiso a un grupo "Administradores" que a cada usuario por separado.
 3. **Roles:** Identidades **temporales**. No tienen contraseña ni llaves fijas. Se usan para que un servicio (como EC2) hable con otro (como S3) de forma segura.
 4. **Políticas:** Documentos en formato **JSON** que definen qué se puede hacer.
-  * *Efecto:* Allow (Permitir) o Deny (Denegar).
-  * *Acción:* Qué quieres hacer (ej: `s3:ListBucket`).
-  * *Recurso:* Sobre qué (ej: un cubo específico).
+   
+    * *Efecto:* Allow (Permitir) o Deny (Denegar).
+    * *Acción:* Qué quieres hacer (ej: `s3:ListBucket`).
+    * *Recurso:* Sobre qué (ej: un cubo específico).
 
 #### El Usuario Raíz (Root User)
 
