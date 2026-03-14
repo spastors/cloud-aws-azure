@@ -335,6 +335,17 @@ Es la evolución de IAM para empresas con muchas cuentas o que ya usan otros sis
 * **Integración:** Se puede conectar con Microsoft Active Directory o Google Workspace.
 * **Uso:** Centraliza el acceso si tu empresa tiene 50 cuentas diferentes.
 
+#### Tabla Resumen: Identidades y Accesos en IAM
+
+| Elemento | ¿Qué es? | Caso de uso típico | Tip de Examen |
+| --- | --- | --- | --- |
+| **Usuario Raíz (Root)** | El creador de la cuenta. Poder absoluto e ilimitado. | **Solo** para tareas de facturación o cerrar la cuenta. | **¡MFA obligatorio!** Nunca se usa para el día a día. |
+| **Usuario IAM** | Una persona o aplicación dentro de tu organización. | Un desarrollador nuevo que necesita acceder a la consola. | No compartas credenciales; un usuario por persona física. |
+| **Grupo IAM** | Colección de usuarios con los mismos permisos. | Grupo "Soporte" que tiene permiso para ver logs de CloudWatch. | Es más fácil gestionar permisos por grupos que uno por uno. |
+| **Rol IAM** | Identidad **temporal** sin contraseña (usa "asunción"). | Permitir que una **instancia EC2** guarde archivos en un bucket S3. | Es más seguro que los usuarios para servicios (no hay claves fijas). |
+| **Política (Policy)** | Documento **JSON** que define qué está permitido. | Definir que "Pepe" solo puede leer (Read-Only) en S3. | Sigue siempre el **Principio de Mínimo Privilegio**. |
+
+------------------------------------------------------------
 
 """
 
