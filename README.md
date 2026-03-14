@@ -267,13 +267,74 @@ Es el proceso de **ajustar el tipo y tamaño de los recursos** a tus necesidades
 | **BYOL** | Reutilizar licencias propias para ahorrar dinero. |
 | **Right-Sizing** | No pagar por capacidad que no estás usando. |
   
-## Seguridad y conformidad (30 % del contenido con puntaje)
+## 🔐 Seguridad y conformidad
 
-- reconocer los componentes del modelo de responsabilidad compartida de AWS
-- describir las responsabilidades del cliente en AWS
-- describir las responsabilidades de AWS
-- describir las responsabilidades que comparten el cliente y AWS
-- Describir cómo pueden cambiar las responsabilidades de AWS y las del cliente según el servicio utilizado (por ejemplo, Amazon RDS, AWS Lambda o Amazon Elastic Compute Cloud)
+""" 
+### Modelo de Responsabilidad Compartida
+
+Se debe distinguir entre la seguridad **"DE"** la nube y la seguridad **"EN"** la nube.
+
+<img width="1818" height="784" alt="image" src="https://github.com/user-attachments/assets/d92afcb5-e11c-4d42-bad9-5c77a4e1354a" />
+
+* **AWS (Responsabilidad DE la nube):** AWS protege la infraestructura global. Piensa en todo lo físico y el software base.
+* Hardware (servidores, discos).
+* Seguridad física de los Centros de Datos (guardias, cámaras).
+* Software de virtualización (Hipervisor).
+* Regiones, Zonas de Disponibilidad y Edge Locations.
+
+* **Cliente (Responsabilidad EN la nube):** Tú eres el dueño de lo que pones dentro.
+* Datos del cliente: Cifrado y copias de seguridad.
+* Gestión de identidades (IAM): Quién entra y quién no.
+* Configuración de red: Grupos de seguridad (firewalls) y ACLs.
+* Sistemas Operativos: Parchear Windows/Linux (en EC2).
+  
+### El Espectro según el Servicio
+
+Dependiendo de qué tan "gestionado" sea el servicio, AWS hace más o menos por el cliente:
+
+| Servicio | Tipo | ¿Quién parchea el Sistema Operativo? | ¿Quién parchea la Base de Datos? |
+| --- | --- | --- | --- |
+| **Amazon EC2** | No gestionado (IaaS) | **Cliente** | **Cliente** (si la instalas tú) |
+| **Amazon RDS** | Gestionado (PaaS) | **AWS** | **AWS** |
+| **AWS Lambda** | Serverless | **AWS** | N/A |
+
+> **Nota de examen:** En servicios como **S3** o **DynamoDB**, tú solo te preocupas de los datos y de quién tiene acceso. AWS se encarga de todo lo demás.
+
+------------------------------------------------------------
+
+### IAM: Identity and Access Management
+
+IAM es gratuito y es un servicio **Global** (no se configura por región). Se rige por el **Principio de Mínimo Privilegio**: dar solo los permisos necesarios para realizar una tarea y nada más.
+
+#### Pilares de IAM
+
+1. **Usuarios:** Identidades persistentes para personas o aplicaciones. (Ej: "Juan" o "App_Ventas").
+2. **Grupos:** Colecciones de usuarios. Es mejor dar permiso a un grupo "Administradores" que a cada usuario por separado.
+3. **Roles:** Identidades **temporales**. No tienen contraseña ni llaves fijas. Se usan para que un servicio (como EC2) hable con otro (como S3) de forma segura.
+4. **Políticas:** Documentos en formato **JSON** que definen qué se puede hacer.
+  * *Efecto:* Allow (Permitir) o Deny (Denegar).
+  * *Acción:* Qué quieres hacer (ej: `s3:ListBucket`).
+  * *Recurso:* Sobre qué (ej: un cubo específico).
+
+#### El Usuario Raíz (Root User)
+
+Es el usuario que se crea con el email al abrir la cuenta. Tiene poder absoluto.
+
+* **Regla de oro:** No usarlo para el día a día. Crea un usuario administrador en IAM y guarda el Root bajo llave.
+* **Seguridad Obligatoria:** Siempre, siempre activar **MFA** (Multi-Factor Authentication).
+* **Tareas exclusivas de Root:** Cerrar la cuenta, cambiar el plan de soporte, cambiar datos de facturación.
+
+#### IAM Identity Center (Antiguo AWS SSO)
+
+Es la evolución de IAM para empresas con muchas cuentas o que ya usan otros sistemas.
+
+* **Single Sign-On (SSO):** Un solo usuario y contraseña para entrar a múltiples cuentas de AWS.
+* **Integración:** Se puede conectar con Microsoft Active Directory o Google Workspace.
+* **Uso:** Centraliza el acceso si tu empresa tiene 50 cuentas diferentes.
+
+
+"""
+
 - identificar dónde encontrar la información de conformidad de AWS (por ejemplo, AWS Artifact)
 - comprender las necesidades de conformidad entre ubicaciones geográficas o sectores (por ejemplo, conformidad de AWS)
 - describir cómo los clientes protegen los recursos en AWS (por ejemplo, Amazon Inspector, AWS Security Hub, Amazon GuardDuty, AWS Shield)
@@ -281,12 +342,6 @@ Es el proceso de **ajustar el tipo y tamaño de los recursos** a tus necesidades
 - reconocer los servicios que ayudan a la gobernanza y la conformidad (por ejemplo, la supervisión con Amazon CloudWatch; la auditoría con AWS CloudTrail, AWS Audit Manager y AWS Config; la generación de informes con informes de acceso)
 - reconocer los requisitos de conformidad que varían entre los servicios de AWS
 - comprender las claves de acceso, las políticas de contraseñas y el almacenamiento de credenciales (por ejemplo, AWS Secrets Manager, AWS Systems Manager)
-- identificar los métodos de autenticación en AWS (por ejemplo, autenticación multifactor [MFA], IAM Identity Center, roles de IAM entre cuentas)
-- definir grupos, usuarios, políticas personalizadas y políticas administradas en conformidad con el principio de mínimo privilegio
-- identificar las tareas que solo el usuario raíz de la cuenta puede realizar
-- comprender qué métodos pueden lograr la protección del usuario raíz
-- comprender los tipos de administración de identidades (por ejemplo, federada)
-- AWS IAM Identity Center (AWS Single Sign-On)
 - describir las características y los servicios de seguridad de AWS (por ejemplo, AWS WAF, AWS Firewall Manager, AWS Shield, Amazon GuardDuty)
 - comprender que los productos de seguridad de terceros están disponibles en AWS Marketplace
 - identificar dónde está disponible la información de seguridad de AWS (por ejemplo, AWS Knowledge Center, AWS Security Center, Blog de seguridad
