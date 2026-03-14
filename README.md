@@ -276,13 +276,15 @@ Se debe distinguir entre la seguridad **"DE"** la nube y la seguridad **"EN"** l
 
 <img width="1818" height="784" alt="image" src="https://github.com/user-attachments/assets/d92afcb5-e11c-4d42-bad9-5c77a4e1354a" />
 
-* **AWS (Responsabilidad DE la nube):** AWS protege la infraestructura global. Piensa en todo lo físico y el software base.
+**AWS (Responsabilidad DE la nube):** AWS protege la infraestructura global. Piensa en todo lo físico y el software base.
+
 * Hardware (servidores, discos).
 * Seguridad física de los Centros de Datos (guardias, cámaras).
 * Software de virtualización (Hipervisor).
 * Regiones, Zonas de Disponibilidad y Edge Locations.
 
-* **Cliente (Responsabilidad EN la nube):** Tú eres el dueño de lo que pones dentro.
+**Cliente (Responsabilidad EN la nube):** Tú eres el dueño de lo que pones dentro.
+
 * Datos del cliente: Cifrado y copias de seguridad.
 * Gestión de identidades (IAM): Quién entra y quién no.
 * Configuración de red: Grupos de seguridad (firewalls) y ACLs.
