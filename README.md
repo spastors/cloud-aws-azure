@@ -512,8 +512,6 @@ AWS Purchasing Options:
 - decidir entre opciones como el acceso programático (por ejemplo, las API, los SDK, la CLI), la consola de administración de AWS y la  infraestructura como código (IaC)
 - evaluar los requisitos para determinar si se deben utilizar operaciones únicas o procesos repetibles
 - identificar modelos de implementación (por ejemplo, en la nube, híbridos, en las instalaciones)
-- describir cómo lograr una alta disponibilidad mediante el uso de varias zonas de disponibilidad
-- reconocer que las zonas de disponibilidad no comparten puntos únicos de error
 - describir cuándo utilizar varias regiones (por ejemplo, recuperación de desastres, continuidad de actividades, baja latencia para los usuarios finales, soberanía de datos)
 - reconocer que el escalado automático proporciona elasticidad
 - identificar los propósitos de los balanceadores de carga
@@ -521,7 +519,6 @@ AWS Purchasing Options:
 - identificar bases de datos relacionales (por ejemplo, Amazon RDS, Amazon Aurora)
 - identificar bases de datos NoSQL (por ejemplo, DynamoDB)
 - identificar bases de datos basadas en memoria (por ejemplo, Amazon ElastiCache)
-- identificar herramientas de migración de bases de datos (por ejemplo, AWS Database Migration Service [AWS DMS], Herramienta de conversión de esquemas de AWS [AWS SCT])
 - identificar los componentes de una VPC (por ejemplo, subredes, puertas de enlace)
 - describir la seguridad en una VPC (por ejemplo, ACL de red, grupos de seguridad, Amazon Inspector)
 - comprender el propósito de Amazon Route 53
