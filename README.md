@@ -1,7 +1,5 @@
 # Guía de Estudio AWS Certified Cloud Practitioner (CLF-C02)
 
-## ☁️ Conceptos de la nube
-
 ### **Servicios de Protección de Recursos**
 
 #### **1. Amazon Inspector**
@@ -87,7 +85,6 @@ Migrar una base de datos es delicado porque no puedes permitir que los datos se 
 **AWS DMS (Database Migration Service):**
 * Permite migrar bases de datos con **tiempo de inactividad mínimo**. Permite migrar bases de datos: on-premise → AWS.
 * **Replicación continua:** Mientras los datos se mueven, DMS sigue copiando los cambios que ocurren en la base de datos de origen.
-
 
 **AWS SCT (Schema Conversion Tool):**
 * Se usa **antes** de DMS si vas a cambiar el "motor" (ej. de Oracle a Amazon Aurora).
