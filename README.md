@@ -393,8 +393,8 @@ Estos servicios registran qué pasa y cómo cambian las cosas.
 
 * **Amazon CloudWatch:** **¿Cómo está el sistema?**
     * Se encarga de las **Métricas** (CPU, RAM, red) y los **Logs**.
-    * **Alarmas:** Puedes configurar que te avise si el uso de CPU supera el 80%.
-    * **Eventos:** Puede disparar acciones automáticas (ej. ejecutar una función Lambda si algo falla).
+    * **Alarmas (Alarms):** Puedes configurar que te avise si el uso de CPU supera el 80%.
+    * **Eventos (Events, EventBridge):** Puede disparar acciones automáticas (ej. ejecutar una función Lambda si algo falla).
 
 ### Cifrado (Protección de los Datos)
 
