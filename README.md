@@ -435,6 +435,8 @@ Estos servicios registran qué pasa y cómo cambian las cosas.
 * **KMS vs. Secrets Manager:** Si la pregunta es sobre "cifrar discos", es **KMS**. Si es sobre "guardar y rotar la contraseña de la base de datos", es **Secrets Manager**.
 * **WAF vs. Shield:** WAF es para **bloquear** ataques específicos (como hackers intentando entrar). Shield es para **sobrevivir** a una inundación masiva que quiere tumbar tu web (DDoS).
 
+------------------------------------------------------------
+
 """
 
 - comprender las necesidades de conformidad entre ubicaciones geográficas o sectores (por ejemplo, conformidad de AWS)
@@ -450,20 +452,68 @@ de AWS)
 - evaluar los requisitos para determinar si se deben utilizar operaciones únicas o procesos repetibles
 - identificar modelos de implementación (por ejemplo, en la nube, híbridos, en las instalaciones)
 """
-* **Regiones:** Ubicaciones físicas en el mundo con múltiples AZs.
-* *Para qué sirven:* Elegir una región cercana al usuario para **bajar la latencia** o cumplir con **leyes de datos** locales (Soberanía de datos).
-* **Zonas de Disponibilidad (AZs):** Uno o más centros de datos aislados dentro de una Región.
-* *Para qué sirven:* Si una AZ falla (por un incendio o inundación), tu aplicación sigue viva en otra. Esto es **Tolerancia a Fallos**.
-* **Puntos de Presencia (Edge Locations):** Centros de datos pequeños repartidos por cientos de ciudades.
-* *Para qué sirven:* **Velocidad de implementación**. Usan servicios como **Amazon CloudFront** para entregar contenido (vídeos, imágenes) con la mínima latencia.
+### Infraestructura Global: ¿Dónde viven mis datos?
+
+La infraestructura se divide en tres niveles jerárquicos:
+
+* **Regiones (Regions):** Ubicaciones físicas en el mundo que contienen múltiples AZ. 
+    * **Criterios de elección:** 
+        - **Cumplimiento legal** (cumplir con leyes de datos locales, ej. datos que no pueden salir de España)
+        - **Proximidad/Latencia** (estar cerca del usuario)
+        - **Coste** (unas regiones son más baratas que otras).
+* **Zonas de Disponibilidad (Availability Zones - AZ):** Uno o más centros de datos discretos con energía y conectividad redundantes dentro de una Región. 
+    * **Clave:** Se usan para **Alta Disponibilidad**. Si una AZ falla, tu app sigue viva en otra dentro de la misma Región. Esto es **Tolerancia a Fallos**.
+* **Puntos de Presencia (Edge Locations):** Centros de datos pequeños repartidos por todo el mundo en cientos de ciudades para el servicio **Amazon CloudFront**.
+    * **Clave:** No sirven para "lanzar servidores", sirven para **caché** de contenido (vídeos, imágenes) cerca del usuario final para reducir la latencia.
+
+### Amazon EC2: El servidor de toda la vida
+
+EC2 (Elastic Compute Cloud) ofrece "capacidad de computación segura y ajustable en la nube"
+
+#### Tipos de Instancia (La regla mnemotécnica)
+
+| Familia | Uso Principal | Truco para recordar |
+| :--- | :--- | :--- |
+| **T (General Purpose)** | Equilibrio entre CPU y memoria. | **T**odo terreno (o **T**iny para pruebas). |
+| **C (Compute Optimized)** | Procesamiento intensivo (batch, media). | **C**omputación / **C**erebro. |
+| **R (Memory Optimized)** | Bases de datos, caché en memoria. | **R**AM. |
+| **M (General Purpose)** | Aplicaciones estándar. | **M**edium / Equilibrio. |
+
+
+### Opciones de Compra: ¿Cómo ahorrar dinero?
+
+AWS Purchasing Options:
+
+1.  **On-Demand (Bajo Demanda):** Pagas por segundo. Sin compromiso. Es la más cara pero la más flexible. Úsala para aplicaciones nuevas o impredecibles.
+2.  **Savings Plans / Reserved Instances:** Te comprometes a un uso constante (1 o 3 años). Ahorro de hasta el **72%**. Ideal para aplicaciones estables (ej. tu base de datos principal).
+3.  **Spot Instances:** Subastas de capacidad sobrante de AWS. Ahorro de hasta el **90%**.
+    * **El riesgo:** AWS puede quitártelas avisando con 2 minutos de antelación. Úsalas solo para tareas que pueden fallar y reanudarse (ej. renderizado de vídeo, análisis de datos).
+
+### Contenedores y Serverless
+
+#### Contenedores (Docker)
+
+* **Amazon ECS (Elastic Container Service):** Servicio de orquestación de contenedores propio de AWS.
+* **Amazon EKS (Elastic Kubernetes Service):** Servicio gestionado para correr **Kubernetes** en AWS.
+
+#### Serverless (Sin servidores que gestionar)
+
+* **AWS Lambda:** Ejecutas código sin aprovisionar ni gestionar servidores. Solo pagas por el tiempo de ejecución (milisegundos).
+* **AWS Fargate:** Es el motor "serverless" para **ECS** y **EKS**. Tú le das el contenedor y Fargate lo corre sin que tú elijas el tipo de instancia EC2.
+
+#### Resumen rápido para no fallar:
+
+* **¿Alta disponibilidad?** → Usa varias **AZ**.
+* **¿Latencia baja para usuarios globales?** → Usa **Edge Locations**.
+* **¿Máximo ahorro para algo que puede interrumpirse?** → **Spot**.
+
+------------------------------------------------------------
+
 """
 
 - describir cómo lograr una alta disponibilidad mediante el uso de varias zonas de disponibilidad
 - reconocer que las zonas de disponibilidad no comparten puntos únicos de error
 - describir cuándo utilizar varias regiones (por ejemplo, recuperación de desastres, continuidad de actividades, baja latencia para los usuarios finales, soberanía de datos)
-- reconocer el uso adecuado de varios tipos de instancia de EC2 (por ejemplo, optimizadas para computación, optimizadas para almacenamiento)
-- reconocer el uso adecuado de varias opciones de contenedores (por ejemplo, Amazon ECS, Amazon EKS)
-- reconocer el uso adecuado de varias opciones de computación sin servidor (por ejemplo, AWS Fargate, Lambda)
 - reconocer que el escalado automático proporciona elasticidad
 - identificar los propósitos de los balanceadores de carga
 - decidir cuándo utilizar las bases de datos alojadas en Elastic Compute Cloud o las bases de datos administradas por AWS
