@@ -218,7 +218,7 @@ Se usan cuando enviar datos por internet tardaría semanas o meses.
 Migrar una base de datos es delicado porque no puedes permitir que los datos se pierdan mientras la gente los usa.
 
 **AWS DMS (Database Migration Service):**
-* Permite migrar bases de datos con **tiempo de inactividad mínimo**.
+* Permite migrar bases de datos con **tiempo de inactividad mínimo**. Permite migrar bases de datos: on-premise → AWS.
 * **Replicación continua:** Mientras los datos se mueven, DMS sigue copiando los cambios que ocurren en la base de datos de origen.
 
 
@@ -507,6 +507,92 @@ AWS Purchasing Options:
 
 ------------------------------------------------------------
 
+### Amazon S3 (Object Storage)
+
+* Servicio de **almacenamiento de objetos** (archivos, imágenes, backups).
+* Los datos se almacenan en **buckets** y objetos.
+* Escalable y altamente duradero.
+
+#### Clases de almacenamiento 
+
+AWS indica que eliges la clase según frecuencia de acceso para optimizar coste y rendimiento
+
+* **S3 Standard** → acceso frecuente
+* **S3 IA (Infrequent Access)** → acceso poco frecuente (más barato, coste por acceso)
+* **S3 One Zone-IA** → más barato, pero en una sola AZ (menos resiliente)
+* **S3 Glacier / Deep Archive** → archivo a muy bajo coste (acceso lento)
+
+#### Lifecycle Policies
+
+* Permiten **mover automáticamente objetos** entre clases (ej: Standard → Glacier)
+* Muy importante para optimización de costes
+
+### Almacenamiento en bloque y archivos
+
+#### Amazon EBS (Elastic Block Store)
+
+* Disco duro para **instancias EC2**
+* Persistente (no se pierde al parar la instancia)
+* Similar a un **disco físico**
+
+#### Amazon EFS (Elastic File System)
+
+* Sistema de archivos compartido
+* Puede ser usado por **múltiples EC2 simultáneamente**
+* Usa protocolo NFS
+
+### Bases de datos en AWS
+
+#### Amazon RDS (Relacional – SQL)
+
+* Base de datos relacional gestionada (MySQL, PostgreSQL, etc.)
+* AWS se encarga de:
+  * backups
+  * parches
+  * alta disponibilidad
+
+👉 Incluye:
+
+* **Aurora** (más rendimiento, compatible MySQL/PostgreSQL)
+
+#### Amazon DynamoDB (NoSQL)
+
+* Base de datos **key-value y documentos**
+* Totalmente gestionada y serverless
+* Rendimiento en **milisegundos a gran escala**
+
+#### Amazon ElastiCache (Cache en memoria)
+
+* Base de datos en memoria (Redis / Memcached)
+* Muy rápida (microsegundos)
+
+#### Amazon Redshift (Data Warehouse)
+
+* Base de datos para **analítica (OLAP)**
+* Consultas SQL sobre grandes volúmenes de datos
+* Optimizado para BI y reporting 
+
+### Rresumen rápido
+
+| Servicio        | Tipo             | Uso principal                | Clave examen                         |
+| --------------- | ---------------- | ---------------------------- | ------------------------------------ |
+| **S3**          | Objetos          | Archivos, backups, data lake | Clases de almacenamiento + lifecycle |
+| **EBS**         | Bloque           | Disco para EC2               | 1 instancia                          |
+| **EFS**         | Archivos         | Sistema compartido           | Multi-EC2                            |
+| **RDS**         | Relacional (SQL) | Apps tradicionales           | Gestionado + Multi-AZ                |
+| **Aurora**      | Relacional       | Alto rendimiento             | Compatible MySQL/Postgre             |
+| **DynamoDB**    | NoSQL            | Alta escala                  | Serverless                           |
+| **ElastiCache** | Cache            | Acelerar apps                | Redis/Memcached                      |
+| **Redshift**    | Data Warehouse   | Analítica                    | OLAP                                 |
+
+### Tips de examen (muy útiles)
+
+* **S3 = objetos**, **EBS = disco**, **EFS = compartido**
+* **RDS = SQL**, **DynamoDB = NoSQL**
+* **Redshift = analítica**, no transaccional
+* **ElastiCache = rendimiento (cache)**
+* **Glacier = almacenamiento barato pero lento**
+
 """
 
 - decidir entre opciones como el acceso programático (por ejemplo, las API, los SDK, la CLI), la consola de administración de AWS y la  infraestructura como código (IaC)
@@ -516,19 +602,10 @@ AWS Purchasing Options:
 - reconocer que el escalado automático proporciona elasticidad
 - identificar los propósitos de los balanceadores de carga
 - decidir cuándo utilizar las bases de datos alojadas en Elastic Compute Cloud o las bases de datos administradas por AWS
-- identificar bases de datos relacionales (por ejemplo, Amazon RDS, Amazon Aurora)
-- identificar bases de datos NoSQL (por ejemplo, DynamoDB)
-- identificar bases de datos basadas en memoria (por ejemplo, Amazon ElastiCache)
 - identificar los componentes de una VPC (por ejemplo, subredes, puertas de enlace)
 - describir la seguridad en una VPC (por ejemplo, ACL de red, grupos de seguridad, Amazon Inspector)
 - comprender el propósito de Amazon Route 53
-- identificar las opciones de conectividad de red con AWS (por ejemplo, AWS VPN, AWS Direct Connect)
-- identificar los usos del almacenamiento de objetos
-- reconocer las diferencias en las clases de almacenamiento de Amazon S3
-- identificar soluciones de almacenamiento en bloques (por ejemplo, Amazon Elastic Block Store [Amazon EBS], almacén de instancias)
-- identificar servicios de archivos (por ejemplo, Amazon Elastic File System [Amazon EFS], Amazon FSx)
-- identificar los sistemas de archivos en caché (por ejemplo, AWS Storage Gateway)
-- comprender los casos de uso de las políticas de ciclo de vida
+- identificar las opciones de conectividad de red con AWS (por ejemplo, AWS VPN, AWS Direct Connect)  
 - describir los casos de uso de AWS Backup
 - comprender los servicios de IA/ML y las tareas que realizan (por ejemplo, IA de Amazon SageMaker, Amazon Lex, Amazon Kendra)
 - identificar los servicios de análisis de datos (por ejemplo, Amazon Athena, Amazon Kinesis, AWS Glue, Amazon QuickSight)
