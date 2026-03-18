@@ -507,91 +507,132 @@ AWS Purchasing Options:
 
 ------------------------------------------------------------
 
-### Amazon S3 (Object Storage)
+### Tipos de almacenamiento en AWS
 
-* Servicio de **almacenamiento de objetos** (archivos, imágenes, backups).
-* Los datos se almacenan en **buckets** y objetos.
-* Escalable y altamente duradero.
+#### Amazon S3 → Almacenamiento de objetos
 
-#### Clases de almacenamiento 
+Para **archivos y datos no estructurados** (imágenes, backups, logs, data lakes)
 
-AWS indica que eliges la clase según frecuencia de acceso para optimizar coste y rendimiento
+* Guarda datos en **buckets (contenedores)** como objetos
+* Escalable y muy duradero
 
-* **S3 Standard** → acceso frecuente
-* **S3 IA (Infrequent Access)** → acceso poco frecuente (más barato, coste por acceso)
-* **S3 One Zone-IA** → más barato, pero en una sola AZ (menos resiliente)
-* **S3 Glacier / Deep Archive** → archivo a muy bajo coste (acceso lento)
+##### Clases de almacenamiento (según acceso)
 
-#### Lifecycle Policies
+* **Standard** → acceso frecuente
+* **IA (Infrequent Access)** → acceso ocasional (más barato)
+* **One Zone-IA** → más barato, menor resiliencia
+* **Glacier / Deep Archive** → archivo (muy barato, acceso lento)
 
-* Permiten **mover automáticamente objetos** entre clases (ej: Standard → Glacier)
-* Muy importante para optimización de costes
+##### Lifecycle Policies
 
-### Almacenamiento en bloque y archivos
+* Automatizan el movimiento de datos entre clases. Ej: Standard → Glacier (ahorro de costes)
 
-#### Amazon EBS (Elastic Block Store)
+#### Almacenamiento para servidores (EC2)
 
-* Disco duro para **instancias EC2**
-* Persistente (no se pierde al parar la instancia)
-* Similar a un **disco físico**
+##### Amazon EBS → almacenamiento en bloque
 
-#### Amazon EFS (Elastic File System)
+“Disco duro” para una instancia EC2
 
-* Sistema de archivos compartido
-* Puede ser usado por **múltiples EC2 simultáneamente**
-* Usa protocolo NFS
+* Asociado a **una sola instancia**
+* Persistente
+* Similar a un disco físico
 
-### Bases de datos en AWS
+##### Amazon EFS → sistema de archivos compartido
 
-#### Amazon RDS (Relacional – SQL)
+Para compartir datos entre múltiples servidores
 
-* Base de datos relacional gestionada (MySQL, PostgreSQL, etc.)
-* AWS se encarga de:
-  * backups
-  * parches
-  * alta disponibilidad
+* Acceso desde **varias EC2 a la vez**
+* Basado en NFS (Linux)
 
-👉 Incluye:
+##### Amazon FSx → file systems especializados
 
-* **Aurora** (más rendimiento, compatible MySQL/PostgreSQL)
+Sistemas de archivos gestionados para casos concretos
 
-#### Amazon DynamoDB (NoSQL)
+* **Windows File Server (SMB)** → entorno Windows
+* **Lustre** → alto rendimiento (Big Data, HPC)
 
-* Base de datos **key-value y documentos**
-* Totalmente gestionada y serverless
-* Rendimiento en **milisegundos a gran escala**
+Diferencia clave:
 
-#### Amazon ElastiCache (Cache en memoria)
+* **EFS** → general (Linux)
+* **FSx** → específico (Windows, HPC, enterprise)
 
-* Base de datos en memoria (Redis / Memcached)
-* Muy rápida (microsegundos)
 
-#### Amazon Redshift (Data Warehouse)
+#### Bases de datos
 
-* Base de datos para **analítica (OLAP)**
-* Consultas SQL sobre grandes volúmenes de datos
-* Optimizado para BI y reporting 
+##### RDS → bases de datos relacionales (SQL)
 
-### Rresumen rápido
+Apps tradicionales
 
-| Servicio        | Tipo             | Uso principal                | Clave examen                         |
-| --------------- | ---------------- | ---------------------------- | ------------------------------------ |
-| **S3**          | Objetos          | Archivos, backups, data lake | Clases de almacenamiento + lifecycle |
-| **EBS**         | Bloque           | Disco para EC2               | 1 instancia                          |
-| **EFS**         | Archivos         | Sistema compartido           | Multi-EC2                            |
-| **RDS**         | Relacional (SQL) | Apps tradicionales           | Gestionado + Multi-AZ                |
-| **Aurora**      | Relacional       | Alto rendimiento             | Compatible MySQL/Postgre             |
-| **DynamoDB**    | NoSQL            | Alta escala                  | Serverless                           |
-| **ElastiCache** | Cache            | Acelerar apps                | Redis/Memcached                      |
-| **Redshift**    | Data Warehouse   | Analítica                    | OLAP                                 |
+* MySQL, PostgreSQL, etc.
+* AWS gestiona backups, parches y HA
 
-### Tips de examen (muy útiles)
+Incluye:
 
-* **S3 = objetos**, **EBS = disco**, **EFS = compartido**
-* **RDS = SQL**, **DynamoDB = NoSQL**
-* **Redshift = analítica**, no transaccional
-* **ElastiCache = rendimiento (cache)**
-* **Glacier = almacenamiento barato pero lento**
+* **Aurora** → más rendimiento
+
+##### DynamoDB → NoSQL
+
+Alta escala y baja latencia
+
+* Key-value / documentos
+* Serverless
+
+DynamoDB = NoSQL + escalabilidad
+
+##### ElastiCache → cache en memoria
+
+Acelerar aplicaciones
+
+* Redis / Memcached
+
+##### Redshift → analítica (Data Warehouse)
+
+Consultas sobre grandes volúmenes de datos
+
+* SQL
+* BI / reporting
+
+Redshift = analítica (no transaccional)
+
+#### AWS Storage Gateway → almacenamiento híbrido
+
+Conecta **on-premise + AWS**
+
+Permite usar la nube como si fuera almacenamiento local.
+
+##### Caching
+
+* Datos frecuentes → en local
+* Datos completos → en AWS
+
+Resultado:
+
+* baja latencia
+* menos tráfico
+
+##### Tipos importantes
+
+* **S3 File Gateway** → archivos en S3 con caché
+* **FSx File Gateway** → acceso a FSx desde on-prem
+
+**Idea clave:**
+Storage Gateway = **híbrido + caché local**
+
+### Tabla Resumen
+
+| Servicio            | Tipo           | ¿Para qué sirve?      | Cómo diferenciarlo rápido |
+| ------------------- | -------------- | --------------------- | ------------------------- |
+| **S3**              | Objetos        | Archivos, backups     | Clases + lifecycle        |
+| **EBS**             | Bloque         | Disco para EC2        | 1 instancia               |
+| **EFS**             | Archivos       | Compartido            | Multi-EC2                 |
+| **FSx**             | Archivos       | Especializado         | Windows / HPC             |
+| **RDS**             | SQL            | Apps tradicionales    | Gestionado                |
+| **Aurora**          | SQL            | Alto rendimiento      | RDS mejorado              |
+| **DynamoDB**        | NoSQL          | Alta escala           | Serverless                |
+| **ElastiCache**     | Cache          | Acelerar apps         | Memoria                   |
+| **Redshift**        | Data Warehouse | Analítica             | OLAP                      |
+| **Storage Gateway** | Híbrido        | On-prem + AWS         | Caché                     |
+| **File Gateway**    | Caché          | Acceso local a S3/FSx | Baja latencia             |
 
 """
 
