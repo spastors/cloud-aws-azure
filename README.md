@@ -2,48 +2,6 @@
 
 ## ☁️ Conceptos de la nube
 
-### **A. Agilidad (Agility)**
-* **Concepto:** Es la **velocidad de innovación**.
-* **Cómo recordarlo:** En la nube, un servidor se crea en segundos, no en semanas.
-* **Pregunta de examen típica:** "¿Qué beneficio permite a los desarrolladores experimentar y fallar rápido con bajo costo?". **Respuesta: Agilidad.**
-
-### **B. Elasticidad (Elasticity)**
-* **Concepto:** Es la capacidad de **ajustar los recursos automáticamente** según la demanda (subir y BAJAR).
-* **Cómo recordarlo:** Como un **chicle**. Se estira cuando hay mucha gente (Black Friday) y se encoge cuando no hay nadie (madrugada) para ahorrar dinero.
-* **Servicio clave:** **Amazon EC2 Auto Scaling**.
-
-### **C. Alta Disponibilidad (High Availability - HA)**
-* **Concepto:** Asegurar que el sistema esté funcionando el mayor tiempo posible **sin interrupciones**.
-* **Cómo recordarlo:** **Redundancia**. Si algo se rompe, hay otro igual listo para sustituirlo.
-* **Pregunta de examen típica:** "¿Cómo se logra la HA en AWS?". **Respuesta: Desplegando en múltiples Zonas de Disponibilidad (Multi-AZ).**
-
-### **D. Alcance Global (Global Reach)**
-* **Concepto:** Capacidad de desplegar recursos y contenido en múltiples ubicaciones geográficas para estar físicamente cerca de los usuarios finales.
-* **Pregunta de examen típica:** "¿Qué beneficio de AWS permite a una empresa desplegar una aplicación a usuarios de todo el mundo con baja latencia en cuestión de minutos?". **Respuesta: Alcance Global (vía Regiones y Edge Locations).**
-
-### **E. Economía de Escala (Economies of Scale)**
-
-* **Concepto:** Es el beneficio de que AWS, al tener millones de clientes, compra hardware en cantidades masivas, lo que reduce sus costos operativos. AWS traslada esos ahorros a los clientes en forma de **precios más bajos**.
-* **Pregunta de examen típica:** "¿Por qué AWS puede reducir los precios de sus servicios periódicamente para sus clientes?". **Respuesta: Debido a las economías de escala.**
-
-### **F. Pago por uso (Pay-as-you-go / Modelo de Consumo)**
-
-* **Concepto:** Método de facturación donde solo pagas por la cantidad exacta de recursos que utilizas, sin contratos a largo plazo ni inversiones iniciales.
-* **Pregunta de examen típica:** "¿Qué característica de la nube de AWS permite a una empresa cambiar gastos de capital (CapEx) por gastos operativos (OpEx)?". **Respuesta: El modelo de precios de pago por uso.**
-
-### **Tabla Resumen**
-
-| Concepto | **Palabras Clave (Disparadores)** | **Escenario Típico del Examen** | **Respuesta Ganadora** |
-| --- | --- | --- | --- |
-| **Agilidad** | *Innovación, rapidez, experimentar, fallar rápido, bajo costo.* | "La empresa quiere probar nuevas ideas sin gastar mucho dinero ni esperar meses..." | **Agilidad** |
-| **Elasticidad** | *Auto Scaling, demanda variable, picos de tráfico, estirar/encoger.* | "Una web de flores tiene mucho tráfico en San Valentín pero poco el resto del año..." | **Elasticidad** |
-| **Alta Disponibilidad** | *Redundancia, Multi-AZ, sin interrupciones, tiempo de actividad.* | "¿Cómo se asegura que una aplicación siga funcionando si un centro de datos falla?" | **Alta Disponibilidad** |
-| **Alcance Global** | *Baja latencia, usuarios en todo el mundo, proximidad, milisegundos.* | "Una empresa en España quiere que sus clientes en Australia vean la web rápido..." | **Alcance Global** |
-| **Economía de Escala** | *Precios más bajos, volumen, pagar menos al crecer AWS.* | "¿Por qué AWS puede ofrecer precios tan bajos a sus clientes?" | **Economía de Escala** |
-| **Pago por uso** | *OpEx, gasto variable, sin inversión inicial, eliminar CapEx.* | "La empresa quiere dejar de comprar servidores físicos y pagar solo por lo consumido..." | **Modelo de Consumo** |
-
-------------------------------------------------------------
-
 ### **Servicios de Protección de Recursos**
 
 #### **1. Amazon Inspector**
