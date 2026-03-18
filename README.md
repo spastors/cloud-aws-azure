@@ -448,10 +448,8 @@ de AWS)
 
 ## Tecnología y servicios en la nube (34 % del contenido con puntaje)
 
-- decidir entre opciones como el acceso programático (por ejemplo, las API, los SDK, la CLI), la consola de administración de AWS y la  infraestructura como código (IaC)
-- evaluar los requisitos para determinar si se deben utilizar operaciones únicas o procesos repetibles
-- identificar modelos de implementación (por ejemplo, en la nube, híbridos, en las instalaciones)
 """
+
 ### Infraestructura Global: ¿Dónde viven mis datos?
 
 La infraestructura se divide en tres niveles jerárquicos:
@@ -511,6 +509,9 @@ AWS Purchasing Options:
 
 """
 
+- decidir entre opciones como el acceso programático (por ejemplo, las API, los SDK, la CLI), la consola de administración de AWS y la  infraestructura como código (IaC)
+- evaluar los requisitos para determinar si se deben utilizar operaciones únicas o procesos repetibles
+- identificar modelos de implementación (por ejemplo, en la nube, híbridos, en las instalaciones)
 - describir cómo lograr una alta disponibilidad mediante el uso de varias zonas de disponibilidad
 - reconocer que las zonas de disponibilidad no comparten puntos únicos de error
 - describir cuándo utilizar varias regiones (por ejemplo, recuperación de desastres, continuidad de actividades, baja latencia para los usuarios finales, soberanía de datos)
