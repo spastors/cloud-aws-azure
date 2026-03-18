@@ -63,21 +63,7 @@
 
 ------------------------------------------------------------
 
-### Las 7 Rs: Estrategias de Migración
-
-Estas son las rutas que puede tomar una aplicación. Van desde "no hacer nada" hasta "rehacerlo todo".
-
-| Estrategia | ¿Qué es? | Cuándo usarla (Palabras clave) |
-| --- | --- | --- |
-| **Rehost** (Lift & Shift) | Mover la aplicación tal cual a una instancia EC2. | Migración rápida, poco tiempo para cambios, bajo costo inicial. |
-| **Replatform** (Lift, Tinker & Shift) | Pequeñas optimizaciones sin cambiar el código central (ej. mover la DB a RDS). | Quieres beneficios de servicios gestionados sin reescribir la app. |
-| **Refactor** (Re-architect) | Reescribir la app para que sea nativa de la nube (ej. usar Lambda o Microservicios). | Necesitas máxima escalabilidad, agilidad y rendimiento. Es la más cara/lenta. |
-| **Relocate** | Mover cargas de trabajo de VMware a AWS sin cambiar nada. | Usas VMware en on-prem y quieres seguir usándolo en la nube. |
-| **Repurchase** (Drop and Shop) | Abandonar el software actual y comprar una versión SaaS. | Pasar de un CRM antiguo a Salesforce o de Email propio a Office 365. |
-| **Retain** | No hacer nada por ahora. Mantenerlo en on-premise. | Aplicaciones que no se pueden migrar por cumplimiento o latencia. |
-| **Retire** | Eliminar la aplicación. | Aplicaciones que ya no se usan o son redundantes. |
-
-### Herramientas de Movimiento de Datos
+### Estrategias de Migración: Herramientas de Movimiento de Datos
 
 Cuando tienes terabytes de datos, el internet de tu oficina puede ser el cuello de botella. Aquí es donde entran los "camiones" de AWS.
 
