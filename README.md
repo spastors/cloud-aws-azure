@@ -719,17 +719,76 @@ Un servicio de DNS (Domain Name System) que traduce nombres en direcciones IP (1
 
 ## 🪙 Facturación, precios y soporte
 
+"""
+### El Trío de las Finanzas (Costos)
+
+#### **AWS Budgets**
+
+Es un servicio para establecer presupuestos personalizados que te **alertan** cuando tus costos o uso superan (o se prevé que superen) el límite.
+* **Se confunde con**: **Cost Explorer**. Recuerda: *Budget* es para **alertas/futuro**, *Explorer* es para **análisis/pasado**.
+
+#### **AWS Cost Explorer**
+
+Es una herramienta visual para **visualizar y analizar** tus patrones de gasto históricos. Es como el **Gráfico de barras** de tu app del banco. Sirve para ver en qué te gastaste el dinero el mes pasado.
+* **En el examen**: "Identificar tendencias de costos", "Ver qué servicio gastó más el trimestre pasado", "Visualizar datos de facturación".
+* **Se confunde con**: **Calculadora de precios**. Recuerda: *Explorer* analiza lo que **ya existe** en tu cuenta.
+
+#### **AWS Pricing Calculator**
+
+Es una herramienta web para **estimar** el costo de los servicios *antes* de crearlos.
+
+### Los Planes de Soporte (El "Call Center")
+
+AWS tiene 4 niveles.
+
+| Plan | Público Objetivo | Característica Estrella (Examen) |
+| :--- | :--- | :--- |
+| **Basic** | Todos (Gratis) | Solo acceso a documentación y foros. |
+| **Developer** | Pruebas/Devs | Soporte por **Email** (Horario laboral). 1 persona puede abrir casos. |
+| **Business** | Cargas de producción | **24/7** Teléfono/Chat/Email. Casos ilimitados. Acceso a toda la API de Trusted Advisor. |
+| **Enterprise** | Empresas críticas | **TAM (Technical Account Manager)**. Respuesta en < 15 min para fallos críticos. |
+
+* **¿Qué es el TAM?**: Es una persona asignada a tu empresa para ayudarte a optimizar todo. **Solo está en el plan Enterprise.**
+* **¿Cómo recordarlo?**: 
+    * *Developer* = Un correo si algo falla.
+    * *Business* = Alguien te coge el teléfono a las 3 AM.
+    * *Enterprise* = Tienes el móvil personal del experto (el TAM).
+
+### Optimización y Gobernanza
+
+#### **AWS Trusted Advisor**
+
+Es un consultor automatizado que escanea tu cuenta y te da recomendaciones en **5 pilares**: Costos, Seguridad, Rendimiento, Tolerancia a fallos y Límites de servicio.
+* **Se confunde con**: **AWS Inspector**. Recuerda: *Trusted Advisor* es general (toda la cuenta), *Inspector* es específico (vulnerabilidades de software en EC2).
+
+#### **AWS Organizations**
+
+Es un servicio para gestionar de forma centralizada múltiples cuentas de AWS.
+
+* **Características clave**:
+    1.  **Consolidated Billing (Facturación unificada)**: Pagas todo en una sola factura y puedes aprovechar descuentos por volumen (todas las cuentas suman para bajar el precio).
+    2.  **SCP (Service Control Policies)**: El "freno de mano". Son políticas que limitan qué servicios pueden usar las cuentas de tu organización.
+
+### Tabla Resumen
+
+| Si la pregunta dice... | La respuesta es... | ¡OJO! No es... |
+| :--- | :--- | :--- |
+| **Prever** gastos futuros / Alertas | **AWS Budgets** | Cost Explorer (es pasado). |
+| **Analizar** gráficos de gasto histórico | **AWS Cost Explorer** | Budgets (no son gráficos de análisis). |
+| **TAM** / Soporte técnico dedicado | **Plan Enterprise** | Plan Business (no tiene TAM). |
+| Limitar servicios con **SCP** | **AWS Organizations** | IAM (IAM es para usuarios, SCP para cuentas). |
+| Revisar **límites de servicio** | **Trusted Advisor** | Service Quotas (aunque se parecen, TA te avisa si estás cerca del límite). |
+
+#### Caso estrella de examen: SCP vs IAM
+* **IAM**: "Juan puede entrar a S3". (Nivel Usuario).
+* **SCP**: "En esta cuenta NADIE puede usar Redshift". (Nivel Cuenta). **Si la SCP prohíbe algo, da igual lo que diga el permiso de IAM, no funcionará.**
+"""
+
 - opciones de compra de computación (por ejemplo, instancias bajo demanda, instancias reservadas, instancias de spot, Savings Plans, hosts dedicados, instancias dedicadas, reservas de capacidad)
 - opciones y niveles de almacenamiento
-- comprender los usos y las capacidades adecuados de AWS Budgets y el explorador de costos de AWS
-- comprender los usos y las capacidades adecuados de la calculadora de precios de AWS
-- comprender la facturación unificada de AWS Organizations y la asignación de costos
 - comprender los distintos tipos de etiquetas de asignación de costos y su relación con los informes de facturación (por ejemplo, Informe de costo y uso de AWS)
-- localizar documentos técnicos, blogs y documentación de AWS en los sitios web oficiales de AWS
 - identificar y localizar los recursos técnicos de AWS (por ejemplo, recomendaciones de AWS, AWS Knowledge Center o AWS re:Post)
-- identificar las opciones de AWS Support para los clientes de AWS (por ejemplo, comunidades y servicio al cliente, AWS Developer Support, AWS Business Support, AWS Enterprise On-Ramp Support, AWS Enterprise
-Support)
-- identificar el rol de Trusted Advisor, el Panel de AWS Health y la API de AWS Health para ayudar a administrar y supervisar los entornos para la optimización de costos
+- AWS Health 
 - identificar el rol del centro de confianza y seguridad de AWS para denunciar el abuso de los recursos de AWS
 - comprender el rol de los socios de AWS (por ejemplo, AWS Marketplace, proveedores de software independientes, integradores de sistemas)
 - identificar los beneficios de ser socio de AWS (por ejemplo, formación y certificación para socios, eventos para socios, descuentos por volumen para socios)
