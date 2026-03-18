@@ -1,6 +1,5 @@
 # Guía de Estudio AWS Certified Cloud Practitioner (CLF-C02)
 
-
 ## ☁️ Conceptos de la nube
 
 ### **A. Agilidad (Agility)**
@@ -269,7 +268,6 @@ Es el proceso de **ajustar el tipo y tamaño de los recursos** a tus necesidades
   
 ## 🔐 Seguridad y conformidad
 
-""" 
 ### Modelo de Responsabilidad Compartida
 
 Se debe distinguir entre la seguridad **"DE"** la nube y la seguridad **"EN"** la nube.
@@ -435,20 +433,7 @@ Estos servicios registran qué pasa y cómo cambian las cosas.
 * **KMS vs. Secrets Manager:** Si la pregunta es sobre "cifrar discos", es **KMS**. Si es sobre "guardar y rotar la contraseña de la base de datos", es **Secrets Manager**.
 * **WAF vs. Shield:** WAF es para **bloquear** ataques específicos (como hackers intentando entrar). Shield es para **sobrevivir** a una inundación masiva que quiere tumbar tu web (DDoS).
 
-------------------------------------------------------------
-
-"""
-
-- comprender las necesidades de conformidad entre ubicaciones geográficas o sectores (por ejemplo, conformidad de AWS)
-- reconocer los requisitos de conformidad que varían entre los servicios de AWS
-- comprender que los productos de seguridad de terceros están disponibles en AWS Marketplace
-- identificar dónde está disponible la información de seguridad de AWS (por ejemplo, AWS Knowledge Center, AWS Security Center, Blog de seguridad
-de AWS)
-- comprender el uso de los servicios de AWS para identificar problemas de seguridad (por ejemplo, AWS Trusted Advisor)
-
 ## 👨🏻‍💻 Tecnología y servicios en la nube
-
-"""
 
 ### Infraestructura Global: ¿Dónde viven mis datos?
 
@@ -697,29 +682,67 @@ Un servicio de DNS (Domain Name System) que traduce nombres en direcciones IP (1
 | "Seguridad sin estado (Stateless) para subred" | **NACL** |
 | "Salida a internet para subredes privadas" | **NAT Gateway** |
 
-"""
+------------------------------------------------------------------
 
-- decidir entre opciones como el acceso programático (por ejemplo, las API, los SDK, la CLI), la consola de administración de AWS y la  infraestructura como código (IaC)
-- evaluar los requisitos para determinar si se deben utilizar operaciones únicas o procesos repetibles
-- identificar modelos de implementación (por ejemplo, en la nube, híbridos, en las instalaciones)
-- describir cuándo utilizar varias regiones (por ejemplo, recuperación de desastres, continuidad de actividades, baja latencia para los usuarios finales, soberanía de datos)
-- reconocer que el escalado automático proporciona elasticidad
-- identificar los propósitos de los balanceadores de carga
-- decidir cuándo utilizar las bases de datos alojadas en Elastic Compute Cloud o las bases de datos administradas por AWS
-- describir los casos de uso de AWS Backup
-- comprender los servicios de IA/ML y las tareas que realizan (por ejemplo, IA de Amazon SageMaker, Amazon Lex, Amazon Kendra)
-- identificar los servicios de análisis de datos (por ejemplo, Amazon Athena, Amazon Kinesis, AWS Glue, Amazon QuickSight)
-- servicios de integración de aplicaciones de Amazon EventBridge, Amazon Simple Notification Service (Amazon SNS) y Amazon Simple Queue Service (Amazon SQS)
-- servicios de aplicaciones empresariales de Amazon Connect y Amazon Simple Email Service (Amazon SES)
-- servicios de habilitación para clientes (por ejemplo, AWS Support)
-- servicios y capacidades de herramientas para desarrolladores (por ejemplo, AWS CodeBuild, AWS CodePipeline y AWS X-Ray)
-- servicios de cómputo para usuarios finales de Amazon AppStream 2.0, Amazon WorkSpaces y Amazon WorkSpaces Secure Browser
-- servicios web y móviles de frontend de AWS Amplify y AWS AppSync
-- servicios de IoT (por ejemplo, AWS IoT Core)
+### IA & Machine Learning 
+
+#### Amazon SageMaker
+
+Plataforma completa para que desarrolladores y científicos de datos **construyan, entrenen y desplieguen** sus propios modelos de Machine Learning.
+
+#### Amazon Rekognition
+
+Análisis de imágenes y vídeo mediante IA. Identifica objetos, personas, texto y escenas.
+* **Cómo recordarlo**: **Re-cognition** = Reconocer caras u objetos en fotos.
+
+#### Amazon Polly
+
+Convierte texto en habla realista (Text-to-Speech).
+
+#### Amazon Lex
+
+Servicio para crear interfaces conversacionales (Chatbots) usando voz y texto.
+* **Cómo recordarlo**: Es el cerebro de **ALEXA**. L-EX -> Al-EX-a.
+
+### Integración de Aplicaciones
+
+Estos servicios sirven para que diferentes partes de tu aplicación se hablen entre sí sin "romperse" si una falla.
+
+#### Amazon SQS (Simple Queue Service)
+
+Un servicio de **colas** de mensajes. Permite enviar, almacenar y recibir mensajes entre componentes de software.
+* **En el examen**: Palabra clave: **Desacoplamiento (Decoupling)**. Sirve para que si el receptor falla, el mensaje no se pierda. Es un modelo **Pull** (el receptor pide el mensaje).
+
+#### Amazon SNS (Simple Notification Service)
+
+Servicio de mensajería **Push** (Pub/Sub). Envía notificaciones a usuarios o aplicaciones.
+
+#### Amazon EventBridge
+
+Un bus de eventos que facilita la conexión de aplicaciones usando datos de tus propios servicios, de AWS y de aplicaciones SaaS externas.
+* **Cómo recordarlo**: Es el **Director de Orquesta**. Reacciona a cosas que pasan: "Si pasa X en S3, haz Y en Lambda". 
+
+### AWS Marketplace
+
+Un catálogo digital con miles de listados de software de proveedores externos (ISV) que funcionan en AWS.
+
+### Tabla Resumen
+
+| Si la pregunta dice... | La respuesta es... | ¡OJO! No es... |
+| :--- | :--- | :--- |
+| **Desacoplar** componentes / Colas | **Amazon SQS** | SNS (SNS es para notificar, no para encolar). |
+| Enviar **Emails o SMS** masivos | **Amazon SNS** | SQS (SQS no envía emails). |
+| Entrenar **tu propio modelo** de ML | **Amazon SageMaker** | Rekognition (Rekognition ya está entrenado). |
+| Crear un **Chatbot** | **Amazon Lex** | Polly (Polly solo lee texto, no conversa). |
+| Comprar software de **terceros** | **AWS Marketplace** | AWS Artifact (Artifact es para documentos legales). |
+
+
+#### Caso estrella de examen: ¿SQS o SNS?
+* Si la aplicación necesita "aguantar" mensajes porque el servidor está saturado: **SQS**.
+* Si la aplicación necesita "avisar" a 5 sistemas distintos a la vez que ha ocurrido una venta: **SNS**.
 
 ## 🪙 Facturación, precios y soporte
 
-"""
 ### El Trío de las Finanzas (Costos)
 
 #### **AWS Budgets**
@@ -782,182 +805,9 @@ Es un servicio para gestionar de forma centralizada múltiples cuentas de AWS.
 #### Caso estrella de examen: SCP vs IAM
 * **IAM**: "Juan puede entrar a S3". (Nivel Usuario).
 * **SCP**: "En esta cuenta NADIE puede usar Redshift". (Nivel Cuenta). **Si la SCP prohíbe algo, da igual lo que diga el permiso de IAM, no funcionará.**
-"""
-
-- opciones de compra de computación (por ejemplo, instancias bajo demanda, instancias reservadas, instancias de spot, Savings Plans, hosts dedicados, instancias dedicadas, reservas de capacidad)
-- opciones y niveles de almacenamiento
-- comprender los distintos tipos de etiquetas de asignación de costos y su relación con los informes de facturación (por ejemplo, Informe de costo y uso de AWS)
-- identificar y localizar los recursos técnicos de AWS (por ejemplo, recomendaciones de AWS, AWS Knowledge Center o AWS re:Post)
-- AWS Health 
-- identificar el rol del centro de confianza y seguridad de AWS para denunciar el abuso de los recursos de AWS
-- comprender el rol de los socios de AWS (por ejemplo, AWS Marketplace, proveedores de software independientes, integradores de sistemas)
-- identificar los beneficios de ser socio de AWS (por ejemplo, formación y certificación para socios, eventos para socios, descuentos por volumen para socios)
-- identificar los servicios clave que ofrece AWS Marketplace (por ejemplo, administración de costos, gobernanza y derechos)
-- identificar las opciones de asistencia técnica disponibles en AWS (por ejemplo, AWS Professional Services, arquitectos de soluciones de AWS)
 
 
-### Servicios y características de AWS
-
-Análisis:
-- Amazon Athena
-- Amazon EMR
-- AWS Glue
-- Amazon Kinesis
-- Amazon OpenSearch Service
-- Amazon QuickSight
-- Amazon Redshift
-
-Integración de aplicaciones:
-- Amazon EventBridge
-- Amazon Simple Notification Service (Amazon SNS)
-- Amazon Simple Queue Service (Amazon SQS)
-- AWS Step Functions
-
-Aplicaciones empresariales:
-- Amazon Connect
-- Amazon Simple Email Service (Amazon SES)
-
-Administración financiera en la nube:
-- AWS Budgets
-- Informes de costo y uso de AWS
-- Explorador de costos de AWS
-- AWS MarketplaceComputación
-- AWS Batch
-- Amazon Elastic Compute Cloud
-- AWS Elastic Beanstalk
-- Amazon Lightsail
-- AWS Outposts
-
-Contenedores:
-- Amazon Elastic Container Registry (Amazon ECR)
-- Amazon Elastic Container Service (Amazon ECS)
-- Amazon Elastic Kubernetes Service (Amazon EKS)
-
-Habilitación para clientes:
-- AWS Support
-
-Base de datos:
-- Amazon Aurora
-- Amazon DocumentDB
-- Amazon DynamoDB
-- Amazon ElastiCache
-- Amazon Neptune
-- Amazon RDS
-
-Herramientas para desarrolladores:
-- AWS CLI
-- AWS CodeBuild
-- AWS CodePipeline
-- AWS X-Ray
-
-AWS End User Computing:
-- Amazon AppStream 2.0
-- Amazon WorkSpaces
-- Amazon WorkSpaces Secure Browser
-
-Frontend web y móvil:
-- AWS Amplify
-- AWS AppSync
-
-Internet de las cosas (IoT):
-- AWS IoT Core
-
-Machine learning:
-- Amazon Comprehend
-- Amazon Kendra
-- Amazon Lex
-- Amazon Polly
-- Amazon Q
-- Amazon Rekognition
-- IA de Amazon SageMaker
-- Amazon Textract
-- Amazon Transcribe
-- Amazon Translate
-
-Administración y gobernanza:
-- AWS Auto Scaling
-- AWS CloudFormation
-- AWS CloudTrail
-- Amazon CloudWatch
-- AWS Compute Optimizer
-- AWS Config
-- AWS Control Tower
-- Panel de AWS Health
-- AWS License Manager
-- Consola de administración de AWS
-- AWS Organizations
-- AWS Service Catalog
-- Service Quotas
-- AWS Systems Manager
-- AWS Trusted Advisor
-- Herramienta de AWS Well-Architected
-
-Migración y transferencia:
-- AWS Application Discovery Service
-- AWS Application Migration Service
-- AWS Database Migration Service (AWS DMS)
-- Migration Evaluator
-- AWS Migration Hub
-- Herramienta de conversión de esquemas de AWS (AWS SCT)
-- AWS Snow Family
-
-Redes y entrega de contenido:
-- Amazon API Gateway
-- Amazon CloudFront
-- AWS Direct Connect
-- AWS Global Accelerator
-- AWS PrivateLink
-- Amazon Route 53
-- AWS Transit Gateway
-- Amazon VPC
-- AWS VPN
-- AWS Site-to-Site VPN
-- AWS Client VPN
-
-Seguridad, identidad y conformidad:
-- AWS Artifact
-- AWS Audit Manager
-- AWS Certificate Manager (ACM)
-- AWS CloudHSM
-- Amazon Cognito
-- Amazon Detective
-- AWS Directory Service
-- AWS Firewall Manager
-- Amazon GuardDuty
-- AWS Identity and Access Management (AWS IAM)
-- AWS IAM Identity Center
-- Amazon Inspector
-- AWS Key Management Service (AWS KMS)
-- Amazon Macie
-- AWS Resource Access Manager (AWS RAM)
-- AWS Secrets Manager
-- AWS Security Hub
-- AWS Shield
-- AWS WAF
-
-Sin servidor:
-- AWS Fargate
-- AWS Lambda
-
-Almacenamiento:
-- AWS Backup
-- Amazon Elastic Block Store (Amazon EBS)
-- Amazon Elastic File System (Amazon EFS)
-- Recuperación de desastres elástica de AWS
-- Amazon FSx
-- Amazon S3
-- Amazon S3 Glacier
-- AWS Storage Gateway
-
-Herramientas para desarrolladores (fuera de alcance):
-- AWS Application Composer
-- AWS CodeArtifact
-- AWS CodeDeploy
-- Amazon CodeGuru
-- AWS CloudShell
-- AWS Device Farm
-
---------------------------------
+-------------------------------
 
 ## Fundamentos de Cloud Computing
 
