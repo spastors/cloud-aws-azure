@@ -100,49 +100,6 @@ Migrar una base de datos es delicado porque no puedes permitir que los datos se 
 
 ------------------------------------------------------------
 
-### IAM: Identity and Access Management
-
-IAM es gratuito y es un servicio **Global** (no se configura por región). Se rige por el **Principio de Mínimo Privilegio**: dar solo los permisos necesarios para realizar una tarea y nada más.
-
-#### Pilares de IAM
-
-1. **Usuarios:** Identidades persistentes para personas o aplicaciones. (Ej: "Juan" o "App_Ventas").
-2. **Grupos:** Colecciones de usuarios. Es mejor dar permiso a un grupo "Administradores" que a cada usuario por separado.
-3. **Roles:** Identidades **temporales**. No tienen contraseña ni llaves fijas. Se usan para que un servicio (como EC2) hable con otro (como S3) de forma segura.
-4. **Políticas:** Documentos en formato **JSON** que definen qué se puede hacer.
-   
-    * *Efecto:* Allow (Permitir) o Deny (Denegar).
-    * *Acción:* Qué quieres hacer (ej: `s3:ListBucket`).
-    * *Recurso:* Sobre qué (ej: un cubo específico).
-
-#### El Usuario Raíz (Root User)
-
-Es el usuario que se crea con el email al abrir la cuenta. Tiene poder absoluto.
-
-* **Regla de oro:** No usarlo para el día a día. Crea un usuario administrador en IAM y guarda el Root bajo llave.
-* **Seguridad Obligatoria:** Siempre, siempre activar **MFA** (Multi-Factor Authentication).
-* **Tareas exclusivas de Root:** Cerrar la cuenta, cambiar el plan de soporte, cambiar datos de facturación.
-
-#### IAM Identity Center (Antiguo AWS SSO)
-
-Es la evolución de IAM para empresas con muchas cuentas o que ya usan otros sistemas.
-
-* **Single Sign-On (SSO):** Un solo usuario y contraseña para entrar a múltiples cuentas de AWS.
-* **Integración:** Se puede conectar con Microsoft Active Directory o Google Workspace.
-* **Uso:** Centraliza el acceso si tu empresa tiene 50 cuentas diferentes.
-
-#### Tabla Resumen: Identidades y Accesos en IAM
-
-| Elemento | ¿Qué es? | Caso de uso típico | Tip de Examen |
-| --- | --- | --- | --- |
-| **Usuario Raíz (Root)** | El creador de la cuenta. Poder absoluto e ilimitado. | **Solo** para tareas de facturación o cerrar la cuenta. | **¡MFA obligatorio!** Nunca se usa para el día a día. |
-| **Usuario IAM** | Una persona o aplicación dentro de tu organización. | Un desarrollador nuevo que necesita acceder a la consola. | No compartas credenciales; un usuario por persona física. |
-| **Grupo IAM** | Colección de usuarios con los mismos permisos. | Grupo "Soporte" que tiene permiso para ver logs de CloudWatch. | Es más fácil gestionar permisos por grupos que uno por uno. |
-| **Rol IAM** | Identidad **temporal** sin contraseña (usa "asunción"). | Permitir que una **instancia EC2** guarde archivos en un bucket S3. | Es más seguro que los usuarios para servicios (no hay claves fijas). |
-| **Política (Policy)** | Documento **JSON** que define qué está permitido. | Definir que "Pepe" solo puede leer (Read-Only) en S3. | Sigue siempre el **Principio de Mínimo Privilegio**. |
-
-------------------------------------------------------------
-
 ### El Escudo de Defensa (Servicios de Seguridad)
 
 Estos servicios protegen proactivamente tu infraestructura contra ataques y filtraciones.
