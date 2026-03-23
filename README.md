@@ -546,6 +546,8 @@ Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-priva
 | **AWS Elastic Disaster Recovery** | Servicio orientado a recuperación ante desastres de servidores y cargas completas. | "DR", "failover", "recuperar entorno tras desastre" | No debe confundirse con backup clásico; busca recuperación operativa. |
 | **Amazon S3 Glacier** | Familia de almacenamiento orientada a archivado de bajo costo y acceso menos inmediato. | "archivo a largo plazo", "retención", "recuperación lenta" | No es la mejor opción si el acceso debe ser frecuente o inmediato. |
 
+> **S3** tiene una función nativa para alojar sitios web estáticos de forma extremadamente económica y escalable.
+
 #### Funciones de S3 que suelen caer en examen
 
 | Función o concepto | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
