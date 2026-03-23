@@ -958,142 +958,43 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 
 ## Fundamentos de Cloud Computing
 
-La **computación en la nube** consiste en ofrecer recursos informáticos (cómputo, almacenamiento, bases de datos, etc.) *bajo demanda* a través de Internet, siguiendo un modelo de pago por uso. Esto elimina la necesidad de comprar y gestionar hardware propio, y permite a las organizaciones escalar con rapidez según la demanda. Entre las ventajas clave destacan la **agilidad** (aprovisionar recursos en minutos), la **elasticidad** (escalar automáticamente) y el **ahorro de costes**, al pagar solo por lo consumido.
-
 <img width="708" height="461" alt="image" src="https://github.com/user-attachments/assets/321729dd-bf99-4b9c-a86f-53d7f198514b" />
-
-
-En la nube, el gasto se transforma de **CAPEX** (inversiones en infraestructuras fijas, como servidores y licencias) a **OPEX** (costes operativos variables, según el uso). Esto reduce el *Costo Total de Propiedad* (TCO), ya que minimiza el CAPEX inicial y ajusta el gasto al consumo real. Por ejemplo, en un entorno propio (on-premises) se asumen grandes CAPEX y costes de mantenimiento, mientras que en la nube el coste es más predecible y flexible.
 
 ## Modelos de servicio y de despliegue
 
-- **IaaS, PaaS y SaaS:** Son modelos de servicio en la nube que definen el nivel de control del usuario.
-  - En **IaaS (Infraestructura como Servicio)**, el proveedor gestiona el hardware y la virtualización, mientras que el cliente controla el sistema operativo, el middleware y las aplicaciones.
-  - En **PaaS (Plataforma)**, el proveedor también gestiona el sistema operativo y el runtime, lo que permite al usuario centrarse en las aplicaciones.
-  - En **SaaS (Software)**, el proveedor gestiona todo y el usuario solo utiliza la aplicación final. La siguiente tabla compara quién controla cada componente en IaaS, PaaS y SaaS:
-
 <img width="778" height="727" alt="image" src="https://github.com/user-attachments/assets/2da8eebd-a7db-4e39-9222-15e450cdd1e2" />
-
-Cada modelo tiene casos de uso. Por ejemplo, IaaS (EC2, EBS) es ideal si necesitas control total del entorno; PaaS (AWS Elastic Beanstalk, RDS) acelera el desarrollo sin gestionar infraestructura; y SaaS (Gmail, Salesforce) ofrece aplicaciones listas para usar. 
-
-**Nubes públicas, privadas, híbridas y multicloud:**
-
-- **Nube pública:** Infraestructura compartida, proporcionada por terceros (p. ej., AWS, Azure, GCP) y utilizada *por muchos clientes*. Ofrece alta escalabilidad y costes bajos gracias al pago por uso, pero un menor control sobre la infraestructura.
-- **Nube privada:** Infraestructura dedicada a una sola organización, ya sea en sus propias instalaciones o en un centro del proveedor. Ofrece mayor control, seguridad y cumplimiento, pero requiere una inversión elevada (mayor CAPEX) y gestión propia.
-- **Nube híbrida:** Combina nube pública y privada. Permite, por ejemplo, mantener datos sensibles en la nube privada y procesarlos en la pública cuando la demanda aumenta, conectando ambos entornos y compartiendo datos. Es útil para combinar escalabilidad y seguridad.
-- **Multicloud:** Uso de servicios de *varios* proveedores públicos a la vez. Reduce la dependencia de un solo proveedor y permite aprovechar las fortalezas de cada nube, pero exige gestionar la compatibilidad y la integración.
-
-Cada tipo responde a necesidades distintas. Por ejemplo, una empresa puede usar AWS (pública) para cargas generales y mantener su propio centro (privada) para datos críticos, o usar AWS + Azure simultáneamente (multicloud) para evitar vendor lock-in.
-
-## Principales proveedores de la nube
-
-Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, **Microsoft Azure** y **Google Cloud Platform (GCP)**. Ofrecen conjuntos de servicios globales similares. AWS es el proveedor más maduro y con mayor amplitud de servicios, seguido por Azure (fuerte en entornos empresariales) y GCP (con foco en datos y ML). También existen otros proveedores relevantes, como IBM Cloud, Oracle Cloud y Alibaba Cloud, entre otros. En general, AWS destaca por su catálogo muy extenso y su presencia global, lo que lo convierte en una buena opción para empezar en la nube.
 
 ## Servicios principales de AWS
 
 <img width="1537" height="739" alt="image" src="https://github.com/user-attachments/assets/38038130-6d3e-46cd-a2de-36a1a6b5dbcf" />
-
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fba67e26-f523-4b24-8cd5-22d4ef3ba15c" />
-
 <img width="1215" height="912" alt="image" src="https://github.com/user-attachments/assets/fcfe20bd-7a20-4cef-9cbb-10a003739b1a" />
-
 <img width="1618" height="860" alt="image" src="https://github.com/user-attachments/assets/40a57f65-6315-48c9-8ccb-e7d8414caf31" />
-
 <img width="1745" height="534" alt="image" src="https://github.com/user-attachments/assets/0a5c3991-74a8-431a-a0b3-7f61a6882224" />
-
 <img width="1850" height="1080" alt="image" src="https://github.com/user-attachments/assets/9309e35e-7153-4c4b-91e2-8cde8b4a2bcd" />
-
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f9236ed9-7523-4c95-b9c1-f4e92a977836" />
-
 <img width="1335" height="948" alt="image" src="https://github.com/user-attachments/assets/c4d216c8-e064-4ff9-886a-cffe77ed0380" />
-
 <img width="916" height="955" alt="image" src="https://github.com/user-attachments/assets/5eb7412c-2e54-4df2-9b74-2fda8ce9643e" />
-
 <img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/29e3610b-31c0-4dd0-a8a9-a5a02f4a75ac" />
-
 <img width="1919" height="1080" alt="image" src="https://github.com/user-attachments/assets/e53232b8-9bff-44af-a0f9-aef9f6bef7ee" />
-
-
-**Cómputo (Compute):**
-
-- **Amazon EC2:** Máquinas virtuales configurables en la nube. Permite elegir sistema operativo, CPU, memoria y almacenamiento. Se paga por segundo u hora de uso. Incluye instancias on-demand (sin compromiso, pago por uso) y opciones de ahorro, como instancias reservadas o Savings Plans, además de Spot (capacidad ociosa con hasta ~90% de descuento).
-
 <img width="1681" height="876" alt="image" src="https://github.com/user-attachments/assets/96943499-a954-4caa-933b-b514f1bba01b" />
-
-- **AWS Auto Scaling / EC2 Auto Scaling** es un servicio que ajusta automáticamente la capacidad de sus recursos (como instancias EC2, ECS o DynamoDB) para mantener un rendimiento óptimo y alta disponibilidad, aumentando o disminuyendo la capacidad según la demanda en tiempo real. Esto optimiza costos al eliminar recursos innecesarios.
-- **Amazon WorkSpaces** es un servicio gestionado de escritorio como servicio (DaaS) en la nube que permite aprovisionar escritorios virtuales seguros y persistentes o no persistentes con Windows, Linux o Ubuntu. Los usuarios acceden a sus aplicaciones y recursos desde cualquier dispositivo, facilitando el trabajo remoto sin necesidad de gestionar hardware o infraestructura compleja.
-- **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
-- **AWS Glue** es un servicio de integración de datos serverless (sin servidor) y totalmente administrado que facilita la detección, preparación, transformación y carga (ETL) de grandes volúmenes de datos para análisis, aprendizaje automático y desarrollo de aplicaciones. Automatiza tareas complejas mediante un Data Catalog centralizado, compatible con Apache Spark y herramientas visuales como Glue Studio.
-- **AWS Elastic Beanstalk** es un servicio "Plataforma como Servicio" (PaaS) de Amazon Web Services que facilita la implementación y escalado rápido de aplicaciones web y servicios (desarrollados en Java, .NET, PHP, Node.js, Python, Ruby, Go y Docker) sin gestionar la infraestructura subyacente. Solo necesitas subir tu código y el servicio gestiona automáticamente el aprovisionamiento, balanceo de carga, escalado y monitoreo.
-
-
-**Contenedores (Containers):**
-
-- **Amazon ECS/EKS/Fargate:** Servicios para ejecutar contenedores Docker. **ECS** es el orquestador propio de AWS. **EKS** es Kubernetes gestionado. **Fargate** permite lanzar contenedores sin gestionar servidores subyacentes. Estos servicios facilitan el despliegue de microservicios y aplicaciones en contenedores.
-- **Amazon Elastic Container Registry (ECR)** es un servicio de registro de contenedores (Docker y OCI) totalmente gestionado y seguro que permite almacenar, administrar y desplegar imágenes de contenedores. Destaca por su alta disponibilidad, integración nativa con AWS (ECS, EKS, Lambda) y funciones de seguridad como el escaneo de vulnerabilidades.
-- **Amazon Elastic Kubernetes Service (Amazon EKS)** es un servicio administrado de Kubernetes que facilita la ejecución de aplicaciones en contenedores en la nube de AWS o en centros de datos propios. Automatiza la gestión, escalado y alta disponibilidad del plano de control y nodos, eliminando la necesidad de instalar o configurar Kubernetes manualmente
-
-**Almacenamiento:**
-- **Amazon S3:** Almacenamiento de objetos en la nube (archivos, imágenes y copias de seguridad). Es altamente escalable y redundante. Soporta distintos *niveles de almacenamiento* (Standard, Infrequent Access, Glacier, etc.) según la frecuencia de acceso. Es ideal para datos estáticos con control de versiones o copias de seguridad. Bucket (contenedor lógico de objetos S3, debe ser nombre único en todo el mundo).
-  - **Amazon AWS Access Analyzer for S3** es una funcionalidad integrada en la consola de S3 que utiliza razonamiento automatizado para identificar qué buckets de S3 son accesibles públicamente o desde otras cuentas de AWS. Ayuda a los administradores a supervisar políticas, detectar riesgos de seguridad y prevenir fugas de datos no deseadas
-  - **S3 Standard**: Ideal para datos de acceso frecuente, alto rendimiento y baja latencia.
-  - **S3 Intelligent-Tiering**: Mueve automáticamente los datos entre dos niveles de acceso (frecuente e infrecuente) cuando cambian los patrones de acceso, sin impacto en el rendimiento.
-  - **S3 Standard-Infrequent Access (S3 Standard-IA)**: Diseñado para datos a los que se accede con menos frecuencia pero que requieren un acceso rápido (milisegundos) cuando es necesario.
-  - **S3 One Zone-Infrequent Access (S3 One Zone-IA)**: Similar a Standard-IA, pero almacena los datos en una sola zona de disponibilidad, lo que reduce costos, siendo ideal para datos reproducibles.
-  - **S3 Glacier Instant Retrieval**: Nivel de archivo que ofrece recuperación en milisegundos para datos a los que se accede raramente.
-  - **S3 Glacier Flexible Retrieval**: (Antes Glacier) Almacenamiento de bajo costo para copias de seguridad con tiempos de recuperación desde minutos a horas.
-  - **S3 Glacier Deep Archive**: La opción de almacenamiento más económica para datos a largo plazo (cumplimiento normativo) a los que se accede una o dos veces al año.
-  - **S3 Express One Zone**: Almacenamiento de mayor rendimiento, diseñado para ofrecer acceso a datos en milisegundos de un solo dígito
-- **Amazon EBS:** Volúmenes de disco en bloque para usar con instancias EC2 (similar a discos duros en la nube).
-- **Amazon Elastic File System (EFS)** es un servicio de almacenamiento de archivos en la nube, gestionado, escalable y compartido, diseñado para AWS y recursos locales. Utiliza el protocolo NFS (Network File System), permitiendo que múltiples instancias EC2, contenedores o servidores accedan simultáneamente a los mismos datos en diferentes zonas de disponibilidad.
-- **AWS Storage Gateway** es un servicio de almacenamiento híbrido que conecta entornos locales (on-premise) con la nube de Amazon Web Services (AWS). Proporciona acceso ilimitado a almacenamiento en la nube (S3, Glacier, EBS) sin cambiar aplicaciones existentes, utilizando protocolos estándar (NFS, SMB, iSCSI) y caché local para baja latencia
-- **AWS Backup** es un servicio de gestión de copias de seguridad totalmente administrado y centralizado que automatiza la protección de datos en la nube de AWS y entornos híbridos. Permite configurar políticas, programar respaldos y gestionar retenciones para servicios como Amazon EC2, RDS, EBS, S3 y DynamoDB, facilitando el cumplimiento normativo.
-- **AWS Lake Formation** es un servicio administrado que simplifica la creación, gestión y protección de data lakes (lagos de datos) en Amazon S3 en cuestión de días, no meses. Centraliza la gobernanza, permitiendo definir políticas de seguridad detalladas a nivel de columna, fila o tabla para controlar el acceso a la información.
-- **AWS Instance Store** es un almacenamiento temporal de alto rendimiento a nivel de bloque, físicamente conectado al host de una instancia EC2. Es ideal para datos efímeros como cachés, buffers y datos temporales que no necesitan persistencia. Los datos se pierden si la instancia se detiene o falla
-
 <img width="1728" height="910" alt="image" src="https://github.com/user-attachments/assets/5d5819d8-5769-4244-9f27-f6b83d5b0d76" />
-
 <img width="728" height="880" alt="image" src="https://github.com/user-attachments/assets/7ed5671b-03fe-44f9-a812-e28a84634906" />
-
-**Bases de datos:**
-
 <img width="1624" height="1000" alt="image" src="https://github.com/user-attachments/assets/17aed05f-740f-48cd-961c-a086755a3169" />
-
-- **Amazon RDS (Relation Database Service):** Bases de datos relacionales gestionadas (MySQL, PostgreSQL, SQL Server, Oracle y Aurora). AWS se encarga de aplicar parches, replicar y hacer copias de seguridad. Soporta **Multi-AZ** para alta disponibilidad (réplicas en distintas AZs).
-
 <img width="1244" height="587" alt="image" src="https://github.com/user-attachments/assets/cddbd8c6-fe66-4573-802d-74779ecbfda3" />
-
-- **Amazon Aurora**: Base de datos relacional de alto rendimiento compatible con MySQL/PostgreSQL.
-- **Amazon DynamoDB:** es un servicio de base de datos NoSQL de clave-valor y documentos, totalmente administrado y sin servidor (serverless) de Amazon Web Services (AWS), que ofrece un rendimiento rápido y predecible (en milisegundos) con escalabilidad automática. Es ideal para aplicaciones modernas, móviles, web, IoT y juegos que requieren alta disponibilidad y manejo de gran volumen de datos.
-- **Amazon Redshift** es un servicio de almacenamiento de datos (data warehouse) en la nube, totalmente gestionado y a escala de petabytes, diseñado para analítica de alto rendimiento. Utiliza almacenamiento columnar y procesamiento paralelo masivo (MPP) para consultas rápidas, permitiendo analizar grandes volúmenes de datos usando SQL y herramientas de BI convencionales a bajo costo.
-
 <img width="1579" height="940" alt="image" src="https://github.com/user-attachments/assets/59c58a55-9c92-4a91-8bf7-923a2abba29a" />
-
-- **Amazon Neptune**: Base de datos orientada a grafos.
-- **DocumentDB** (compatible con MongoDB)
-- **Amazon ElastiCache:** Servicio de caché en memoria compatible con Redis o Memcached para mejorar el rendimiento de aplicaciones.
-
 <img width="1577" height="945" alt="image" src="https://github.com/user-attachments/assets/2255e526-d3a3-4779-88c5-811ab01a230e" />
-
-**Redes y entrega de contenido (Networking & Content Delivery)**
-
-- **Amazon VPC:** Red virtual privada en AWS donde se definen subredes, tablas de enrutamiento y gateways. Cada cuenta de AWS inicia con una VPC por región. Dentro de la VPC se crean *subredes* (públicas o privadas) y recursos (EC2, RDS, etc.). Se conecta al exterior mediante una **Puerta de Enlace a Internet (Internet Gateway)** y se pueden usar **NAT Gateways** para el tráfico saliente de subredes privadas. VPC actúa como una red tradicional propia en la nube.
-
 <img width="1786" height="751" alt="image" src="https://github.com/user-attachments/assets/9537aa49-102e-4fd3-9623-b341b1cc3dd8" />
-
 <img width="1649" height="762" alt="image" src="https://github.com/user-attachments/assets/66371141-a3be-4c27-b34e-a1d28e1f1e9c" />
-
-- **Grupos de seguridad:** Firewalls a nivel de instancia EC2. Controlan qué tráfico entra o sale de cada servidor (por ejemplo, permitir SSH solo desde ciertas IPs). Son *stateful*: permiten respuestas automáticamente cuando una instancia origina tráfico.
-- **Listas de control de acceso (Network ACL -> NACL):** Firewalls a nivel de subred, que evalúan el tráfico de entrada y salida por reglas (stateless).
-- **Amazon Route 53:** Servicio DNS escalable y de alta disponibilidad. Traduce nombres de dominio a IPs y permite enrutar tráfico de forma inteligente (geolocalización y latencia). También soporta balanceo de carga simple a Load Balancers o puntos finales.
-- **Elastic Load Balancing (ELB):** Distribuye automáticamente el tráfico entre múltiples instancias en una o más zonas de disponibilidad. Aumenta la disponibilidad y la tolerancia a fallos. Soporta distintos tipos (Application Load Balancer para HTTP/HTTPS, Network Load Balancer de baja latencia y Gateway Load Balancer para tráfico L4).
-- **Amazon CloudFront:** Red de entrega de contenido (CDN) global para distribuir contenido (contenidos web estáticos y dinámicos, como HTML, CSS, JavaScript e imágenes, así como vídeos) con baja latencia.
-
 <img width="1852" height="794" alt="image" src="https://github.com/user-attachments/assets/e33c0ad9-b1e7-4516-9f4f-6135c684fb11" />
-
 <img width="1834" height="933" alt="image" src="https://github.com/user-attachments/assets/7dc0e166-02b5-45c9-8da1-e96a26db6d62" />
+<img width="1231" height="752" alt="image" src="https://github.com/user-attachments/assets/0bbb6e8e-477a-4c86-95aa-84bd387cd295" />
+<img width="956" height="733" alt="image" src="https://github.com/user-attachments/assets/b3897885-dff2-407f-85d4-560d3b985a69" />
+<img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/01afeb5c-b3e3-4bf5-b41f-d516754e5527" />
+<img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/ebac3c56-ee47-4d46-92b8-bb75eb766b9d" />
+<img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
 
-- **AWS Global Accelerator** es un servicio de red que mejora la disponibilidad y el rendimiento (hasta un 60% más rápido) de las aplicaciones web y de Internet al dirigir el tráfico de usuarios a través de la infraestructura de red global de Amazon, en lugar de la red pública de Internet. Utiliza direcciones IP estáticas con Anycast para enrutar el tráfico al punto de enlace más cercano.
+
 
 
 **Seguridad e IAM:**
@@ -1103,16 +1004,7 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
   - **AWS IAM Group (Grupo)** es Una colección de usuarios de IAM. Sirve para gestionar permisos a escala. En lugar de asignar políticas (permisos) a cada usuario individualmente, creas un grupo, le asignas permisos y añades usuarios a ese grupo. Todos los miembros heredan los permisos del grupo. Ejemplo: Un grupo llamado "Administradores" o "Desarrolladores" que agrupa a varias personas. 
   - **AWS IAM Role (Rol)** es una identidad de IAM que puedes crear en tu cuenta pero que no tiene credenciales estáticas (contraseñas o claves de acceso) asociadas. Está diseñado para ser asumido temporalmente por usuarios, aplicaciones o servicios de AWS (como EC2 o Lambda) que necesitan permisos específicos solo durante un tiempo limitado. Ejemplo: Darle a una instancia EC2 (servidor) un rol para acceder a una base de datos sin guardar contraseñas dentro del servidor
 **Mínimo privilegio:** Otorgar solo los permisos estrictamente necesarios a usuarios y roles (evitando permisos administrativos innecesarios) es una práctica esencial de seguridad. Además, activar **MFA** (autenticación multifactor) en todas las cuentas de IAM refuerza la protección.
-
-<img width="1231" height="752" alt="image" src="https://github.com/user-attachments/assets/0bbb6e8e-477a-4c86-95aa-84bd387cd295" />
-
 - **Políticas de IAM:** Documentos en JSON que definen permisos (qué acciones puede realizar un usuario o rol sobre qué recursos). Se adjuntan a usuarios, grupos o roles para controlar el acceso.
-
-<img width="956" height="733" alt="image" src="https://github.com/user-attachments/assets/b3897885-dff2-407f-85d4-560d3b985a69" />
-<img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/01afeb5c-b3e3-4bf5-b41f-d516754e5527" />
-<img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/ebac3c56-ee47-4d46-92b8-bb75eb766b9d" />
-<img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
-
 - **Amazon Macie** es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza machine learning y coincidencia de patrones para descubrir, clasificar y proteger automáticamente información sensible (como datos personales o financieros) almacenada en Amazon S3.
 - **Amazon Inspector** es un servicio de gestión de vulnerabilidades automatizado de Amazon Web Services (AWS) que analiza continuamente cargas de trabajo (instancias EC2, contenedores ECR y funciones Lambda) para detectar fallos de seguridad, software desactualizado y exposiciones de red no deseadas. Proporciona hallazgos detallados con recomendaciones de corrección, mejorando la postura de seguridad y el cumplimiento normativo.
 - **Amazon Network ACLs** (Listas de Control de Acceso a la Red) son una capa de seguridad esencial en AWS que actúa como un firewall sin estado (stateless) a nivel de subred. Controlan el tráfico entrante y saliente, permitiendo o denegando reglas específicas para proteger los recursos dentro de una VPC.
