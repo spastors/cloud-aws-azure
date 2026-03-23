@@ -102,34 +102,6 @@ Migrar una base de datos es delicado porque no puedes permitir que los datos se 
 
 ## 👨🏻‍💻 Tecnología y servicios en la nube
 
-### Infraestructura Global: ¿Dónde viven mis datos?
-
-La infraestructura se divide en tres niveles jerárquicos:
-
-* **Regiones (Regions):** Ubicaciones físicas en el mundo que contienen múltiples AZ. 
-    * **Criterios de elección:** 
-        - **Cumplimiento legal** (cumplir con leyes de datos locales, ej. datos que no pueden salir de España)
-        - **Proximidad/Latencia** (estar cerca del usuario)
-        - **Coste** (unas regiones son más baratas que otras).
-* **Zonas de Disponibilidad (Availability Zones - AZ):** Uno o más centros de datos discretos con energía y conectividad redundantes dentro de una Región. 
-    * **Clave:** Se usan para **Alta Disponibilidad**. Si una AZ falla, tu app sigue viva en otra dentro de la misma Región. Esto es **Tolerancia a Fallos**.
-* **Puntos de Presencia (Edge Locations):** Centros de datos pequeños repartidos por todo el mundo en cientos de ciudades para el servicio **Amazon CloudFront**.
-    * **Clave:** No sirven para "lanzar servidores", sirven para **caché** de contenido (vídeos, imágenes) cerca del usuario final para reducir la latencia.
-
-### Amazon EC2: El servidor de toda la vida
-
-EC2 (Elastic Compute Cloud) ofrece "capacidad de computación segura y ajustable en la nube"
-
-#### Tipos de Instancia (La regla mnemotécnica)
-
-| Familia | Uso Principal | Truco para recordar |
-| :--- | :--- | :--- |
-| **T (General Purpose)** | Equilibrio entre CPU y memoria. | **T**odo terreno (o **T**iny para pruebas). |
-| **C (Compute Optimized)** | Procesamiento intensivo (batch, media). | **C**omputación / **C**erebro. |
-| **R (Memory Optimized)** | Bases de datos, caché en memoria. | **R**AM. |
-| **M (General Purpose)** | Aplicaciones estándar. | **M**edium / Equilibrio. |
-
-
 ### Opciones de Compra: ¿Cómo ahorrar dinero?
 
 AWS Purchasing Options:
@@ -138,24 +110,6 @@ AWS Purchasing Options:
 2.  **Savings Plans / Reserved Instances:** Te comprometes a un uso constante (1 o 3 años). Ahorro de hasta el **72%**. Ideal para aplicaciones estables (ej. tu base de datos principal).
 3.  **Spot Instances:** Subastas de capacidad sobrante de AWS. Ahorro de hasta el **90%**.
     * **El riesgo:** AWS puede quitártelas avisando con 2 minutos de antelación. Úsalas solo para tareas que pueden fallar y reanudarse (ej. renderizado de vídeo, análisis de datos).
-
-### Contenedores y Serverless
-
-#### Contenedores (Docker)
-
-* **Amazon ECS (Elastic Container Service):** Servicio de orquestación de contenedores propio de AWS.
-* **Amazon EKS (Elastic Kubernetes Service):** Servicio gestionado para correr **Kubernetes** en AWS.
-
-#### Serverless (Sin servidores que gestionar)
-
-* **AWS Lambda:** Ejecutas código sin aprovisionar ni gestionar servidores. Solo pagas por el tiempo de ejecución (milisegundos).
-* **AWS Fargate:** Es el motor "serverless" para **ECS** y **EKS**. Tú le das el contenedor y Fargate lo corre sin que tú elijas el tipo de instancia EC2.
-
-#### Resumen rápido para no fallar:
-
-* **¿Alta disponibilidad?** → Usa varias **AZ**.
-* **¿Latencia baja para usuarios globales?** → Usa **Edge Locations**.
-* **¿Máximo ahorro para algo que puede interrumpirse?** → **Spot**.
 
 ------------------------------------------------------------
 
@@ -211,32 +165,6 @@ Diferencia clave:
 
 #### Bases de datos
 
-##### RDS → bases de datos relacionales (SQL)
-
-Apps tradicionales
-
-* MySQL, PostgreSQL, etc.
-* AWS gestiona backups, parches y HA
-
-Incluye:
-
-* **Aurora** → más rendimiento
-
-##### DynamoDB → NoSQL
-
-Alta escala y baja latencia
-
-* Key-value / documentos
-* Serverless
-
-DynamoDB = NoSQL + escalabilidad
-
-##### ElastiCache → cache en memoria
-
-Acelerar aplicaciones
-
-* Redis / Memcached
-
 ##### Redshift → analítica (Data Warehouse)
 
 Consultas sobre grandes volúmenes de datos
@@ -278,10 +206,6 @@ Storage Gateway = **híbrido + caché local**
 | **EBS**             | Bloque         | Disco para EC2        | 1 instancia               |
 | **EFS**             | Archivos       | Compartido            | Multi-EC2                 |
 | **FSx**             | Archivos       | Especializado         | Windows / HPC             |
-| **RDS**             | SQL            | Apps tradicionales    | Gestionado                |
-| **Aurora**          | SQL            | Alto rendimiento      | RDS mejorado              |
-| **DynamoDB**        | NoSQL          | Alta escala           | Serverless                |
-| **ElastiCache**     | Cache          | Acelerar apps         | Memoria                   |
 | **Redshift**        | Data Warehouse | Analítica             | OLAP                      |
 | **Storage Gateway** | Híbrido        | On-prem + AWS         | Caché                     |
 | **File Gateway**    | Caché          | Acceso local a S3/FSx | Baja latencia             |
@@ -327,15 +251,6 @@ Es tu sección aislada de forma lógica en la nube de AWS donde lanzas tus recur
 Un servicio de DNS (Domain Name System) que traduce nombres en direcciones IP (1.2.3.4).
 * **¿Cómo recordarlo?**: Es la **agenda de contactos** de tu móvil. No te sabes el número de tu madre, buscas "Mamá" y el móvil marca el número. El puerto DNS es el **53**, de ahí el nombre.
 * **Confusión**: No confundir con **CloudFront**. Route 53 te dice *dónde* está el servidor; CloudFront te *entrega* el contenido rápido.
-
-### Elastic Load Balancing (ALB vs. NLB)
-
-* **Application Load Balancer (ALB)**: 
-    * Trabaja en la **Capa 7** (HTTP/HTTPS). 
-    * Es "inteligente": puede enviar tráfico a distintas carpetas (ej: /videos va a un servidor, /fotos a otro).
-* **Network Load Balancer (NLB)**: 
-    * Trabaja en la **Capa 4** (TCP/UDP). 
-    * Es "bruto" pero ultra rápido. Maneja millones de peticiones con latencia casi nula.
 
 #### Tabla Resumen
 
@@ -545,7 +460,7 @@ Los líderes del mercado de servicios cloud son **Amazon Web Services (AWS)**, *
 - **AWS Lambda:** Computación serverless que ejecuta código ante eventos (HTTP, mensajes o cambios en datos). Escala automáticamente y se cobra por milisegundos de ejecución y memoria utilizada. Es ideal para tareas puntuales sin administrar servidores.
 - **AWS Glue** es un servicio de integración de datos serverless (sin servidor) y totalmente administrado que facilita la detección, preparación, transformación y carga (ETL) de grandes volúmenes de datos para análisis, aprendizaje automático y desarrollo de aplicaciones. Automatiza tareas complejas mediante un Data Catalog centralizado, compatible con Apache Spark y herramientas visuales como Glue Studio.
 - **AWS Elastic Beanstalk** es un servicio "Plataforma como Servicio" (PaaS) de Amazon Web Services que facilita la implementación y escalado rápido de aplicaciones web y servicios (desarrollados en Java, .NET, PHP, Node.js, Python, Ruby, Go y Docker) sin gestionar la infraestructura subyacente. Solo necesitas subir tu código y el servicio gestiona automáticamente el aprovisionamiento, balanceo de carga, escalado y monitoreo.
-- **AWS Software Development Kit (SDK)** es un conjunto de herramientas, bibliotecas y documentación que permite a los desarrolladores crear aplicaciones fácilmente en la plataforma Amazon Web Services (AWS). Simplifica el acceso a servicios de AWS (como S3, DynamoDB) mediante código, soportando lenguajes como Python, JavaScript, Java, PHP, Ruby, Go y .NET
+
 
 **Contenedores (Containers):**
 
