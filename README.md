@@ -115,54 +115,6 @@ AWS Purchasing Options:
 
 ### Tipos de almacenamiento en AWS
 
-#### Amazon S3 → Almacenamiento de objetos
-
-Para **archivos y datos no estructurados** (imágenes, backups, logs, data lakes)
-
-* Guarda datos en **buckets (contenedores)** como objetos
-* Escalable y muy duradero
-
-##### Clases de almacenamiento (según acceso)
-
-* **Standard** → acceso frecuente
-* **IA (Infrequent Access)** → acceso ocasional (más barato)
-* **One Zone-IA** → más barato, menor resiliencia
-* **Glacier / Deep Archive** → archivo (muy barato, acceso lento)
-
-##### Lifecycle Policies
-
-* Automatizan el movimiento de datos entre clases. Ej: Standard → Glacier (ahorro de costes)
-
-#### Almacenamiento para servidores (EC2)
-
-##### Amazon EBS → almacenamiento en bloque
-
-“Disco duro” para una instancia EC2
-
-* Asociado a **una sola instancia**
-* Persistente
-* Similar a un disco físico
-
-##### Amazon EFS → sistema de archivos compartido
-
-Para compartir datos entre múltiples servidores
-
-* Acceso desde **varias EC2 a la vez**
-* Basado en NFS (Linux)
-
-##### Amazon FSx → file systems especializados
-
-Sistemas de archivos gestionados para casos concretos
-
-* **Windows File Server (SMB)** → entorno Windows
-* **Lustre** → alto rendimiento (Big Data, HPC)
-
-Diferencia clave:
-
-* **EFS** → general (Linux)
-* **FSx** → específico (Windows, HPC, enterprise)
-
-
 #### Bases de datos
 
 ##### Redshift → analítica (Data Warehouse)
@@ -174,43 +126,7 @@ Consultas sobre grandes volúmenes de datos
 
 Redshift = analítica (no transaccional)
 
-#### AWS Storage Gateway → almacenamiento híbrido
 
-Conecta **on-premise + AWS**
-
-Permite usar la nube como si fuera almacenamiento local.
-
-##### Caching
-
-* Datos frecuentes → en local
-* Datos completos → en AWS
-
-Resultado:
-
-* baja latencia
-* menos tráfico
-
-##### Tipos importantes
-
-* **S3 File Gateway** → archivos en S3 con caché
-* **FSx File Gateway** → acceso a FSx desde on-prem
-
-**Idea clave:**
-Storage Gateway = **híbrido + caché local**
-
-### Tabla Resumen
-
-| Servicio            | Tipo           | ¿Para qué sirve?      | Cómo diferenciarlo rápido |
-| ------------------- | -------------- | --------------------- | ------------------------- |
-| **S3**              | Objetos        | Archivos, backups     | Clases + lifecycle        |
-| **EBS**             | Bloque         | Disco para EC2        | 1 instancia               |
-| **EFS**             | Archivos       | Compartido            | Multi-EC2                 |
-| **FSx**             | Archivos       | Especializado         | Windows / HPC             |
-| **Redshift**        | Data Warehouse | Analítica             | OLAP                      |
-| **Storage Gateway** | Híbrido        | On-prem + AWS         | Caché                     |
-| **File Gateway**    | Caché          | Acceso local a S3/FSx | Baja latencia             |
-
-------------------------------------------------------------
 
 ### IA & Machine Learning 
 
