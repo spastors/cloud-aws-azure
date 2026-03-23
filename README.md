@@ -473,6 +473,10 @@ La infraestructura se divide en tres niveles jerárquicos:
 
 #### Componentes de VPC
 
+<img width="611" height="481" alt="image" src="https://github.com/user-attachments/assets/d4594105-f492-49e4-93ca-6ff8e29457fb" />
+
+Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-private-subnets-and-nat-gateways-using-aws-cli.html 
+
 | Componente | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
 | --- | --- | --- | --- |
 | **Amazon VPC** | Red virtual aislada lógicamente en la que se despliegan recursos de AWS. | "aislamiento de red", "diseño de red", "entorno privado" | Es el contenedor lógico de red, no una subred concreta. |
