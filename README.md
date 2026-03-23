@@ -29,6 +29,8 @@ La computación en la nube consiste en consumir recursos informáticos a través
 | **Economías de escala** | ahorro derivado del volumen masivo de AWS | AWS compra y opera a gran escala y traslada parte del ahorro | "¿por qué AWS reduce precios?" |
 | **Pago por uso** | modelo en el que se paga por consumo real y no por capacidad comprada por adelantado | el costo acompaña al uso del servicio | CapEx a OpEx, eliminar inversión inicial, flexibilidad financiera |
 
+<img width="708" height="461" alt="image" src="https://github.com/user-attachments/assets/321729dd-bf99-4b9c-a86f-53d7f198514b" />
+
 - Rapidez para experimentar y lanzar ✅ **agilidad** ❌ elasticidad
 - Subir y bajar capacidad según demanda ✅ **elasticidad** ❌ alta disponibilidad
 - Tolerar el fallo de una zona ✅ **alta disponibilidad** ❌ alcance global
@@ -38,6 +40,8 @@ La computación en la nube consiste en consumir recursos informáticos a través
 > La escalabilidad es la capacidad o acción de crecer para soportar una mayor carga de trabajo de forma vertical u horizontal; la elasticidad es la capacidad de aprovisionar y liberar recursos automáticamente y en tiempo real según la demanda actual. Escalabilidad = potencial de crecimiento; Elasticidad = adaptación dinámica.
 
 ### Modelos tradicionales de servicio
+
+<img width="778" height="727" alt="image" src="https://github.com/user-attachments/assets/2da8eebd-a7db-4e39-9222-15e450cdd1e2" />
 
 | Modelo | Qué gestiona el proveedor | Qué mantiene el cliente | Cómo suele caer en examen | Ejemplos útiles |
 | --- | --- | --- | --- | --- |
@@ -143,7 +147,7 @@ Fuente: https://medium.com/@vasanthabalaji/aws-cloud-adoption-framework-ad11d362
 | --- | --- | --- |
 | **Rehost** (Lift & Shift) | Mover la aplicación sin cambios a una instancia EC2. | Migración rápida, poco tiempo para cambios, bajo costo inicial. |
 | **Replatform** (Lift, Tinker & Shift) | Pequeñas optimizaciones sin cambiar el código central (ej. mover la DB a RDS). | Quieres beneficios de servicios gestionados sin reescribir la app. |
-| **Refactor** (Re-architect) | Reescribir la app para que sea nativa de la nube (ej. usar Lambda o Microservicios). | Necesitas máxima escalabilidad, agilidad y rendimiento. Es la más cara/lenta. |
+| **Refactor** (Re-architect) | Reescribir la app para que sea nativa de la nube (ej. usar Lambda o Microservicios). | Necesitas máxima escalabilidad, agilidad y rendimiento Es la más cara/lenta. |
 | **Relocate** | Mover cargas de trabajo de VMware a AWS sin cambiar nada. | Usas VMware en on-prem y quieres seguir usándolo en la nube. |
 | **Repurchase** (Drop and Shop) | Abandonar el software actual y comprar una versión SaaS. | Pasar de un CRM antiguo a Salesforce o de Email propio a Office 365. |
 | **Retain** | No hacer nada por ahora. Mantenerlo en on-premises. | Aplicaciones que no se pueden migrar por cumplimiento o latencia. |
@@ -462,6 +466,8 @@ Un contenedor empaqueta una aplicación con sus dependencias en una unidad porta
 
 ### Servicios de bases de datos
 
+<img width="1624" height="1000" alt="image" src="https://github.com/user-attachments/assets/17aed05f-740f-48cd-961c-a086755a3169" />
+
 | Servicio o concepto | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
 | --- | --- | --- | --- |
 | **Base de datos en EC2** | La organización instala y administra la base de datos sobre una instancia EC2. | "control total", "software específico", "gestionar el sistema operativo y la base de datos" | El cliente se encarga de parches, backups, alta disponibilidad y operación. |
@@ -499,6 +505,8 @@ Un contenedor empaqueta una aplicación con sus dependencias en una unidad porta
 
 <img width="611" height="481" alt="image" src="https://github.com/user-attachments/assets/d4594105-f492-49e4-93ca-6ff8e29457fb" />
 
+<img width="1215" height="912" alt="image" src="https://github.com/user-attachments/assets/fcfe20bd-7a20-4cef-9cbb-10a003739b1a" />
+
 Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-private-subnets-and-nat-gateways-using-aws-cli.html 
 
 | Componente | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
@@ -528,6 +536,8 @@ Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-priva
 | **Reglas** | solo allow | allow y deny |
 
 #### Conectividad y entrega de contenido
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fba67e26-f523-4b24-8cd5-22d4ef3ba15c" />
 
 | Servicio | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
 | --- | --- | --- | --- |
@@ -1025,23 +1035,13 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 -------------------------------
 -------------------------------
 
-File 1 <img width="708" height="461" alt="image" src="https://github.com/user-attachments/assets/321729dd-bf99-4b9c-a86f-53d7f198514b" />
-File 2 <img width="778" height="727" alt="image" src="https://github.com/user-attachments/assets/2da8eebd-a7db-4e39-9222-15e450cdd1e2" />
-File 3 <img width="1537" height="739" alt="image" src="https://github.com/user-attachments/assets/38038130-6d3e-46cd-a2de-36a1a6b5dbcf" />
-File 4 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fba67e26-f523-4b24-8cd5-22d4ef3ba15c" />
-File 5 <img width="1215" height="912" alt="image" src="https://github.com/user-attachments/assets/fcfe20bd-7a20-4cef-9cbb-10a003739b1a" />
-File 6 <img width="1618" height="860" alt="image" src="https://github.com/user-attachments/assets/40a57f65-6315-48c9-8ccb-e7d8414caf31" />
-File 7 <img width="1745" height="534" alt="image" src="https://github.com/user-attachments/assets/0a5c3991-74a8-431a-a0b3-7f61a6882224" />
-File 8 <img width="1850" height="1080" alt="image" src="https://github.com/user-attachments/assets/9309e35e-7153-4c4b-91e2-8cde8b4a2bcd" />
-File 9 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f9236ed9-7523-4c95-b9c1-f4e92a977836" />
-File 10 <img width="1335" height="948" alt="image" src="https://github.com/user-attachments/assets/c4d216c8-e064-4ff9-886a-cffe77ed0380" />
-File 11 <img width="916" height="955" alt="image" src="https://github.com/user-attachments/assets/5eb7412c-2e54-4df2-9b74-2fda8ce9643e" />
-File 12 <img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/29e3610b-31c0-4dd0-a8a9-a5a02f4a75ac" />
-File 13 <img width="1919" height="1080" alt="image" src="https://github.com/user-attachments/assets/e53232b8-9bff-44af-a0f9-aef9f6bef7ee" />
-File 14 <img width="1681" height="876" alt="image" src="https://github.com/user-attachments/assets/96943499-a954-4caa-933b-b514f1bba01b" />
-File 15 <img width="1728" height="910" alt="image" src="https://github.com/user-attachments/assets/5d5819d8-5769-4244-9f27-f6b83d5b0d76" />
-File 16 <img width="728" height="880" alt="image" src="https://github.com/user-attachments/assets/7ed5671b-03fe-44f9-a812-e28a84634906" />
-File 17 <img width="1624" height="1000" alt="image" src="https://github.com/user-attachments/assets/17aed05f-740f-48cd-961c-a086755a3169" />
+### AWS Services
+
+<img width="916" height="955" alt="image" src="https://github.com/user-attachments/assets/5eb7412c-2e54-4df2-9b74-2fda8ce9643e" />
+
+<img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/29e3610b-31c0-4dd0-a8a9-a5a02f4a75ac" />
+
+
 File 18 <img width="1244" height="587" alt="image" src="https://github.com/user-attachments/assets/cddbd8c6-fe66-4573-802d-74779ecbfda3" />
 File 19 <img width="1579" height="940" alt="image" src="https://github.com/user-attachments/assets/59c58a55-9c92-4a91-8bf7-923a2abba29a" />
 File 20 <img width="1577" height="945" alt="image" src="https://github.com/user-attachments/assets/2255e526-d3a3-4779-88c5-811ab01a230e" />
