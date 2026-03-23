@@ -614,6 +614,8 @@ Clases de almacenamiento (según acceso)
 | **Amazon EventBridge** | Bus de eventos que conecta eventos de AWS, SaaS o aplicaciones propias con acciones y destinos. | "reaccionar a eventos", "arquitectura orientada a eventos" | No coordina estados complejos como Step Functions. |
 | **AWS Step Functions** | Orquesta flujos de trabajo y coordina pasos, reintentos y transiciones entre tareas. | "workflow", "pasos secuenciales", "orquestación" | Si la pregunta describe un proceso con estados y varios pasos, suele apuntar a Step Functions. |
 
+* Falta Simple Email Service.
+
 #### Cómo no confundir SQS y SNS
 
 | Si la necesidad es... | La respuesta suele ser... | Por qué |
