@@ -956,16 +956,8 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 -------------------------------
 -------------------------------
 
-## Fundamentos de Cloud Computing
-
 <img width="708" height="461" alt="image" src="https://github.com/user-attachments/assets/321729dd-bf99-4b9c-a86f-53d7f198514b" />
-
-## Modelos de servicio y de despliegue
-
 <img width="778" height="727" alt="image" src="https://github.com/user-attachments/assets/2da8eebd-a7db-4e39-9222-15e450cdd1e2" />
-
-## Servicios principales de AWS
-
 <img width="1537" height="739" alt="image" src="https://github.com/user-attachments/assets/38038130-6d3e-46cd-a2de-36a1a6b5dbcf" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fba67e26-f523-4b24-8cd5-22d4ef3ba15c" />
 <img width="1215" height="912" alt="image" src="https://github.com/user-attachments/assets/fcfe20bd-7a20-4cef-9cbb-10a003739b1a" />
@@ -993,139 +985,21 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 <img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/01afeb5c-b3e3-4bf5-b41f-d516754e5527" />
 <img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/ebac3c56-ee47-4d46-92b8-bb75eb766b9d" />
 <img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
-
-
-
-
-**Seguridad e IAM:**
-
-- **AWS Identity and Access Management (IAM):** Permite crear usuarios, grupos y roles con permisos específicos. Un **usuario IAM** representa a una persona o aplicación que interactúa con AWS. Se recomienda aplicar el **principio de privilegio mínimo**, dando a cada usuario solo los permisos necesarios. La *cuenta root* (creador de la cuenta) tiene todos los permisos. Se aconseja protegerla con **MFA** (autenticación de dos factores) y usarla solo cuando sea imprescindible. AWS permite habilitar MFA para cualquier usuario IAM, requiriendo un código adicional generado en un dispositivo, lo que mejora la seguridad.
-  - **AWS IAM User (Usuario)** es una identidad específica dentro de tu cuenta de AWS que representa a una persona física o a una aplicación/servicio que interactúa con AWS. Se utiliza para el acceso directo y continuo. Un usuario tiene credenciales a largo plazo (nombre de usuario/contraseña para la consola o claves de acceso para la CLI/API). Ejemplo: Un desarrollador llamado "Juan" o una aplicación de backend que necesita leer datos de S3.
-  - **AWS IAM Group (Grupo)** es Una colección de usuarios de IAM. Sirve para gestionar permisos a escala. En lugar de asignar políticas (permisos) a cada usuario individualmente, creas un grupo, le asignas permisos y añades usuarios a ese grupo. Todos los miembros heredan los permisos del grupo. Ejemplo: Un grupo llamado "Administradores" o "Desarrolladores" que agrupa a varias personas. 
-  - **AWS IAM Role (Rol)** es una identidad de IAM que puedes crear en tu cuenta pero que no tiene credenciales estáticas (contraseñas o claves de acceso) asociadas. Está diseñado para ser asumido temporalmente por usuarios, aplicaciones o servicios de AWS (como EC2 o Lambda) que necesitan permisos específicos solo durante un tiempo limitado. Ejemplo: Darle a una instancia EC2 (servidor) un rol para acceder a una base de datos sin guardar contraseñas dentro del servidor
-**Mínimo privilegio:** Otorgar solo los permisos estrictamente necesarios a usuarios y roles (evitando permisos administrativos innecesarios) es una práctica esencial de seguridad. Además, activar **MFA** (autenticación multifactor) en todas las cuentas de IAM refuerza la protección.
-- **Políticas de IAM:** Documentos en JSON que definen permisos (qué acciones puede realizar un usuario o rol sobre qué recursos). Se adjuntan a usuarios, grupos o roles para controlar el acceso.
-- **Amazon Macie** es un servicio de seguridad y privacidad de datos totalmente gestionado que utiliza machine learning y coincidencia de patrones para descubrir, clasificar y proteger automáticamente información sensible (como datos personales o financieros) almacenada en Amazon S3.
-- **Amazon Inspector** es un servicio de gestión de vulnerabilidades automatizado de Amazon Web Services (AWS) que analiza continuamente cargas de trabajo (instancias EC2, contenedores ECR y funciones Lambda) para detectar fallos de seguridad, software desactualizado y exposiciones de red no deseadas. Proporciona hallazgos detallados con recomendaciones de corrección, mejorando la postura de seguridad y el cumplimiento normativo.
-- **Amazon Network ACLs** (Listas de Control de Acceso a la Red) son una capa de seguridad esencial en AWS que actúa como un firewall sin estado (stateless) a nivel de subred. Controlan el tráfico entrante y saliente, permitiendo o denegando reglas específicas para proteger los recursos dentro de una VPC.
-- **Amazon Cognito** es un servicio de Amazon Web Services (AWS) que gestiona el registro, inicio de sesión y control de acceso de usuarios en aplicaciones web y móviles.
-
 <img width="1717" height="775" alt="image" src="https://github.com/user-attachments/assets/eb3da604-02d6-4642-8e9c-a57a50a75056" />
-
-- **Amazon GuardDuty** es un servicio de detección de amenazas inteligente y administrado que monitorea continuamente las cuentas, cargas de trabajo (como EC2, EKS, Lambda) y datos de almacenamiento (S3) de AWS en busca de actividades maliciosas, comportamientos inusuales y malware. Utiliza inteligencia artificial, aprendizaje automático y fuentes de datos de seguridad para proporcionar alertas detalladas, facilitando la remediación rápida.
-- **AWS Artifact** es un servicio centralizado y bajo demanda que proporciona acceso a los informes de seguridad y cumplimiento de AWS, incluyendo certificaciones ISO, PCI e informes SOC. Es fundamental para auditorías, permitiendo a los usuarios descargar documentos de cumplimiento y gestionar acuerdos (aceptar términos) con AWS.
-- **AWS WAF (Web Application Firewall)** es un servicio de seguridad en la nube de Amazon Web Services que protege aplicaciones web y APIs contra exploits comunes, bots y tráfico malicioso. Permite crear reglas personalizadas para bloquear o permitir solicitudes HTTP/HTTPS basadas en IP, cabeceras o contenido, protegiendo recursos como CloudFront, Application Load Balancer y API Gateway.
-- **AWS Shield** es un servicio gestionado de protección contra ataques de denegación de servicio distribuido (DDoS) que salvaguarda aplicaciones web en Amazon Web Services (AWS). Ofrece dos niveles: Standard, que es gratuito y automático para ataques comunes en capas 3/4, y Advanced, que ofrece mitigación, visibilidad y soporte especializado para ataques sofisticados.
-- **Otros servicios de seguridad:** AWS ofrece servicios específicos como AWS KMS (gestión de claves)
-
-**Gestión y Gobernanza (Management)**
-
-- **Amazon CloudWatch** es un servicio de monitoreo y observabilidad nativo de AWS que recopila datos en tiempo real (métricas, logs y eventos) de recursos como EC2, RDS y Lambda. Permite visualizar el rendimiento, configurar alarmas, automatizar acciones y optimizar recursos, ofreciendo una vista unificada del estado operativo.
-- **AWS CloudTrail** es un servicio de gobernanza y auditoría de Amazon Web Services (AWS) que registra automáticamente las acciones de los usuarios y las llamadas a la API en su infraestructura. Permite identificar quién hizo qué, cuándo y desde dónde, facilitando la seguridad, el cumplimiento normativo y la resolución de problemas.
-- **Amazon QuickSight** es un servicio de Business Intelligence (BI) rápido, basado en la nube y nativo de AWS, que permite crear y compartir paneles interactivos (dashboards), visualizaciones de datos y análisis sin necesidad de gestionar servidores. Funciona bajo un modelo "serverless", es escalable y utiliza el motor en memoria SPICE para obtener un rendimiento rápido.
-- **AWS Config** es un servicio de gobernanza que monitorea, registra y evalúa continuamente las configuraciones de los recursos de AWS. Permite auditar cambios históricos, evaluar el cumplimiento de políticas de seguridad y automatizar la remediación de configuraciones incorrectas. Es clave para la seguridad, el cumplimiento normativo y el control de costos.
-- **AWS Trusted Advisor:** Herramienta que analiza el entorno de AWS y ofrece recomendaciones basadas en buenas prácticas extraídas de miles de clientes. Trusted Advisor sugiere acciones para *ahorrar dinero*, *mejorar la disponibilidad y el rendimiento* o *cerrar huecos de seguridad*. Con soporte básico se accede a algunas verificaciones. Con planes Business o Enterprise se tiene acceso completo a todos los checks. Por ejemplo, puede identificar instancias EC2 infrautilizadas para apagarlas y ahorrar costes.
-
-**Mensajería y otros**
-
-- **Amazon Simple Queue Service (SQS)** es un servicio de colas de mensajes totalmente gestionado por AWS que permite desacoplar y escalar microservicios, sistemas distribuidos y aplicaciones sin servidor. Facilita el envío, almacenamiento y recepción de mensajes entre componentes de software a cualquier volumen, garantizando la entrega y eliminando la necesidad de gestionar middleware complejo
-- **Amazon AWS Marketplace** es una tienda digital curada por Amazon que permite a los clientes encontrar, comprar, implementar y gestionar rápidamente software, servicios y datos de terceros compatibles con la nube de Amazon Web Services (AWS). Ofrece miles de soluciones de proveedores independientes, incluyendo SaaS, máquinas virtuales (AMI) y herramientas de seguridad, simplificando la adquisición y facturación bajo una misma cuenta.
-- **SNS (Simple Notification Service)**: Envía notificaciones a muchos suscriptores (Pub/Sub, emails, SMS).
-
-## Facturación y gestión de costes
-
-AWS ofrece herramientas para controlar los gastos y entender los costes:
-
-- **Modelos de precios:** AWS cobra mayoritariamente por consumo. En EC2, por ejemplo, existen instancias **bajo demanda** (pago por hora o segundo, sin compromiso previo), instancias **reservadas** o **Savings Plans** (compromiso por 1 a 3 años con descuento) y **Spot** (capacidad no usada, hasta ~90% más barato). Los servicios de almacenamiento y datos también se cobran según el uso y el nivel. Es clave conocer estas opciones para optimizar costes.
-  - **Amazon Spot Instances** son máquinas virtuales de Amazon EC2 que permiten utilizar la capacidad de cómputo sobrante de AWS con descuentos de hasta el 90% respecto a los precios bajo demanda. Son ideales para cargas de trabajo flexibles, sin estado y tolerantes a interrupciones, ya que AWS puede recuperar la instancia con un aviso de 2 minutos.
-  - **AWS Reserved Instances (RI)** modelo de precios de Amazon Web Services que permite reservar capacidad de cómputo (instancias EC2) o bases de datos (RDS) por un periodo de 1 a 3 años, ofreciendo descuentos de hasta el 72% respecto a los precios bajo demanda. Son ideales para cargas de trabajo estables y predecibles
-  - **AWS On-Demand (bajo demanda)** máquinas virtuales de Amazon EC2 que permiten pagar por la capacidad de cómputo por segundo o por hora, sin compromisos a largo plazo ni pagos iniciales. Son ideales para cargas de trabajo a corto plazo, impredecibles o que no se pueden interrumpir.
-  - **AWS Dedicated Host** es un servidor físico de Amazon EC2 totalmente dedicado a una sola cuenta de cliente. Permite utilizar licencias de software propias (como Windows o SQL Server) vinculadas a sockets o núcleos físicos, cumpliendo con estrictos requisitos de conformidad. Ofrece visibilidad y control sobre la ubicación de las instancias
-- **Facturación consolidada de Amazon AWS** es una funcionalidad de AWS Organizations que agrupa los cargos de múltiples cuentas de AWS en una sola factura, permitiendo una gestión financiera centralizada. Sus principales ventajas son la simplificación contable, una única fecha de pago, y descuentos por volumen acumulados de todas las cuentas. Ventajas clave:
-  - Una sola factura: Simplifica la administración al consolidar los cargos de todas las cuentas vinculadas, reduciendo el papeleo.
-  - Descuentos por volumen (Pricing Volume Discounts): Permite combinar el uso de servicios de todas las cuentas para alcanzar niveles de precios más bajos (descuentos por volumen) en servicios como S3, EC2 y Savings Plans, lo que reduce los costos generales.
-  - Gestión eficiente y visibilidad: La cuenta principal ("master account") puede visualizar y desglosar los costos y el uso de cada cuenta miembro, facilitando la auditoría y control de costos.
-  - Pagos simplificados: Estandariza los ciclos de facturación, lo que mejora la gestión del flujo de caja al tener fechas de vencimiento unificadas.
-  - Independencia de cuentas: Aunque la facturación está centralizada, todas las cuentas miembros siguen siendo independientes en términos de recursos y seguridad
- 
-Basic: Gratis. Solo consultas de facturación.
-
-Developer: Soporte en horario comercial por email. (A partir de aquí hay soporte técnico).
-
-Business: 24/7 por teléfono/chat. Casos ilimitados.
-
-Enterprise: Incluye TAM (Technical Account Manager) y soporte consultivo.
-
-- **Etiquetado y reportes:** Se recomienda usar **tags (etiquetas)** en recursos para atribuir costes a proyectos o equipos. AWS Cost and Usage Reports y Cost Explorer permiten analizar el consumo histórico y las tendencias.
-- **AWS Budgets:** Herramienta para establecer presupuestos y alertas. Permite definir alertas (por ejemplo, enviar un correo o disparar una acción cuando se supere el 80% del presupuesto mensual). Se pueden crear presupuestos de coste total, de uso de recursos o de cobertura (RI/Savings Plans) y recibir notificaciones vía email o SNS.
-- **AWS Cost Explorer:** Interfaz para visualizar y analizar los costes y el uso históricos. Permite crear informes personalizados, ver tendencias de gasto de los últimos 13 meses y pronosticar hasta 18 meses. También ofrece recomendaciones de instancias reservadas óptimas.
-- **AWS Compute Optimizer** es un servicio de machine learning que analiza el uso histórico de tus recursos en la nube (instancias EC2, volúmenes EBS, funciones Lambda, ECS en Fargate) para recomendar configuraciones óptimas. Ayuda a reducir costos y mejorar el rendimiento, evitando el sobreaprovisionamiento o infrautilización
-- **AWS Pricing Calculator** es una herramienta web gratuita de Amazon Web Services que permite modelar, estimar y planificar los costos de arquitectura en la nube antes de implementarlos. Ayuda a usuarios nuevos y avanzados a proyectar gastos mensuales de servicios como EC2, S3 o RDS, facilitando la toma de decisiones financieras y presupuestarias
-- **Amazon Reserved Instances (RI)** son un modelo de precios de AWS que ofrece descuentos significativos (hasta un 72% menos que bajo demanda) a cambio de un compromiso de uso constante durante 1 o 3 años. Garantizan capacidad de reserva en una zona específica, ideal para cargas de trabajo estables y predecibles.
-
-Un **ejemplo práctico**: una empresa puede crear en AWS Budgets un presupuesto mensual fijo y configurar una alerta por correo si el coste real alcanza el 80% del presupuesto. Así, se controlan los gastos de forma proactiva y se pueden tomar medidas (p. ej., apagar recursos no críticos) antes de exceder el límite. Para migraciones de datos, se puede usar **AWS Snowball** (un dispositivo físico seguro) para trasladar petabytes de información a AWS sin depender de la red pública. El dispositivo se envía al cliente, se copian los datos y luego se devuelve a AWS, lo que acelera migraciones masivas.
-
-Es importante crear una alarma de costes, es decir, poner limites desde el banco a la tarjeta bancaria, ya que no se puede limitar el gasto mensual desde el cloud.
-
-## Soporte técnico (AWS Support)
-
-Todos los clientes de AWS disponen de soporte *Básico* gratuito, que incluye acceso 24/7 a documentación, foros (AWS) y un número limitado de **Trusted Advisor Checks** (analiza tu entorno de AWS y ofrece recomendaciones en tiempo real basadas en las mejores prácticas de AWS) básicos para límites de servicio. Para soporte técnico con tiempos de respuesta garantizados, se usan planes de pago: **Developer**, **Business** y **Enterprise**. Estos ofrecen asistencia 24/7 (teléfono, chat y email) y recursos especializados:
-
-- Developer: soporte básico para una sola persona, con atención en horario comercial.
-- Business: ideal para cargas de producción, incluye atención 24/7 con tiempos de respuesta desde 1 hora (p. ej., 12 a 24 h para soporte general).
-- Enterprise: para negocios críticos, e incluye además un TAM (Técnico de Cuenta Designado) y revisiones proactivas de arquitecturas.
-
-En resumen, los planes de pago proporcionan **soporte técnico 24/7** y **recomendaciones ilimitadas** de Trusted Advisor. Por ejemplo, los planes Business y Enterprise permiten crear casos ilimitados y acceder a asesoramiento experto en arquitectura.
-
-- **AWS Cloud Adoption Framework (AWS CAF)** es un marco estructurado de Amazon Web Services (AWS) que proporciona mejores prácticas y orientación para acelerar la transformación digital y la adopción de la nube. Ayuda a alinear las estrategias empresariales con la tecnología, cubriendo áreas como seguridad, personas y operaciones para minimizar riesgos. Perspectivas clave de AWS CAF (3.0):
-  - Comercial (Business): Asegura que las inversiones en la nube estén alineadas con los objetivos de negocio y contribuyan a acelerar la transformación digital.
-  - Personas (People): Se enfoca en preparar y motivar al personal para el cambio, promoviendo una cultura de aprendizaje continuo y adaptabilidad.
-  - Gobernanza (Governance): Facilita la coordinación y supervisión de iniciativas en la nube, ayudando a gestionar riesgos y prioridades organizativas.
-  - Plataforma (Platform): Proporciona orientación para diseñar y escalar una arquitectura técnica sólida y flexible en la nube.
-  - Seguridad (Security): Garantiza que los datos, aplicaciones y sistemas estén protegidos y cumplan con los requisitos de seguridad y conformidad.
-  - Operaciones (Operations): Se asegura de que los servicios en la nube funcionen de manera fiable y eficiente, satisfaciendo las necesidades del negocio.
-
-## Buenas prácticas en AWS
-
-- **Responsabilidad Compartida:** AWS se encarga de la seguridad *de* la nube (infraestructura física, redes y centros de datos), mientras que el cliente es responsable de la seguridad *en* la nube (sistema operativo, aplicaciones, datos y configuraciones). Por ejemplo, AWS asegura la integridad del hardware y la virtualización, pero el usuario debe mantener los datos cifrados y los permisos de IAM bien configurados.
-
 <img width="1818" height="784" alt="image" src="https://github.com/user-attachments/assets/d92afcb5-e11c-4d42-bad9-5c77a4e1354a" />
-
-- **AWS Well-Architected Framework** es un conjunto de mejores prácticas, principios de diseño y guías de Amazon Web Services (AWS) para ayudar a arquitectos de la nube a construir infraestructura segura, de alto rendimiento, resiliente y eficiente. Se basa en seis pilares fundamentales, evaluando cargas de trabajo para optimizar costos y sostenibilidad. 
-  - Excelencia operativa (Operational Excellence): Ejecutar y monitorear sistemas, mejorando procesos continuamente. -> Monitor, improve processes, automation
-  - Seguridad (Security): Proteger información, sistemas y activos. -> Protect, data, encryption, identity
-  - Fiabilidad (Reliability): Capacidad de recuperarse de fallos y escalar recursos. -> Recover, failure, fault tolerance, high availability, resilience
-  - Eficiencia de rendimiento (Performance): Usar recursos computacionales de manera eficiente. -> Efficiency	Efficient use of resources, latency, scaling, performance
-  - Optimización de costes (Cost Optimization): Evitar costos innecesarios y maximizar el retorno de inversión. -> Reduce cost, avoid waste, rightsizing
-  - Sostenibilidad (Sustainability): Minimizar el impacto ambiental de la carga de trabajo. -> Environmental impact, energy
-
-1️⃣ ¿Habla de fallos o recuperación? → Reliability
-
-2️⃣ ¿Habla de velocidad o eficiencia? → Performance
-
-3️⃣ ¿Habla de proteger datos? → Security
-
-4️⃣ ¿Habla de ahorrar dinero? → Cost Optimization
-
-5️⃣ ¿Habla de monitoreo y mejora continua? → Operational Excellence
-
-## Redes básicas de AWS
-
-Cada cuenta de AWS dispone de una **VPC (Virtual Private Cloud)** por región. En la VPC se definen subredes (públicas o privadas), rutas y gateways. Por ejemplo, una subred pública se conecta a Internet mediante una **Puerta de Internet (IGW)**, mientras que una subred privada usa una **NAT Gateway** para el tráfico saliente. Los **Security Groups** actúan como cortafuegos virtuales a nivel de instancia. AWS organiza sus centros de datos en **Regiones** (ubicaciones geográficas) y **Zonas de Disponibilidad** (centros independientes dentro de cada región), lo que permite diseñar aplicaciones multi-AZ para alta disponibilidad.
-
-- Región: Área geográfica física (ej. París, Tokyo). Contiene 2 o más AZs.
-- Zona de Disponibilidad (AZ): Uno o más centros de datos discretos con energía y red redundantes.
-- Ubicaciones de Borde (Edge Locations): Puntos finales de la red CDN (CloudFront) para caché de baja latencia. Hay muchas más Edge Locations que Regiones.
-
 <img width="977" height="320" alt="image" src="https://github.com/user-attachments/assets/47edb4d5-1d53-4b72-b339-16a0a6350552" />
-
-A la hora de legir una región se debe tener en cuenta: requisitos legales, proximidad con clientes, servicios disponibles y precios.
-
-**Route 53** es el servicio DNS de AWS. Traduce nombres de dominio a direcciones IP y se integra con balanceadores de carga. 
-
-**Elastic Load Balancer** (ELB) reparte automáticamente tráfico de aplicaciones entre varias instancias en múltiples zonas, y solo envía tráfico a instancias “saludables”. Esto mejora la escalabilidad y la tolerancia a fallos.
-
 <img width="1259" height="893" alt="image" src="https://github.com/user-attachments/assets/31e473bc-1598-4c65-8962-ff7f9fe1b60c" />
+<img width="1002" height="664" alt="image" src="https://github.com/user-attachments/assets/37db5792-9a40-484a-b0b1-12c46a6ecbda" />
+<img width="784" height="568" alt="image" src="https://github.com/user-attachments/assets/ed52668c-0f19-40d4-a44b-fc03a75608c1" />
+
+https://youtu.be/8OKfNHciBNg
+
+https://github.com/roxsross/aws-cloud-practitioner-complete-guide/blob/master/practice-exams/practice-exam-3.md
+
+-------------------------------
+-------------------------------
+-------------------------------
+-------------------------------
 
 ### Conceptos Básicos de Nombres de Dominio
 
@@ -1231,106 +1105,3 @@ A la hora de legir una región se debe tener en cuenta: requisitos legales, prox
 - Los name servers de Route 53 deben configurarse en el registrador del dominio
 
 <img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/d2e54c3a-7fd7-4f3a-8bb5-52a7355b9379" />
-
-## Contenedores y orquestación
-
-Un **contenedor** encapsula una aplicación con sus dependencias en un entorno portátil y ligero (p. ej., Docker). En AWS, los contenedores se pueden ejecutar mediante **Amazon ECS** o **EKS**. *Kubernetes* (open-source) es un sistema de orquestación que automatiza el despliegue, el escalado y la gestión de aplicaciones en contenedores. AWS ofrece **EKS** como servicio gestionado de Kubernetes y **Fargate** para ejecutar contenedores sin administrar servidores. Por ejemplo, una aplicación web puede desplegarse en un clúster ECS con varios contenedores que se escalan según la demanda.
-
-## DevOps e Infraestructura como Código
-
-La cultura **DevOps** fomenta la colaboración entre desarrollo y operaciones para entregar software con frecuencia y calidad, mediante automatización y CI/CD. En AWS, servicios como **CodeCommit** (repositorio Git), **CodeBuild** (compilación) y **CodeDeploy/CodePipeline** (entrega continua) ayudan a implementar DevOps. Por ejemplo, un cambio en el código puede activar automáticamente una pipeline que ejecute pruebas y despliegue en AWS. La **Infraestructura como Código (IaC)** permite definir recursos (redes, servidores y bases) en archivos (JSON o YAML). 
-
-**AWS CloudFormation** es un servicio de IaC que modela y aprovisiona recursos de AWS de forma automática a partir de plantillas.
-
-**AWS CodeStar** es un servicio unificado en la nube que facilita la creación, gestión y trabajo en proyectos de desarrollo de software en Amazon Web Services (AWS). Permite configurar rápidamente cadenas de herramientas CI/CD (integración y entrega continuas), incluyendo código fuente, compilación y despliegue, además de integrar gestión de tareas (Jira) y paneles de control del equipo.
-
-**Amazon Lightsail** es el servicio de servidor privado virtual (VPS) de AWS diseñado para ser sencillo, rápido y económico. Incluye todo lo necesario para lanzar un proyecto web (instancias, almacenamiento, bases de datos, redes, IP estática) con precios fijos mensuales, siendo ideal para sitios web, aplicaciones pequeñas, blogs (WordPress) y entornos de desarrollo
-
-## Interoperabilidad y portabilidad
-
-En la nube, **interoperabilidad** significa que distintos sistemas o nubes pueden comunicarse e intercambiar datos usando estándares comunes. La **portabilidad** es la capacidad de trasladar cargas de trabajo (aplicaciones y datos) entre proveedores o entre entornos local y nube con cambios mínimos. Por ejemplo, almacenar datos en formatos abiertos o usar contenedores puede facilitar mover una aplicación de AWS a Azure sin dependencias propietarias. Estos conceptos son clave para evitar el *vendor lock-in* y aprovechar múltiples nubes o centros locales según convenga.
-
-## Ejemplos prácticos de uso y migración
-
-- **Migración de datos grandes:** Usar AWS Snowball para copiar petabytes de información desde un centro de datos local a S3 (dispositivo físico seguro que se envía al cliente, se carga con datos y se devuelve).
-- **Amazon S3 File Gateway** es un servicio de almacenamiento híbrido que permite a las aplicaciones locales (on-premises) acceder a datos en la nube de Amazon S3 utilizando protocolos estándar de archivos como NFS o SMB. Facilita la migración, copia de seguridad y almacenamiento en la nube al funcionar como un puente entre servidores locales y S3, ofreciendo almacenamiento casi ilimitado y caché local para baja latencia.
-- **AWS Application Discovery Service (ADS)** es un servicio de Amazon Web Services diseñado para ayudar a las empresas a planificar su migración a la nube. Recopila automáticamente datos detallados de configuración, rendimiento y dependencia (conexiones TCP) de servidores locales y bases de datos, integrándose con AWS Migration Hub para facilitar la migración
-- **AWS Migration Evaluator (anteriormente TSO Logic)** es un servicio gratuito de Amazon Web Services (AWS) que ayuda a las empresas a crear casos de negocio basados en datos para planificar la migración a la nube. Recopila información sobre la infraestructura local (servidores, bases de datos) para recomendar opciones de implementación rentables, acelerando la toma de decisiones y reduciendo costos. 
-- **Estrategia de migración (7 R’s):** Al planear la migración de aplicaciones a la nube, existen varias estrategias: 
-
-  - **Rehost (Lift & Shift)**: trasladar la aplicación a la nube *sin cambiar* su código ni arquitectura. Es la forma más rápida: simplemente se mueve (p.ej. máquinas virtuales) tal cual, obteniendo beneficios de la nube (reducción de costos de datacenter) sin reescribir nada.
-  - **Repurchase (Drop & Shop)**: se reemplaza la solución existente por una alternativa SaaS o un servicio gestionado equivalente. Por ejemplo, sustituir un software comprado por una versión en la nube o un servicio PaaS específico. Se “dejade migrar” el software anterior y se adquiere otro licenciado para la nube.
-  - **Replatform (Lift & Reshape)**: similar a rehost, pero con *algunas optimizaciones menores*. Se transfieren las aplicaciones a la nube realizando cambios limitados (p.ej. actualizar versión de SO, reconfigurar parámetros, usar bases de datos gestionadas) para aprovechar mejor características cloud, sin reescribir la app.
-  - **Refactor (Re-architect)**: re-diseñar la aplicación para que sea *nativa de la nube*. Esto implica re-implementar partes significativas (p.ej. convertir monolitos en microservicios o usar funciones serverless). La app se replantea aprovechando al máximo escalabilidad, resiliencia y otros servicios cloud.
-  - **Retire (Retirar)**: identificar aplicaciones obsoletas o no críticas y **darlas de baja**. A menudo las migraciones revelan software que ya no se usa; en lugar de moverlo, simplemente se elimina.
-  - **Retain (Conservar)**: mantener la aplicación *donde está*, al menos por ahora. Puede aplazarse su migración o decidir que no es adecuada para el cloud.
-  - (A veces se agrega **Relocate**: mover cargas virtualizadas sin cambios, p.ej. VMs con VMware hacia la nube, sin modificar la app).
-
-<img width="1002" height="664" alt="image" src="https://github.com/user-attachments/assets/37db5792-9a40-484a-b0b1-12c46a6ecbda" />
-
-- **Optimización de costes:** Por ejemplo, una startup puede lanzar una aplicación en EC2 bajo demanda y, cuando se estabilice, reservar capacidad para reducir gastos. También puede habilitar Auto Scaling para reducir servidores en horas valle.
-- **Presupuestos y alertas:** Crear presupuestos mensuales en AWS Budgets y configurar notificaciones (SNS o email) cuando se aproxime el límite. Como práctica, se puede fijar una alerta al 80% del presupuesto para revisar el gasto.
-- **Seguridad:** Implementar políticas de IAM estrictas y habilitar MFA. Por ejemplo, exigir que solo personal con permisos adecuados pueda lanzar instancias EC2 de producción, mientras que en desarrollo se usan permisos más limitados.
-- **Alta disponibilidad:** Desplegar instancias en múltiples AZ dentro de una región. Por ejemplo, configurar una base de datos RDS con Multi-AZ para replicar datos en otra zona y soportar fallos.
-- **Contenedores y Serverless:** Para una app web con picos de tráfico, se puede ejecutar el backend en contenedores (ECS o EKS) y usar funciones Lambda para tareas puntuales (procesar imágenes o enviar emails), aprovechando el escalado automático.
-- **AWS DataSync** es un servicio de transferencia de datos en línea, seguro y gestionado que automatiza y acelera el movimiento de grandes volúmenes de datos entre sistemas de almacenamiento locales (on-premises), otras nubes (como Azure o Google Cloud) y los servicios de almacenamiento de AWS (S3, EFS, FSx). Facilita migraciones, réplicas y archivado, gestionando automáticamente la infraestructura, el cifrado y la validación de la integridad
-
-## Glosario de términos clave
-
-- **CAPEX (Capital Expenditure):** Gastos de capital. Inversiones iniciales en activos duraderos (servidores, hardware y licencias perpetuas). En la nube, el CAPEX se minimiza.
-- **OPEX (Operational Expenditure):** Gastos operativos. Costes recurrentes de operación (consumo de recursos, suscripciones y licencias anuales). En la nube, la mayoría de costes son OPEX (pago por uso).
-- **TCO (Total Cost of Ownership):** Costo total de propiedad. Suma de todos los gastos de un sistema en un período (CAPEX + OPEX + mantenimiento + actualizaciones).
-  
-<img width="784" height="568" alt="image" src="https://github.com/user-attachments/assets/ed52668c-0f19-40d4-a44b-fc03a75608c1" />
-
-- **IaaS/PaaS/SaaS:** Modelos de servicio en la nube. IaaS (Infraestructura como Servicio) entrega recursos básicos (máquinas virtuales y almacenamiento), PaaS (Plataforma) ofrece entornos listos para desarrollar (bases de datos gestionadas y frameworks) y SaaS (Software) entrega aplicaciones completas por Internet.
-- **Contenedor:** Entorno ligero y portátil que encapsula una aplicación y sus dependencias (por ejemplo, Docker), aislando procesos sobre un kernel compartido.
-- **Kubernetes:** Plataforma open source para **orquestar contenedores**. Automatiza el despliegue, el escalado y la administración de aplicaciones en contenedores.
-- **DevOps:** Metodología y cultura de desarrollo y operaciones orientada a entregar software de forma continua mediante automatización y colaboración.
-- **Interoperabilidad:** Capacidad de sistemas o nubes diferentes para comunicarse e intercambiar datos usando estándares comunes.
-- **Portabilidad:** Facilidad para trasladar datos, aplicaciones o cargas de trabajo entre entornos de nube o entre nube y local, minimizando dependencias de proveedor.
-- **Región y Zona de Disponibilidad (AZ):** AWS organiza su infraestructura en **regiones** (localidades geográficas grandes) y cada región tiene varias **AZ** (centros de datos aislados). Desplegar en múltiples AZ mejora la disponibilidad.
-- **Máquina virtual (EC2):** Servidor virtual en la nube que ejecuta un sistema operativo completo. Se cobra por tiempo de uso.
-- **Instancia Spot:** Tipo de pago de muy bajo coste para computación que aprovecha capacidad no usada. AWS puede interrumpirla con 2 minutos de aviso.
-- **Elasticidad:** Capacidad de escalar recursos (subir o bajar) dinámicamente según la demanda.
-- **Auto Scaling:** Servicio que ajusta automáticamente el número de instancias EC2 según métricas (uso de CPU, tráfico, etc.).
-- **ELB (Elastic Load Balancer):** Servicio que reparte el tráfico de red entre múltiples instancias (mejora la escalabilidad y la tolerancia a fallos).
-- **Route 53:** Servicio DNS de AWS para traducir dominios a IPs y balancear tráfico globalmente.
-- **VPC (Virtual Private Cloud):** Red virtual aislada en AWS donde se despliegan recursos. Funciona como una red propia en la nube.
-- **Grupo de Seguridad:** Firewall virtual a nivel de instancia EC2. Controla qué tráfico entra y sale de la instancia.
-- **MFA (Autenticación Multifactor):** Seguridad adicional que exige, además de la contraseña, un código temporal (p. ej., de una app móvil) para iniciar sesión.
-- **Trusted Advisor:** Servicio que realiza comprobaciones automáticas de buenas prácticas (costes, rendimiento y seguridad) y sugiere mejoras.
-- **AWS Budgets / Cost Explorer:** Herramientas para gestionar costes. Budgets crea alertas de gasto. Cost Explorer visualiza y analiza el uso pasado y ofrece predicciones.
-- **Snowball:** Dispositivo físico de AWS para migrar grandes volúmenes de datos a la nube (petabytes) de forma segura.
-
-**Referencias:** Documentación oficial de AWS y guías de estudio sobre conceptos de computación en la nube, así como recursos educativos proporcionados por AWS. Cada sección incluye enlaces a la documentación oficial para profundizar en los servicios relevantes.
-
-[Amazon EC2 - Capacidad de computación segura y de tamaño ajustable - AWS](https://aws.amazon.com/es/ec2/pricing/)
-
-[¿Qué es Amazon VPC? - Amazon Virtual Private Cloud](https://docs.aws.amazon.com/es_es/vpc/latest/userguide/what-is-amazon-vpc.html)
-
-[Controlar el tráfico hacia los recursos de AWS mediante grupos de seguridad - Amazon Virtual Private Cloud](https://docs.aws.amazon.com/es_es/vpc/latest/userguide/vpc-security-groups.html)
-
-[¿Qué es Elastic Load Balancing? - Elastic Load Balancing](https://docs.aws.amazon.com/es_es/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
-
-[Usuarios de IAM - AWS Identity and Access Management](https://docs.aws.amazon.com/es_es/IAM/latest/UserGuide/id_users.html)
-
-[Gestione sus costes con AWS presupuestos - AWS Gestión de costes](https://docs.aws.amazon.com/es_es/cost-management/latest/userguide/budgets-managing-costs.html)
-
-[Análisis de los costes y el uso con AWS Cost Explorer - AWS Gestión de costes](https://docs.aws.amazon.com/es_es/cost-management/latest/userguide/ce-what-is.html)
-
-[AWS Snowball | Secure Edge Computing and Offline Data Transfer | Amazon Web Services](https://aws.amazon.com/snowball/)
-
-[Comparación de planes de AWS Support — Características de AWS Support — AWS](https://aws.amazon.com/es/premiumsupport/plans/)
-
-[Modelo de responsabilidad compartida. Amazon Web Services (AWS)](https://aws.amazon.com/es/compliance/shared-responsibility-model/)
-
-[AWS Well-Architected: Desarrolle aplicaciones seguras y eficaces en la nube](https://aws.amazon.com/es/architecture/well-architected/)
-
-[AWS Trusted Advisor - AWS Support](https://docs.aws.amazon.com/es_es/awssupport/latest/user/trusted-advisor.html)
-
-[Aprovisionamiento de infraestructura como código - AWS CloudFormation - AWS](https://aws.amazon.com/es/cloudformation/)
-
-https://youtu.be/8OKfNHciBNg
-
-https://github.com/roxsross/aws-cloud-practitioner-complete-guide/blob/master/practice-exams/practice-exam-3.md
