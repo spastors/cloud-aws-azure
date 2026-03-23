@@ -494,3 +494,5 @@ En la nube, **interoperabilidad** significa que distintos sistemas o nubes puede
 [Aprovisionamiento de infraestructura como código - AWS CloudFormation - AWS](https://aws.amazon.com/es/cloudformation/)
 
 https://youtu.be/8OKfNHciBNg
+
+https://github.com/roxsross/aws-cloud-practitioner-complete-guide/blob/master/practice-exams/practice-exam-3.md
