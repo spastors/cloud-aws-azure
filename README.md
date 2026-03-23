@@ -789,7 +789,7 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 | Si la pregunta busca... | La respuesta suele ser... | Por qué |
 | --- | --- | --- |
 | **dar permiso a un usuario, rol o grupo para hacer algo** | **IAM** | IAM concede permisos a identidades dentro de la cuenta |
-| **limitar lo que puede usar una cuenta completa o una OU, aunque IAM lo permita** | **SCP** | una SCP establece el máximo permitido a nivel de organización; no concede permisos, solo los restringe |
+| **limitar lo que puede usar una cuenta completa o una OU, aunque IAM lo permita** | **SCP (Service Control Policies)** | una SCP establece el máximo permitido a nivel de organización; no concede permisos, solo los restringe |
 
 ### Planes de soporte
 
