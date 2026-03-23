@@ -504,6 +504,8 @@ Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-priva
 
 #### Conectividad y entrega de contenido
 
+* Falta VPC Peering
+
 | Servicio | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
 | --- | --- | --- | --- |
 | **AWS VPN** | Familia de conexiones VPN cifradas entre AWS, usuarios o redes externas. | "conectividad cifrada sobre internet" | Es el concepto general; luego el examen suele concretar Site-to-Site o Client VPN. |
