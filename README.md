@@ -143,6 +143,8 @@ Fuente: https://medium.com/@vasanthabalaji/aws-cloud-adoption-framework-ad11d362
 
 #### Las 7 Rs
 
+<img width="1002" height="664" alt="image" src="https://github.com/user-attachments/assets/37db5792-9a40-484a-b0b1-12c46a6ecbda" />
+
 | Estrategia | ¿Qué es? | Cuándo usarla (Palabras clave) |
 | --- | --- | --- |
 | **Rehost** (Lift & Shift) | Mover la aplicación sin cambios a una instancia EC2. | Migración rápida, poco tiempo para cambios, bajo costo inicial. |
@@ -238,6 +240,8 @@ IAM es gratuito y es un servicio **Global** (no se configura por región). Se ri
     * *Efecto:* Allow (Permitir) o Deny (Denegar).
     * *Acción:* Qué quieres hacer (ej: `s3:ListBucket`).
     * *Recurso:* Sobre qué (ej: un cubo específico).
+  
+ <img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
 
 | Elemento | Qué es | Cómo recordarlo | Cómo suele caer |
 | --- | --- | --- | --- |
@@ -508,6 +512,8 @@ Un contenedor empaqueta una aplicación con sus dependencias en una unidad porta
 <img width="1215" height="912" alt="image" src="https://github.com/user-attachments/assets/fcfe20bd-7a20-4cef-9cbb-10a003739b1a" />
 
 Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-private-subnets-and-nat-gateways-using-aws-cli.html 
+
+ <img width="1649" height="762" alt="image" src="https://github.com/user-attachments/assets/66371141-a3be-4c27-b34e-a1d28e1f1e9c" />
 
 | Componente | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
 | --- | --- | --- | --- |
@@ -1040,26 +1046,6 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 <img width="916" height="955" alt="image" src="https://github.com/user-attachments/assets/5eb7412c-2e54-4df2-9b74-2fda8ce9643e" />
 
 <img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/29e3610b-31c0-4dd0-a8a9-a5a02f4a75ac" />
-
-
-File 18 <img width="1244" height="587" alt="image" src="https://github.com/user-attachments/assets/cddbd8c6-fe66-4573-802d-74779ecbfda3" />
-File 19 <img width="1579" height="940" alt="image" src="https://github.com/user-attachments/assets/59c58a55-9c92-4a91-8bf7-923a2abba29a" />
-File 20 <img width="1577" height="945" alt="image" src="https://github.com/user-attachments/assets/2255e526-d3a3-4779-88c5-811ab01a230e" />
-File 21 <img width="1786" height="751" alt="image" src="https://github.com/user-attachments/assets/9537aa49-102e-4fd3-9623-b341b1cc3dd8" />
-File 22 <img width="1649" height="762" alt="image" src="https://github.com/user-attachments/assets/66371141-a3be-4c27-b34e-a1d28e1f1e9c" />
-File 23 <img width="1852" height="794" alt="image" src="https://github.com/user-attachments/assets/e33c0ad9-b1e7-4516-9f4f-6135c684fb11" />
-File 24 <img width="1834" height="933" alt="image" src="https://github.com/user-attachments/assets/7dc0e166-02b5-45c9-8da1-e96a26db6d62" />
-File 25 <img width="1231" height="752" alt="image" src="https://github.com/user-attachments/assets/0bbb6e8e-477a-4c86-95aa-84bd387cd295" />
-File 26 <img width="956" height="733" alt="image" src="https://github.com/user-attachments/assets/b3897885-dff2-407f-85d4-560d3b985a69" />
-File 27 <img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/01afeb5c-b3e3-4bf5-b41f-d516754e5527" />
-File 28 <img width="1638" height="761" alt="image" src="https://github.com/user-attachments/assets/ebac3c56-ee47-4d46-92b8-bb75eb766b9d" />
-File 29 <img width="1186" height="712" alt="image" src="https://github.com/user-attachments/assets/ba672110-7fd9-409b-8195-05eab527533e" />
-File 30 <img width="1717" height="775" alt="image" src="https://github.com/user-attachments/assets/eb3da604-02d6-4642-8e9c-a57a50a75056" />
-File 31 <img width="1818" height="784" alt="image" src="https://github.com/user-attachments/assets/d92afcb5-e11c-4d42-bad9-5c77a4e1354a" />
-File 32 <img width="977" height="320" alt="image" src="https://github.com/user-attachments/assets/47edb4d5-1d53-4b72-b339-16a0a6350552" />
-File 33 <img width="1259" height="893" alt="image" src="https://github.com/user-attachments/assets/31e473bc-1598-4c65-8962-ff7f9fe1b60c" />
-File 34 <img width="1002" height="664" alt="image" src="https://github.com/user-attachments/assets/37db5792-9a40-484a-b0b1-12c46a6ecbda" />
-File 35 <img width="784" height="568" alt="image" src="https://github.com/user-attachments/assets/ed52668c-0f19-40d4-a44b-fc03a75608c1" />
 
 https://youtu.be/8OKfNHciBNg
 
