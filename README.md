@@ -85,8 +85,9 @@ Es un marco para planificar la adopción de la nube a nivel organizativo, es dec
 
 #### Las 6 perspectivas del AWS CAF
 
-""" [GIT] Añadir foto """
-https://medium.com/@vasanthabalaji/aws-cloud-adoption-framework-ad11d3623150
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a466ce4b-0f90-49dd-88d9-63711c20f02a" />
+
+Fuente: https://medium.com/@vasanthabalaji/aws-cloud-adoption-framework-ad11d3623150
 
 #### A. Perspectivas de Capacidades Empresariales (Enfocadas en estrategia)
 
