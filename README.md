@@ -13,6 +13,10 @@
 
 ## Dominio 1. Conceptos de la nube
 
+### Qué es cloud computing
+
+La computación en la nube consiste en consumir recursos informáticos a través de internet **bajo demanda** y con un modelo de **pago por uso**. La idea clave no es solo dejar de comprar hardware propio, sino poder aprovisionar capacidad con rapidez, ajustarla cuando cambie la demanda y apoyarse en servicios gestionados para reducir trabajo operativo.
+
 ### Beneficios de la nube
 
 | Concepto | Qué es | Cómo recordarlo | Cómo se suele preguntar |
@@ -32,6 +36,16 @@
 - Reducción de inversión inicial ✅ **pago por uso / OpEx** ❌ economías de escala
 
 > La escalabilidad es la capacidad o acción de crecer para soportar una mayor carga de trabajo de forma vertical u horizontal; la elasticidad es la capacidad de aprovisionar y liberar recursos automáticamente y en tiempo real según la demanda actual. Escalabilidad = potencial de crecimiento; Elasticidad = adaptación dinámica.
+
+### Modelos tradicionales de servicio
+
+| Modelo | Qué gestiona el proveedor | Qué mantiene el cliente | Cómo suele caer en examen | Ejemplos útiles |
+| --- | --- | --- | --- | --- |
+| **IaaS** | infraestructura física, red, almacenamiento y virtualización | sistema operativo, middleware, aplicaciones y datos | cuando se necesita más control sobre el entorno | **Amazon EC2**, **Amazon EBS**, redes en **Amazon VPC** |
+| **PaaS** | además de la infraestructura, la plataforma necesaria para desplegar y ejecutar la aplicación | código, configuración funcional y datos de la aplicación | cuando se quiere reducir la administración del entorno y centrarse en la aplicación | **AWS Elastic Beanstalk** como referencia clásica de plataforma gestionada |
+| **SaaS** | la solución completa, desde infraestructura hasta aplicación final | uso funcional de la aplicación y configuración de negocio | cuando se consume una aplicación lista para usar | herramientas como **Salesforce**, **Microsoft 365** o soluciones SaaS de terceros |
+
+> **Matiz útil:** AWS no organiza todos sus servicios en una taxonomía rígida de `IaaS / PaaS / SaaS`. En `CLF-C02` conviene usar estas categorías como marco mental para entender **cuánto controla el cliente** y **cuánto gestiona el proveedor**.
 
 ### Well-Architected Framework
 
@@ -79,7 +93,7 @@ Es un marco para planificar la adopción de la nube a nivel organizativo, es dec
 
 * **Reducción del riesgo empresarial:** No se trata solo de seguridad, sino de **resiliencia**. La nube permite recuperarse de desastres y evitar caídas de servicio (fiabilidad), lo que protege la reputación y las finanzas.
 * **Mejora del rendimiento ESG (Social, Ambiental y Gobernanza):** Aquí es donde entra la **Sostenibilidad**. Al usar la infraestructura eficiente de AWS, las empresas reducen su huella de carbono y mejoran su transparencia de datos.
-* **Aumento de los ingresos:** Permite crear productos nuevos y lanzarlos al mercado más rápido (**Time-to-market**). Si puedes experimentar barato y rápido, generas más dinero.
+* **Aumento de los ingresos:** Permite crear productos nuevos y lanzarlos al mercado con mayor rapidez (**time-to-market**), lo que facilita captar oportunidades antes y responder mejor al mercado.
 * **Aumento de la eficiencia operativa:** Automatizar tareas repetitivas y reducir el costo de mantener centros de datos físicos para que el equipo dedique más tiempo a actividades de mayor valor.
 
 
@@ -132,7 +146,7 @@ Fuente: https://medium.com/@vasanthabalaji/aws-cloud-adoption-framework-ad11d362
 | **Refactor** (Re-architect) | Reescribir la app para que sea nativa de la nube (ej. usar Lambda o Microservicios). | Necesitas máxima escalabilidad, agilidad y rendimiento. Es la más cara/lenta. |
 | **Relocate** | Mover cargas de trabajo de VMware a AWS sin cambiar nada. | Usas VMware en on-prem y quieres seguir usándolo en la nube. |
 | **Repurchase** (Drop and Shop) | Abandonar el software actual y comprar una versión SaaS. | Pasar de un CRM antiguo a Salesforce o de Email propio a Office 365. |
-| **Retain** | No hacer nada por ahora. Mantenerlo en on-premise. | Aplicaciones que no se pueden migrar por cumplimiento o latencia. |
+| **Retain** | No hacer nada por ahora. Mantenerlo en on-premises. | Aplicaciones que no se pueden migrar por cumplimiento o latencia. |
 | **Retire** | Eliminar la aplicación. | Aplicaciones que ya no se usan o son redundantes. |
 
 #### Herramientas y recursos de migración
@@ -168,6 +182,8 @@ Fuente: https://medium.com/@vasanthabalaji/aws-cloud-adoption-framework-ad11d362
 | **Right-Sizing** | ajustar recursos al uso real | reducir sobredimensionamiento | no es auto scaling |
 | **Automatización** | sustituir tareas manuales repetitivas por procesos consistentes | menos errores, más velocidad, más repetibilidad | no es solo ahorro; también mejora control |
 | **Economías de escala** | ventaja de AWS por operar a gran volumen | reducción de precios y eficiencias operativas | no es un modelo de compra |
+
+> Pasar de **CapEx** a **OpEx** no garantiza por sí solo un menor costo total. Lo que cambia es el perfil financiero del gasto; la reducción del **TCO** depende del uso real, del diseño de la arquitectura y de la disciplina operativa.
 
 ---
 
@@ -361,9 +377,11 @@ AWS CloudShell ofrece una shell basada en navegador, ya autenticada desde la con
 
 | Modelo | Qué significa realmente | Aspectos relevantes |
 | --- | --- | --- |
-| **Cloud** | La carga de trabajo se ejecuta íntegramente en la nube de AWS. | No implica necesariamente serverless; solo describe dónde se ejecuta la carga. |
-| **On-premises** | La carga sigue desplegada en la infraestructura propia de la organización.  | No debe confundirse con Outposts, que sigue siendo infraestructura y experiencia AWS. |
-| **Hybrid** | Parte de la solución se ejecuta en AWS y otra parte permanece en las instalaciones o en otro entorno conectado. | Híbrido no significa multi-cloud. La idea clave es mezclar AWS con entorno local. |
+| **Public cloud** | Los recursos se consumen desde la infraestructura de un proveedor cloud y se comparten a gran escala entre muchos clientes. | En el contexto del examen, AWS es un ejemplo de nube pública. La idea clave es elasticidad, pago por uso y operación por parte del proveedor. |
+| **Private cloud** | Entorno cloud dedicado a una sola organización, normalmente con más control directo sobre infraestructura y políticas. | No es lo mismo que decir simplemente on-premises, aunque muchas nubes privadas se ejecutan en instalaciones propias. |
+| **On-premises** | La carga sigue desplegada en la infraestructura propia de la organización. | Puede formar parte de un entorno tradicional o de una nube privada. No debe confundirse con Outposts, que sigue siendo infraestructura y experiencia AWS. |
+| **Hybrid** | Parte de la solución se ejecuta en AWS y otra parte permanece en las instalaciones o en otro entorno conectado. | Híbrido no significa multi-cloud. La idea clave es mezclar recursos cloud con recursos no cloud o locales conectados. |
+| **Multicloud** | Se usan servicios de más de un proveedor cloud público. | No es lo mismo que híbrido: multicloud significa varios proveedores cloud; híbrido significa combinar cloud con otro entorno como on-premises. |
 | **AWS Outposts** | Infraestructura de AWS desplegada físicamente en las instalaciones del cliente para operar con experiencia AWS en las propias instalaciones. | Se elige cuando se necesita usar servicios y herramientas de AWS, pero con infraestructura ubicada en el centro del cliente. |
 
 ### Infraestructura global de AWS
@@ -400,17 +418,21 @@ La infraestructura se divide en tres niveles jerárquicos:
 | Servicio o concepto | Qué hace realmente |Aspectos relevantes |
 | --- | --- | --- |
 | **Amazon EC2** | Proporciona capacidad de cómputo bajo demanda mediante máquinas virtuales configurables. | Es la respuesta cuando se necesita control más granular sobre el entorno. |
-| **AWS Auto Scaling** | Ajusta automáticamente la capacidad para responder a cambios en la demanda. | Su misión es adaptar capacidad. No reparte tráfico como ELB. |
-| **Elastic Load Balancing** | Distribuye el tráfico entrante entre múltiples destinos para mejorar disponibilidad y escalado horizontal. | Balancea tráfico, pero no añade capacidad por sí solo. |
+| **AWS Auto Scaling** | Ajusta automáticamente la capacidad de recursos escalables para responder a cambios en la demanda. | La idea clave es **elasticidad automática**. En EC2 suele materializarse con Auto Scaling groups; no reparte tráfico como ELB. |
+| **Elastic Load Balancing** | Distribuye el tráfico entrante entre múltiples destinos y solo envía tráfico a destinos saludables según sus health checks. | Mejora disponibilidad y escalado horizontal, pero no añade capacidad por sí solo. |
 | **AWS Lambda** | Ejecuta código sin aprovisionar ni administrar servidores. | Se paga por uso y escala automáticamente. No es la opción si se necesita control continuo del sistema operativo. Se asocia a un modelo **serverless**. |
 | **AWS Fargate** | Ejecuta contenedores para ECS o EKS sin administrar instancias subyacentes. | No es una función como Lambda; sigue siendo un modelo basado en contenedores. Puede recordarse como **serverless para contenedores**. |
 | **Amazon ECS** | Servicio de orquestación de contenedores nativo de AWS. | Si la pregunta no exige Kubernetes, ECS suele ser candidato natural. |
 | **Amazon EKS** | Servicio administrado para ejecutar Kubernetes en AWS. | La palabra disparadora suele ser **Kubernetes**. |
 | **Amazon ECR** | Registro administrado para almacenar y distribuir imágenes de contenedor. | Almacena imágenes; no ejecuta contenedores. Su función principal es servir de registro para imágenes. |
-| **AWS Elastic Beanstalk** | Automatiza buena parte del despliegue y operación de aplicaciones. | Simplifica la plataforma de aplicación, pero no sustituye a IaC completa. |
+| **AWS Elastic Beanstalk** | Servicio administrado para desplegar y escalar aplicaciones web sin gestionar manualmente gran parte de la infraestructura subyacente. | Puede entenderse como una referencia clásica de **plataforma administrada** en AWS. No sustituye a IaC completa ni ofrece el mismo control granular que EC2. |
 | **Amazon Lightsail** | Servicio simplificado para sitios web, VPS y cargas pequeñas o previsibles. | Más simple que EC2, pero menos flexible para arquitecturas complejas. |
 | **AWS Batch** | Orquesta y ejecuta trabajos por lotes a escala. | No es balanceo ni ejecución interactiva de aplicaciones web. |
 | **AWS Outposts** | Extiende servicios de cómputo y otros servicios de AWS a las instalaciones del cliente. | Aparece cuando se necesita experiencia AWS con infraestructura física en las instalaciones de la organización. |
+
+**Qué conviene recordar sobre contenedores**
+
+Un contenedor empaqueta una aplicación con sus dependencias en una unidad portable. En examen, la idea clave suele ser esta: **ECS** es la orquestación de contenedores nativa de AWS, **EKS** es Kubernetes administrado y **Fargate** permite ejecutar contenedores sin administrar servidores subyacentes.
 
 #### Familias EC2 que conviene reconocer
 
@@ -435,6 +457,8 @@ La infraestructura se divide en tres niveles jerárquicos:
 | --- | --- | --- |
 | **ALB (Application Load Balancer)** | Balancea tráfico HTTP/HTTPS en capa 7 y permite reglas por ruta o por host. | aplicaciones web, microservicios, routing inteligente |
 | **NLB (Network Load Balancer)** | Balancea tráfico TCP/UDP en capa 4 con alto rendimiento y baja latencia. | tráfico de red de alto rendimiento, IP estática, cargas muy exigentes |
+
+> Para `CLF-C02`, la distinción que más suele rentar es **ALB vs NLB**. Existen otros tipos, pero rara vez son la confusión principal en este examen.
 
 ### Servicios de bases de datos
 
@@ -485,6 +509,7 @@ Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-priva
 | **NAT Gateway** | Permite que recursos en subredes privadas salgan a internet sin aceptar conexiones entrantes iniciadas desde internet. | "instancias privadas que descargan actualizaciones", "salida desde subred privada" | La idea clave es **salida**, no entrada pública. |
 | **Virtual Private Gateway (VGW)** | Punto de terminación del lado de AWS para conexiones VPN hacia una VPC. | "Site-to-Site VPN", "conectar una VPC con on-premises" | Se asocia a VPN. No es el hub para muchas VPC y muchas redes. |
 | **AWS Transit Gateway** | Hub central para conectar múltiples VPC y redes on-premises. | "muchas VPC", "conectividad centralizada", "hub-and-spoke" | Si hay muchas redes que conectar, pensar en Transit Gateway. |
+| **VPC Peering** | Conexión privada directa entre dos VPC para que intercambien tráfico usando IP privadas. | "conectar dos VPC directamente" | Es útil para conectar pocas VPC. Si la topología crece mucho, Transit Gateway suele encajar mejor. |
 | **Route Table** | Define hacia dónde se dirige el tráfico de la subred o del gateway. | "rutas a IGW, NAT, VGW o TGW" | Decide caminos; no filtra tráfico como SG o NACL. |
 | **Security Group** | Firewall stateful a nivel de instancia o interfaz de red. | "seguridad del recurso", "permitir acceso a una instancia" | Si una conexión entra permitida, la respuesta de vuelta se permite automáticamente. |
 | **Network ACL** | Firewall stateless a nivel de subred. | "capa adicional en la subred", "allow y deny" | Evalúa entrada y salida por separado. |
@@ -504,15 +529,13 @@ Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-priva
 
 #### Conectividad y entrega de contenido
 
-* Falta VPC Peering
-
 | Servicio | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
 | --- | --- | --- | --- |
 | **AWS VPN** | Familia de conexiones VPN cifradas entre AWS, usuarios o redes externas. | "conectividad cifrada sobre internet" | Es el concepto general; luego el examen suele concretar Site-to-Site o Client VPN. |
 | **AWS Site-to-Site VPN** | Conecta una red on-premises con AWS a través de internet pública mediante túneles VPN. | "conectar datacenter", "usar internet", "implementación rápida" | Suele compararse con Direct Connect. |
 | **AWS Client VPN** | Proporciona acceso remoto seguro para usuarios finales a AWS o redes conectadas. | "acceso remoto de usuarios", "VPN para empleados" | No es la conexión red a red típica de Site-to-Site. |
 | **AWS Direct Connect** | Establece un enlace de red dedicado entre la red interna del cliente y AWS. | "ancho de banda predecible", "no usar internet pública", "conectividad dedicada" | Se elige cuando se busca conectividad más consistente o privada que una VPN sobre internet. |
-| **Amazon Route 53** | Servicio DNS escalable y altamente disponible que dirige consultas al recurso correcto. | "DNS", "resolución de nombres", "routing" | Dice **dónde** está el recurso; no entrega contenido como CloudFront. |
+| **Amazon Route 53** | Servicio DNS escalable y altamente disponible que dirige consultas al recurso correcto. | "DNS", "resolución de nombres", "routing" | Puede aplicar políticas de routing como latencia o geolocalización. Dice **dónde** está el recurso; no entrega contenido como CloudFront. |
 | **Amazon CloudFront** | CDN que cachea y entrega contenido cerca del usuario final. | "caché global", "latencia baja", "edge locations" | Entrega contenido; no reemplaza a Route 53. |
 | **AWS Global Accelerator** | Mejora disponibilidad y rendimiento global dirigiendo tráfico a los endpoints óptimos sobre la red global de AWS. | "IP estática global", "usuarios globales", "TCP/UDP" | Suele aparecer cuando se busca mejor ruta global hacia aplicaciones, no caché. |
 | **Amazon API Gateway** | Servicio administrado para crear, publicar, proteger y monitorizar APIs. | "publicar API", "front door de APIs", "gestión de endpoints" | No es un balanceador genérico ni un CDN. |
@@ -534,7 +557,7 @@ Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-priva
 
 | Servicio o concepto | Qué hace realmente | Cómo suele caer en examen | Aspectos relevantes |
 | --- | --- | --- | --- |
-| **Amazon S3** | Servicio de almacenamiento de objetos para guardar y proteger cualquier volumen de datos. | "archivos", "backups", "logs", "data lake", "contenido estático" | La palabra disparadora suele ser **objeto** o **datos no estructurados**. |
+| **Amazon S3** | Servicio de almacenamiento de objetos para guardar y proteger cualquier volumen de datos dentro de buckets. | "archivos", "backups", "logs", "data lake", "contenido estático" | La palabra disparadora suele ser **objeto** o **datos no estructurados**. Los objetos viven en buckets y, en el caso de buckets de uso general, sus nombres deben ser globalmente únicos. |
 | **Clases de S3** | Niveles de almacenamiento con distintos costos y patrones de acceso. | "frecuente", "infrecuente", "archivo", "optimizar costes" | La clase correcta depende de frecuencia de acceso, latencia y coste. |
 | **Lifecycle Policies** | Reglas automáticas para mover u expirar objetos según su edad o retención. | "mover a Glacier", "eliminar datos antiguos", "automatizar ciclo de vida" | Son políticas de ciclo de vida, no un servicio de backup. |
 | **Amazon EBS** | Almacenamiento en bloque persistente para instancias EC2. | "disco para EC2", "volumen persistente", "block storage" | Se asocia normalmente a una instancia dentro de la misma AZ. |
@@ -561,9 +584,12 @@ Fuente: https://docs.aws.amazon.com/vpc/latest/userguide/create-a-vpc-with-priva
 Clases de almacenamiento (según acceso)
 
 * **Standard** → acceso frecuente
-* **IA (Infrequent Access)** → acceso ocasional (más barato)
-* **One Zone-IA** → más barato, menor resiliencia
-* **Glacier / Deep Archive** → archivo (muy barato, acceso lento)
+* **Intelligent-Tiering** → patrones de acceso cambiantes o desconocidos
+* **Standard-IA (Infrequent Access)** → acceso ocasional con recuperación rápida
+* **One Zone-IA** → acceso ocasional con menor resiliencia y menor costo
+* **Glacier Instant Retrieval** → archivado con acceso en milisegundos
+* **Glacier Flexible Retrieval** → archivado de bajo costo con recuperación más lenta
+* **Glacier Deep Archive** → archivado a muy largo plazo y menor costo
 
 | Servicio            | ¿Para qué sirve?      | Cómo diferenciarlo rápido |
 | ------------------- | --------------------- | ------------------------- |
@@ -579,7 +605,7 @@ Clases de almacenamiento (según acceso)
 | --- | --- | --- | --- |
 | **Amazon Athena** | Permite consultar datos en S3 con SQL sin administrar infraestructura propia. | "consultar datos en S3", "SQL sin servidores" | La clave es análisis ad hoc sobre datos ya almacenados en S3. |
 | **Amazon EMR** | Plataforma administrada para ejecutar frameworks de big data como Hadoop o Spark. | "big data", "clústeres", "procesamiento distribuido" | Se elige cuando la pregunta habla de frameworks de procesamiento a gran escala. |
-| **AWS Glue** | Servicio administrado de integración y preparación de datos, especialmente para procesos ETL. | "ETL", "catalogar datos", "preparar datos" | No es visualización como QuickSight ni data warehouse como Redshift. |
+| **AWS Glue** | Servicio administrado y serverless para integración, preparación y transformación de datos, especialmente en procesos ETL. | "ETL", "catalogar datos", "preparar datos" | Puede incluir catálogo de datos y preparación de datos. No es visualización como QuickSight ni data warehouse como Redshift. |
 | **Amazon Kinesis** | Conjunto de servicios para recopilar y procesar datos en streaming en tiempo real. | "streaming", "telemetría", "eventos continuos" | La idea clave es **flujo continuo**, no cola tradicional. |
 | **Amazon OpenSearch Service** | Servicio administrado para búsqueda, análisis y observabilidad. | "logs", "búsqueda", "analítica de texto", "observabilidad" | No es un data warehouse analítico relacional como Redshift. |
 | **Amazon QuickSight** | Servicio de business intelligence para análisis visual, paneles e informes. | "dashboards", "visualización", "BI" | Se usa para presentar datos, no para almacenarlos como Redshift. |
@@ -611,17 +637,22 @@ Clases de almacenamiento (según acceso)
 | --- | --- | --- | --- |
 | **Amazon SQS** | Cola de mensajes que desacopla componentes y conserva mensajes hasta que se procesan. | "desacoplar", "cola", "absorber picos", "mensaje que espera" | Es pull y orientado a colas. No es notificación masiva a múltiples destinos como SNS. |
 | **Amazon SNS** | Servicio pub/sub para enviar notificaciones a múltiples suscriptores o endpoints. | "notificar a muchos destinos", "push", "fan-out", "emails o SMS" | La idea clave es publicación a múltiples suscriptores, no almacenamiento en cola como SQS. |
+| **Amazon SES** | Servicio administrado para enviar y recibir correo electrónico desde aplicaciones. | "correo transaccional", "envío masivo de emails", "enviar emails desde una aplicación" | Si el requisito principal es correo electrónico, suele apuntar a SES. No actúa como cola como SQS ni como pub/sub general como SNS. |
 | **Amazon EventBridge** | Bus de eventos que conecta eventos de AWS, SaaS o aplicaciones propias con acciones y destinos. | "reaccionar a eventos", "arquitectura orientada a eventos" | No coordina estados complejos como Step Functions. |
 | **AWS Step Functions** | Orquesta flujos de trabajo y coordina pasos, reintentos y transiciones entre tareas. | "workflow", "pasos secuenciales", "orquestación" | Si la pregunta describe un proceso con estados y varios pasos, suele apuntar a Step Functions. |
 
-* Falta Simple Email Service.
+**Nota útil: Amazon SES**
 
-#### Cómo no confundir SQS y SNS
+`Amazon SES` no es la respuesta típica de integración desacoplada como `SQS`, `SNS` o `EventBridge`, pero conviene recordarlo aquí porque se confunde con frecuencia con `SNS` cuando el requisito habla de **correo electrónico transaccional o masivo**.
+
+
+#### Cómo no confundir SQS, SNS y SES
 
 | Si la necesidad es... | La respuesta suele ser... | Por qué |
 | --- | --- | --- |
 | **aguantar mensajes hasta que el consumidor pueda procesarlos** | **Amazon SQS** | funciona como cola y desacopla componentes para que un fallo o saturación del receptor no implique perder el mensaje |
 | **avisar a varios sistemas o suscriptores al mismo tiempo** | **Amazon SNS** | publica el mismo evento a múltiples destinos en modelo push |
+| **enviar correos electrónicos desde una aplicación o campaña** | **Amazon SES** | está orientado al envío de email, no a actuar como cola o bus de eventos |
 
 ### Servicios adicionales in-scope
 
@@ -637,7 +668,7 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 | **Herramientas para desarrolladores** | **AWS CodePipeline** | orquestación de etapas de integración y entrega continua |
 | **Herramientas para desarrolladores** | **AWS X-Ray** | trazabilidad y análisis de aplicaciones distribuidas |
 | **End User Computing** | **Amazon AppStream 2.0** | streaming de aplicaciones al usuario final |
-| **End User Computing** | **Amazon WorkSpaces** | escritorios virtuales administrados |
+| **End User Computing** | **Amazon WorkSpaces** | escritorios virtuales en la nube para usuarios finales |
 | **End User Computing** | **Amazon WorkSpaces Secure Browser** | navegador remoto y aislado para acceso seguro |
 | **Frontend web y móvil** | **AWS Amplify** | desarrollo y despliegue de aplicaciones frontend y full stack |
 | **Frontend web y móvil** | **AWS AppSync** | APIs GraphQL administradas y sincronización de datos |
@@ -660,6 +691,19 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 | **Migración y transferencia** | **AWS Migration Hub** | seguimiento central de migraciones |
 | **Migración y transferencia** | **AWS Schema Conversion Tool** | conversión de esquemas de base de datos |
 | **Migración y transferencia** | **AWS Snow Family** | traslado físico de grandes volúmenes de datos |
+
+#### DevOps, CI/CD e infraestructura como código
+
+| Concepto o servicio | Qué conviene recordar |
+| --- | --- |
+| **DevOps** | enfoque de trabajo que prioriza colaboración, automatización y entregas frecuentes y fiables |
+| **CI/CD** | prácticas para integrar, probar y desplegar cambios de forma repetible y controlada |
+| **AWS CloudFormation** | referencia principal de **IaC** en AWS para definir infraestructura mediante plantillas |
+| **AWS CodeBuild** | servicio orientado a compilación y pruebas dentro de flujos de entrega |
+| **AWS CodePipeline** | orquesta etapas de integración y entrega continua |
+| **AWS X-Ray** | ayuda a analizar el comportamiento de aplicaciones distribuidas |
+
+> Para `CLF-C02`, suele ser más rentable dominar **CloudFormation**, **CodeBuild**, **CodePipeline** y **X-Ray** que memorizar herramientas históricas o menos relevantes para el alcance actual del examen.
 
 
 ### 12. Chuleta del Dominio 3
@@ -690,6 +734,7 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 | salida a internet desde subred privada | **NAT Gateway** | salida, no entrada |
 | conectividad VPN de una VPC | **Virtual Private Gateway** | extremo AWS para Site-to-Site VPN |
 | muchas VPC y conectividad centralizada | **AWS Transit Gateway** | hub central |
+| conectar dos VPC directamente | **VPC Peering** | conexión privada punto a punto |
 | firewall stateful a nivel de instancia | **Security Group** | recuerda la conexión |
 | firewall stateless a nivel de subred | **Network ACL** | evalúa entrada y salida por separado |
 | DNS | **Amazon Route 53** | resuelve nombres |
@@ -736,9 +781,11 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 #### Qué conviene recordar sobre RI y Organizations
 
 * Las **Reserved Instances** y otros compromisos suelen aparecer asociadas a **uso estable**.
+* La **flexibilidad de algunas RI** significa que el descuento puede aplicarse a otras instancias compatibles dentro de ciertos límites; no implica libertad total para cualquier cambio.
 * En preguntas de examen, **AWS Organizations** puede influir en cómo se aprovechan beneficios y facturación de compromisos a nivel agregado.
 * Si la pregunta destaca **flexibilidad de cómputo**, con frecuencia conviene pensar en **Savings Plans** antes que en RI clásicas.
 * En **EC2 Spot Instances**, AWS puede interrumpir la capacidad cuando la necesita de vuelta; la referencia típica de examen es el **aviso de 2 minutos**.
+* Una **Reserved Instance** no debe confundirse con una **Capacity Reservation**: la primera se asocia a un modelo de ahorro por compromiso; la segunda se centra en garantizar capacidad disponible.
 
 ### Costos de almacenamiento y transferencia
 
@@ -767,6 +814,8 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 | **analizar en qué se gastó el dinero y ver tendencias históricas** | **AWS Cost Explorer** | trabaja sobre datos de coste ya existentes en la cuenta |
 | **estimar cuánto costará una arquitectura antes de desplegarla** | **AWS Pricing Calculator** | se usa antes de crear recursos, no sobre gasto real ya consumido |
 
+> **AWS Budgets** sirve para alertar y, en ciertos casos, automatizar respuestas, pero no equivale a un tope absoluto de gasto de toda la cuenta. En examen conviene pensarlo como herramienta de **control y aviso**, no como “interruptor financiero”.
+
 ### Etiquetas de asignación de costos
 
 | Concepto | Qué se debe recordar |
@@ -784,8 +833,12 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 | **SCP** | límite máximo de permisos a nivel de cuenta u OU | bloquear servicios o acciones en cuentas enteras | no concede permisos |
 | **AWS Support Center** | portal para gestionar casos de soporte | apertura y seguimiento de casos | no es Health Dashboard |
 | **AWS Health Dashboard** | información sobre incidentes y mantenimiento que afectan a AWS o a la cuenta | estado del servicio o eventos programados | no es Trusted Advisor |
+| **AWS Health API** | acceso programático a eventos de salud y mantenimiento que afectan al entorno | automatizar consulta o integración de eventos de salud | no es monitorización de métricas como CloudWatch |
 | **AWS Trusted Advisor** | recomendaciones de optimización | costo, seguridad, rendimiento, tolerancia a fallos y límites de servicio | no informa de incidentes reales del servicio |
+| **AWS Compute Optimizer** | recomendaciones de dimensionamiento basadas en el uso observado de ciertos recursos | rightsizing, optimización de cómputo y almacenamiento | no es una herramienta de facturación histórica; propone configuraciones más adecuadas |
+| **Documentación oficial y whitepapers de AWS** | documentación técnica, guías conceptuales y marcos de referencia publicados por AWS | "buscar documentación oficial", "whitepapers", "marcos de referencia" | no sustituyen a soporte; son recursos de autoaprendizaje y diseño |
 | **AWS Knowledge Center** | artículos técnicos oficiales | localización de información técnica | no es documentación de precios |
+| **AWS Prescriptive Guidance** | patrones, recomendaciones y guías oficiales para casos de uso y decisiones arquitectónicas concretas | "guidance", "patrones recomendados", "cómo abordar un escenario" | no es soporte personalizado ni una comunidad abierta como re:Post |
 | **AWS re:Post** | preguntas y respuestas técnicas | apoyo comunitario y técnico | no es un caso formal de soporte |
 | **AWS Professional Services** | apoyo experto de AWS para proyectos y transformaciones | acompañamiento profesional | no es un plan de soporte estándar |
 | **Arquitectos de soluciones de AWS** | apoyo técnico y de arquitectura en contexto comercial o técnico | orientación sobre diseño y adopción | no sustituyen soporte operativo continuo |
@@ -814,6 +867,7 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 
 | Tema | Qué se debe recordar |
 | --- | --- |
+| **AWS Partner Network (APN)** | ecosistema de socios de AWS que incluye distintos tipos de partners y programas |
 | **AWS Marketplace** | catálogo de software y soluciones de terceros para desplegar en AWS |
 | **ISV** | proveedor de software independiente |
 | **System Integrator** | socio que ayuda a implantar, integrar o transformar |
@@ -832,6 +886,7 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 | limitar servicios a nivel cuenta | **SCP** |
 | estado o mantenimiento que afecta al servicio | **AWS Health Dashboard** |
 | recomendaciones de optimización | **Trusted Advisor** |
+| rightsizing basado en uso observado | **AWS Compute Optimizer** |
 | software de terceros en AWS | **AWS Marketplace** |
 
 ---
@@ -863,12 +918,13 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 | **WAF** | ataques web y reglas de capa 7 |
 | **Shield** | DDoS |
 
-### 4. SQS vs SNS vs EventBridge vs Step Functions
+### 4. SQS vs SNS vs SES vs EventBridge vs Step Functions
 
 | Servicio | Idea correcta |
 | --- | --- |
 | **SQS** | cola, desacoplamiento, mensajes que esperan |
 | **SNS** | publicación a múltiples suscriptores |
+| **SES** | envío de correo electrónico desde aplicaciones |
 | **EventBridge** | eventos que disparan acciones |
 | **Step Functions** | orquestación de pasos |
 
@@ -918,7 +974,7 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 * Saber distinguir **IAM user**, **IAM role**, **IAM Identity Center**, **Cognito**, **STS** y **root**.
 * Identificar sin duda las parejas que más se cruzan: `CloudWatch / CloudTrail / Config`, `GuardDuty / Inspector`, `WAF / Shield`, `SQS / SNS / EventBridge / Step Functions`.
 * Elegir correctamente entre **consola**, **CLI/API/SDK** e **IaC** según se trate de operación puntual o proceso repetible.
-* Reconocer **IGW**, **NAT Gateway**, **VGW**, **Transit Gateway**, **Security Group** y **NACL**.
+* Reconocer **IGW**, **NAT Gateway**, **VGW**, **Transit Gateway**, **VPC Peering**, **Security Group** y **NACL**.
 * Diferenciar **S3**, **EBS**, **EFS**, **FSx**, **Storage Gateway** y **AWS Backup**.
 * No confundir en `S3` **bucket policy**, **versioning**, **replication** y **Object Lock**.
 * No confundir **AMI** y **EBS Snapshot**.
@@ -926,7 +982,8 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 * Tener clara la diferencia entre **Multi-AZ** y **Read Replica** en `RDS`.
 * Saber qué herramientas sirven para **migrar**, cuáles para **descubrir** y cuáles para **justificar económicamente**.
 * Distinguir **On-Demand**, **RI**, **Savings Plans**, **Spot**, **Dedicated Hosts**, **Dedicated Instances** y **Capacity Reservations**.
-* Saber cuándo usar **Budgets**, **Cost Explorer**, **CUR**, **Pricing Calculator**, **Organizations**, **Trusted Advisor** y **AWS Health**.
+* Saber cuándo usar **Budgets**, **Cost Explorer**, **CUR**, **Pricing Calculator**, **Organizations**, **Trusted Advisor**, **Compute Optimizer** y **AWS Health**.
+* Reconocer recursos técnicos oficiales como **documentación de AWS**, **whitepapers**, **AWS Prescriptive Guidance**, **Knowledge Center**, **re:Post**, **Security Blog** y **Support Center**, y entender el papel de **APN**, **ISV** y **System Integrator**.
 
 ---
 
@@ -938,17 +995,29 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 * Dominio 3: <https://docs.aws.amazon.com/es_es/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html>
 * Dominio 4: <https://docs.aws.amazon.com/es_es/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html>
 * Servicios oficiales incluidos en alcance: <https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-in-scope-services.html>
+* Qué es cloud computing: <https://aws.amazon.com/what-is-cloud-computing/>
+* Modelos tradicionales de servicio (`IaaS / PaaS / SaaS`): <https://aws.amazon.com/es/what-is/iaas/> y <https://aws.amazon.com/what-is/saas/>
+* Tipos de cloud computing y modelos de despliegue: <https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html>
+* Multicloud en AWS: <https://aws.amazon.com/multicloud/features/>
 * Planes de soporte de AWS: <https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html>
 * Avisos de fin de soporte de planes heredados: <https://docs.aws.amazon.com/awssupport/latest/user/support-plans-eos.html>
 * AWS CloudShell: <https://docs.aws.amazon.com/cloudshell/latest/userguide/welcome.html>
+* AWS CAF: <https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/foundational-capabilities.html>
 * IAM Access Analyzer: <https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html>
 * Bucket policies de Amazon S3: <https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html>
+* Clases de almacenamiento de Amazon S3: <https://docs.aws.amazon.com/es_es/AmazonS3/latest/userguide/storage-class-intro.html>
 * S3 Versioning: <https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html>
 * S3 Object Lock: <https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html>
 * Multi-AZ en Amazon RDS: <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZSingleStandby.html>
 * Read replicas en Amazon RDS: <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html>
 * Snapshots de Amazon EBS: <https://docs.aws.amazon.com/ebs/latest/userguide/how_snapshots_work.html>
 * Amazon Machine Images (AMI): <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html>
+* Application Auto Scaling: <https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html>
+* VPC Peering: <https://docs.aws.amazon.com/vpc/latest/userguide/vpc-peering.html>
+* Amazon WorkSpaces: <https://docs.aws.amazon.com/es_es/workspaces/latest/adminguide/amazon-workspaces.html>
+* AWS Prescriptive Guidance: <https://docs.aws.amazon.com/prescriptive-guidance/latest/getting-started/what-is-aws-prescriptive-guidance.html>
+* AWS Partner Network (APN): <https://aws.amazon.com/partners/>
+* AWS Health API: <https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html>
 
 
 -------------------------------
