@@ -1047,6 +1047,11 @@ Estos servicios suelen entrar como preguntas directas de reconocimiento más que
 
 <img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/29e3610b-31c0-4dd0-a8a9-a5a02f4a75ac" />
 
+<img width="1280" height="2000" alt="image" src="https://github.com/user-attachments/assets/b15a001a-f3c7-473d-8d18-0f2f46fcd40b" />
+
+https://es.scribd.com/document/879838188/AWS-Azure-y-GCP
+
+
 https://youtu.be/8OKfNHciBNg
 
 https://github.com/roxsross/aws-cloud-practitioner-complete-guide/blob/master/practice-exams/practice-exam-3.md
